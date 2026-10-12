@@ -1,0 +1,1673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Providence Church — Earthquake Relief</title>
+<meta name="description" content="Providence Church Coronado and local volunteers are collecting food, water, blankets, hygiene products and diapers for families affected by the earthquake in Azuero, Panama. Find a drop-off point or donate.">
+<meta name="theme-color" content="#0E1830">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="https://providencechurchpa.org/img/favicon.png">
+<link rel="apple-touch-icon" href="https://providencechurchpa.org/img/logo.png">
+<link rel="alternate" hreflang="en" href="https://providenceearthquakerelief.netlify.app/en/">
+<link rel="alternate" hreflang="es" href="https://providenceearthquakerelief.netlify.app/es/">
+<meta property="og:url" content="https://providenceearthquakerelief.netlify.app/">
+<link rel="canonical" href="https://providenceearthquakerelief.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Providence Church Coronado">
+<meta property="og:title" content="Providence Church — Earthquake Relief">
+<meta property="og:description" content="Providence Church Coronado and local volunteers are collecting food, water, blankets, hygiene products and diapers for families affected by the earthquake in Azuero, Panama. Find a drop-off point or donate.">
+<meta property="og:image" content="https://providencechurchpa.org/img/logo.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_PA">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one scrolling page; navy header and hero as on providencechurchpa.org, paper sections, cream bands for alternating sections. */
+:root{
+  /* Brand tokens copied from providencechurchpa.org stylesheet (:root) */
+  --navy:#1B2A4A; --navy-deep:#0E1830; --gold:#B8934A; --gold-lt:#D9BA7C;
+  --cream:#F7F3E9; --paper:#FFFDF9; --ink:#23252B; --muted:#5A5F6B; --rule:#DED6C4;
+  /* Derived */
+  --gold-ink:#7E6026; --on-navy:#EFE9DC; --on-navy-muted:#BEB6A5; --navy-line:rgba(239,233,220,.18);
+  --ok:#2E6A4C; --ok-bg:#E4EFE8; --warn:#85570F; --warn-bg:#F5EAD3;
+  --stop:#8C2E29; --stop-bg:#F5E2DF; --wait:#46516E; --wait-bg:#E7E9EF;
+  --wa:#1C7348; --fb:#2550A0; --field:#FFFFFF; --focus:#2550A0;
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --shadow:0 1px 3px rgba(14,24,48,.07),0 6px 18px rgba(14,24,48,.05);
+  --r:4px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto}
+a{color:var(--navy)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--navy);line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,5vw,2.4rem);letter-spacing:-.01em}
+h3{font-size:1.3rem}
+p{margin:0}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy-deep);padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:28px}}
+.ico{width:1.25em;height:1.25em;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.22em}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.lead{color:var(--muted);font-size:1.06rem;max-width:62ch}
+.sec{padding-block:56px}
+.sec.band{background:var(--cream);border-block:1px solid var(--rule)}
+.sec-head{display:grid;gap:10px;margin-bottom:28px}
+.rule{width:44px;height:2px;background:var(--gold);border:0;margin:0}
+
+/* Buttons — church style: 2px radius, uppercase, letterspaced */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:2px;border:1px solid transparent;font:600 .9rem/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;color:inherit;text-align:center}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover:not([disabled]){background:var(--gold-lt)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover:not([disabled]){background:var(--navy-deep)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover:not([disabled]){background:var(--cream)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-fb{background:var(--fb);color:#fff}
+.btn-sm{min-height:40px;padding:8px 14px;font-size:.78rem}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy-deep);color:var(--on-navy);border-bottom:1px solid var(--navy-line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-navy);min-width:0}
+.brand img{width:42px;height:42px;border-radius:50%;flex:none}
+.brand b{display:block;font:600 1.2rem/1.05 var(--serif);color:#fff}
+.brand small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:2px;overflow:hidden}
+.lang button{min-width:44px;min-height:40px;border:0;background:none;color:var(--on-navy);font:600 .85rem var(--sans);letter-spacing:.06em;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--navy-deep)}
+.menu-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.4);border-radius:2px;background:none;color:#fff;font:600 .85rem var(--sans);cursor:pointer}
+.nav{display:none;order:3;flex-basis:100%;border-top:1px solid var(--navy-line)}
+.nav.open{display:block}
+.nav ul{list-style:none;margin:0;padding:8px 0 14px;display:grid}
+.nav a{display:block;padding:12px 2px;color:var(--gold-lt);text-decoration:none;font-size:1.05rem;border-bottom:1px solid var(--navy-line)}
+.nav a:hover{color:#fff}
+@media (min-width:1120px){
+  .menu-btn{display:none}
+  .nav{display:block;order:0;flex-basis:auto;border:0;margin-left:auto}
+  .top-in{flex-wrap:nowrap}
+  .nav ul{display:flex;gap:2px;padding:0}
+  .nav a{border:0;padding:8px 7px;font-size:.9rem}
+  .top-actions{margin-left:6px}
+}
+
+/* Hero */
+.hero{background:var(--navy-deep);color:var(--on-navy);padding-block:40px 48px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -1px -10%;height:46%;background:linear-gradient(180deg,rgba(27,42,74,0),rgba(27,42,74,.65));pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;gap:26px}
+.hero-logo{width:132px;height:132px;border-radius:50%;box-shadow:0 0 0 6px rgba(217,186,124,.16)}
+.hero .eyebrow{color:var(--gold-lt)}
+.hero h1{color:#fff;font-size:clamp(2.1rem,7.4vw,3.5rem);letter-spacing:-.015em;max-width:16ch}
+.hero .mission{font-size:1.1rem;color:var(--on-navy);max-width:60ch}
+.route{display:flex;gap:10px;align-items:flex-start;color:var(--on-navy-muted);font-size:.98rem;border-left:2px solid var(--gold);padding-left:12px;max-width:60ch}
+.ctas{display:grid;gap:10px;grid-template-columns:1fr 1fr;max-width:640px}
+.ctas .primary{grid-column:1/-1;min-height:60px;font-size:1rem}
+.ctas .btn{width:100%}
+.gate-note{display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--gold-lt)}
+@media (min-width:860px){
+  .hero{padding-block:64px 72px}
+  .hero-grid{grid-template-columns:1fr auto;align-items:start}
+  .hero-logo{width:200px;height:200px;order:2}
+}
+
+/* Announcement / status strip */
+.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:var(--r);background:var(--wait-bg);color:var(--wait);font-size:.95rem}
+.notice.warn{background:var(--warn-bg);color:var(--warn)}
+.notice.ok{background:var(--ok-bg);color:var(--ok)}
+.notice.stop{background:var(--stop-bg);color:var(--stop)}
+
+/* Finder */
+.finder{display:grid;gap:14px;margin-bottom:22px}
+.search{position:relative}
+.search .ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;min-height:52px;padding:12px 14px 12px 44px;border:1px solid var(--rule);border-radius:var(--r);background:var(--field);font:inherit;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:8px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--field);font:600 .92rem var(--sans);color:var(--navy);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chip .n{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip[aria-pressed="true"] .n{color:var(--gold-lt)}
+.near{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.near small{color:var(--muted);font-size:.88rem}
+.geo-msg{min-height:0}
+.map-block{display:grid;gap:12px;margin-bottom:26px}
+.map{position:relative;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;background:#E9E6DF;box-shadow:var(--shadow)}
+.map svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.map-attr{position:absolute;right:0;bottom:0;margin:0;padding:2px 6px;font-size:.68rem;background:rgba(255,253,249,.85);color:var(--muted)}
+.map-attr a{color:var(--muted)}
+.pin{cursor:pointer}
+.pin .star{fill:var(--gold);stroke:var(--navy-deep);stroke-width:3;stroke-linejoin:round}
+.pin:hover .star,.pin:focus .star{fill:var(--gold-lt)}
+.pin.nearest .star{fill:#E8B23A}
+.pin .halo{fill:rgba(14,24,48,.18)}
+.pin text{font:700 25px var(--sans);fill:var(--navy-deep);paint-order:stroke;stroke:#FFFDF9;stroke-width:7px;stroke-linejoin:round}
+.pin:focus{outline:none}
+.pin:focus-visible .star{stroke:var(--focus);stroke-width:5}
+.me-dot{fill:#2B6BE0;stroke:#fff;stroke-width:5}
+.me-ring{fill:rgba(43,107,224,.18)}
+.map-pending{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--muted)}
+@media (max-width:520px){.pin text{font-size:34px;stroke-width:9px}}
+.loc-list{display:grid;gap:16px}
+@media (min-width:900px){.loc-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.loc{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.loc.highlight{outline:3px solid var(--gold);outline-offset:2px}
+.loc-head{padding:18px 18px 12px;display:grid;gap:8px}
+.loc-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.loc-name{display:flex;gap:10px;align-items:flex-start}
+.loc-name .ico{color:var(--gold-ink);margin-top:.25em}
+.loc-name h3{font-size:1.45rem}
+.loc-comm{color:var(--muted);font-size:.95rem}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-accepting{background:var(--ok-bg);color:var(--ok)}
+.st-full{background:var(--warn-bg);color:var(--warn)}
+.st-closed{background:var(--stop-bg);color:var(--stop)}
+.st-awaiting{background:var(--wait-bg);color:var(--wait)}
+.loc-body{padding:0 18px 18px;display:grid;gap:12px}
+.row{display:flex;gap:10px;align-items:flex-start;font-size:.97rem}
+.row .ico{color:var(--navy);margin-top:.15em}
+.row.muted{color:var(--muted)}
+.gate{background:var(--navy);color:var(--on-navy);border-radius:var(--r);padding:16px;display:grid;gap:6px}
+.gate strong{display:flex;gap:10px;align-items:center;color:#fff;font:600 1.2rem/1.2 var(--serif)}
+.gate strong .ico{color:var(--gold-lt)}
+.gate p{font-size:.95rem}
+.gate .tip{color:var(--gold-lt);font-size:.9rem}
+.loc-foot{margin-top:auto;padding:12px 18px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem;color:var(--muted)}
+.empty{border:1px dashed var(--rule);border-radius:var(--r);padding:26px 20px;text-align:center;display:grid;gap:10px;justify-items:center;background:var(--field)}
+.empty h3{font-size:1.25rem}
+
+/* Supplies */
+.sup-grid{display:grid;gap:16px}
+@media (min-width:700px){.sup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sup{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:start;min-width:0}
+.sup-h{display:flex;gap:14px;align-items:center}
+.sup-ic{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--gold-lt);display:grid;place-items:center;flex:none}
+.sup-ic .ico{width:24px;height:24px}
+.sup-h p{color:var(--muted);font-size:.93rem;margin-top:2px}
+.items{list-style:none;margin:0;padding:0;display:grid}
+.items li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--rule)}
+.items li:first-child{border-top:0}
+.pr-urgent{background:var(--stop-bg);color:var(--stop)}
+.pr-needed{background:var(--warn-bg);color:var(--warn)}
+.pr-sufficient{background:var(--ok-bg);color:var(--ok)}
+.pr-notAccepting{background:var(--wait-bg);color:var(--wait)}
+.items li.off span:first-child{color:var(--muted);text-decoration:line-through}
+.sup-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px;color:var(--muted);font-size:.92rem}
+.guide{margin-top:22px;background:var(--navy-deep);color:var(--on-navy);border-radius:var(--r);padding:22px;display:grid;gap:14px}
+.guide h3{color:#fff;display:flex;gap:10px;align-items:center}
+.guide h3 .ico{color:var(--gold-lt)}
+.guide ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+@media (min-width:700px){.guide ul{grid-template-columns:1fr 1fr;column-gap:28px}}
+.guide li{display:flex;gap:10px}
+.guide li .ico{color:var(--gold-lt);margin-top:.15em}
+.guide a{color:var(--gold-lt)}
+
+/* Money */
+.memo{background:var(--navy);color:var(--on-navy);border-radius:var(--r);padding:22px;display:grid;gap:10px;margin-bottom:18px}
+.memo .eyebrow{color:var(--gold-lt)}
+.memo-code{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.memo-code code{font:600 clamp(1.35rem,5.6vw,1.9rem)/1.2 var(--sans);letter-spacing:.08em;color:#fff;background:rgba(255,255,255,.07);padding:10px 14px;border:1px dashed var(--gold-lt);border-radius:2px;user-select:all;overflow-wrap:anywhere}
+.memo small{color:var(--on-navy-muted);font-size:.93rem}
+.pay-grid{display:grid;gap:16px}
+@media (min-width:800px){.pay-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pay{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:14px;align-content:start;min-width:0}
+.pay-h{display:flex;gap:12px;align-items:center}
+.pay-h .sup-ic{width:42px;height:42px}
+.kv{display:grid;gap:0}
+.kv div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--rule)}
+.kv div:first-child{border-top:0}
+.kv dt{color:var(--muted);font-size:.88rem}
+.kv dd{margin:0;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.kv .txt{min-width:0}
+.copy{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border:1px solid var(--rule);background:var(--paper);border-radius:2px;font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);cursor:pointer;flex:none}
+.copy.done{background:var(--ok-bg);border-color:var(--ok-bg);color:var(--ok)}
+.memo .copy{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+.pending{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border:1px dashed var(--rule);border-radius:var(--r);padding:14px;color:var(--muted);font-size:.97rem}
+.qr-img{width:180px;max-width:100%;border:1px solid var(--rule);border-radius:var(--r);padding:8px;background:#fff}
+.safety{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.93rem;margin-top:16px}
+.fin{margin-top:22px;border-top:1px solid var(--rule);padding-top:22px;display:grid;gap:14px}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:16px}
+.tile b{display:block;font:600 1.7rem/1.1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.tile span{color:var(--muted);font-size:.9rem}
+
+/* Cash gifts */
+.cash{margin-top:26px;display:grid;gap:10px}
+.cash h3{font-size:1.5rem}
+.cash-sum{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin:4px 0 2px}
+.cash-sum b{font:600 1.9rem/1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.cash-sum span{color:var(--muted);font-size:.92rem}
+.cash-list{list-style:none;margin:0;padding:0;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
+.cash-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--rule)}
+.cash-list li:first-child{border-top:0}
+.cash-who{min-width:0}
+.cash-who b{display:block;font-weight:600;overflow-wrap:anywhere}
+.cash-who small{color:var(--muted);font-size:.86rem}
+.cash-amt{font:600 1.15rem var(--sans);color:var(--ok);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cash-note{color:var(--muted);font-size:.9rem;display:flex;gap:8px;align-items:flex-start}
+/* Share */
+.share{background:var(--navy-deep);color:var(--on-navy)}
+.share h2{color:#fff}
+.share .eyebrow{color:var(--gold-lt)}
+.share .lead{color:var(--on-navy-muted)}
+.share-btns{display:grid;gap:10px}
+@media (min-width:520px){.share-btns{grid-template-columns:repeat(3,auto);justify-content:start}}
+.share .pending{background:rgba(255,255,255,.05);border-color:var(--navy-line);color:var(--on-navy-muted)}
+.share .copy{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+/* Forms */
+.forms{display:grid;gap:18px}
+.fcard{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}
+.fcard>summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.fcard>summary::-webkit-details-marker{display:none}
+.fcard>summary h3{font-size:1.35rem}
+.fcard>summary p{color:var(--muted);font-size:.95rem;margin-top:2px}
+.fcard>summary .chev{margin-left:auto;color:var(--navy);transition:transform .2s}
+.fcard[open]>summary .chev{transform:rotate(180deg)}
+.fcard form{padding:0 20px 22px;display:grid;gap:16px;border-top:1px solid var(--rule);padding-top:18px}
+.fgrid{display:grid;gap:16px}
+@media (min-width:700px){.fgrid{grid-template-columns:1fr 1fr}.fgrid .full{grid-column:1/-1}}
+.field{display:grid;gap:6px;min-width:0}
+.field label,.field legend{font-weight:600;font-size:.95rem;color:var(--navy)}
+.field .hint{font-size:.85rem;color:var(--muted)}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{width:100%;min-height:48px;padding:10px 12px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);font:inherit;color:var(--ink)}
+.field textarea{min-height:96px;resize:vertical}
+.field [aria-invalid="true"]{border-color:var(--stop);background:var(--stop-bg)}
+.err{color:var(--stop);font-size:.88rem;font-weight:600}
+fieldset.field{border:0;padding:0;margin:0}
+.checks{display:grid;gap:8px}
+@media (min-width:520px){.checks{grid-template-columns:1fr 1fr}}
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);cursor:pointer;font-size:.97rem;min-height:48px}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--navy);flex:none}
+.form-foot{display:grid;gap:10px}
+.form-foot .btn{justify-self:start}
+.private{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:.88rem}
+
+/* Updates */
+.upd-list{display:grid;gap:16px}
+.upd{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:10px}
+.upd time{color:var(--gold-ink);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase}
+.upd-photos{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.upd-photos img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+.upd dl{margin:0;display:grid;gap:6px;font-size:.95rem}
+.upd dt{font-weight:600;color:var(--navy)}
+.upd dd{margin:0 0 6px}
+
+/* Donations received */
+.rec-sum{color:var(--muted);font-size:.95rem;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.rec-list{display:grid;gap:0;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
+.rec-list:empty{display:none}
+.rec{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border-top:1px solid var(--rule)}
+.rec:first-child{border-top:0}
+.rec-date{width:54px;text-align:center;border-right:1px solid var(--rule);padding-right:12px;line-height:1.05}
+.rec-date b{display:block;font:600 1.6rem/1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.rec-date span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);font-weight:600}
+.rec-items{font-weight:600;color:var(--ink)}
+.rec-meta{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--muted);font-size:.9rem;margin-top:3px}
+.rec-meta span{display:inline-flex;gap:5px;align-items:center}
+.rec-meta .ico{width:1em;height:1em}
+.rec-thumb{width:64px;height:64px;border-radius:var(--r);object-fit:cover;border:1px solid var(--rule)}
+.rec-more{display:flex;justify-content:center;padding:12px;border-top:1px solid var(--rule)}
+.rec-howto{display:flex;gap:10px;align-items:flex-start;margin-top:16px;color:var(--muted);font-size:.95rem;max-width:70ch}
+.rec-howto .ico{color:var(--wa);margin-top:.15em}
+/* Deliveries */
+.dist-list{display:grid;gap:22px}
+.dist{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:grid;min-width:0}
+@media (min-width:860px){.dist.has-photos{grid-template-columns:1.15fr 1fr}}
+.dist-photos{display:grid;gap:4px;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--navy-deep)}
+.dist-photos a,.dist-photos figure{margin:0;display:block;min-width:0}
+.dist-photos img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+.dist-photos > :first-child{grid-column:1/-1}
+.dist-photos > :first-child img{aspect-ratio:16/10}
+.dist-body{padding:20px;display:grid;gap:12px;align-content:start}
+.dist-body time{color:var(--gold-ink);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+.dist-body dl{margin:0;display:grid;gap:4px;font-size:.95rem}
+.dist-body dt{font-weight:600;color:var(--navy);margin-top:6px}
+.dist-body dd{margin:0}
+.dist-body ul{margin:0;padding-left:1.1em}
+/* About */
+.about-grid{display:grid;gap:26px}
+@media (min-width:860px){.about-grid{grid-template-columns:1.25fr 1fr}}
+.about-grid p{max-width:62ch}
+.steps{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start}
+.steps li .ico{color:var(--gold-ink);margin-top:.15em}
+.church{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start}
+.church img{width:84px;height:84px;border-radius:50%}
+.church .muted{color:var(--muted);font-size:.95rem}
+
+.contact{margin-top:20px;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:10px;box-shadow:var(--shadow)}
+.contact h3{display:flex;gap:10px;align-items:center}
+.contact h3 .ico{color:var(--wa)}
+.contact .num{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.contact .num b{font:600 1.45rem/1.2 var(--sans);letter-spacing:.02em;color:var(--navy);font-variant-numeric:tabular-nums;user-select:all}
+.textonly{display:flex;gap:8px;align-items:flex-start;color:var(--warn);background:var(--warn-bg);border-radius:var(--r);padding:8px 12px;font-size:.93rem;font-weight:600}
+.gate-note a,.guide li a{color:var(--gold-lt)}
+footer{background:var(--navy-deep);color:var(--on-navy-muted);padding-block:34px;font-size:.93rem}
+footer .wrap{display:grid;gap:10px}
+footer b{color:#fff;font:600 1.15rem var(--serif)}
+footer a{color:var(--gold-lt)}
+.data-status{margin-bottom:16px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#puntos" data-t="skip">Saltar a los puntos de recolección</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-in">
+      <a class="brand" href="#inicio">
+        <img class="logo" alt="Providence Church Coronado" width="42" height="42">
+        <span><b>Providence Church</b><small data-t="brand.sub">Ayuda por el Sismo</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal" data-t-aria="nav.label">
+        <ul>
+          <li><a href="#inicio" data-t="nav.home">Inicio</a></li>
+          <li><a href="#puntos" data-t="nav.locations">Puntos de Recolección</a></li>
+          <li><a href="#necesidades" data-t="nav.supplies">Qué Necesitamos</a></li>
+          <li><a href="#donaciones" data-t="nav.money">Donaciones</a></li>
+          <li><a href="#voluntariado" data-t="nav.volunteer">Voluntariado</a></li>
+          <li><a href="#actualizaciones" data-t="nav.updates">Recibido</a></li>
+          <li><a href="#entregas" data-t="nav.deliveries">Entregas</a></li>
+          <li><a href="#nosotros" data-t="nav.about">Sobre Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="top-actions">
+        <div class="lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+        <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" id="menuBtn">
+          <svg class="ico"><use href="#i-menu"/></svg><span data-t="menu">Menú</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <img class="logo hero-logo" alt="Providence Church Coronado · Iglesia Providencia" width="200" height="200">
+    <div style="display:grid;gap:20px;min-width:0">
+      <hr class="rule">
+      <p class="eyebrow" data-t="hero.eyebrow">Sismo del 9 de octubre de 2026 · Península de Azuero</p>
+      <h1 data-t="hero.title">Juntos Podemos Ayudar a Azuero a Recuperarse.</h1>
+      <p class="mission" data-t="hero.mission"></p>
+      <p class="route"><svg class="ico"><use href="#i-truck"/></svg><span data-t="hero.route"></span></p>
+      <div class="ctas">
+        <a class="btn btn-gold primary" href="#puntos"><svg class="ico"><use href="#i-pin"/></svg><span data-t="cta.find">Buscar un punto de recolección</span></a>
+        <a class="btn btn-ghost" href="#necesidades"><svg class="ico"><use href="#i-package"/></svg><span data-t="cta.supplies"></span></a>
+        <a class="btn btn-ghost" href="#donaciones"><svg class="ico"><use href="#i-heart"/></svg><span data-t="cta.money"></span></a>
+      </div>
+      <p class="gate-note"><svg class="ico"><use href="#i-shield"/></svg><span data-t="hero.gate"></span></p>
+      <p class="gate-note" id="heroContact" hidden></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="announce" hidden style="padding-top:20px"></div>
+
+<!-- DROP-OFF LOCATIONS -->
+<section class="sec" id="puntos" aria-labelledby="loc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="loc.eyebrow"></p>
+      <h2 id="loc-title" data-t="loc.title"></h2>
+      <p class="lead" data-t="loc.lead"></p>
+    </div>
+    <div class="data-status" id="dataStatus" hidden></div>
+    <div class="map-block">
+      <div class="map" id="map">
+        <svg id="mapSvg" viewBox="0 0 932 707" role="img" aria-labelledby="mapTitle">
+          <title id="mapTitle" data-t="map.title"></title>
+          <image id="mapImg" x="0" y="0" width="932" height="707"/>
+          <g id="mapPins"></g>
+        </svg>
+        <p class="map-attr">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>
+      </div>
+      <div class="near">
+        <button class="btn btn-gold" type="button" id="nearBtn"><svg class="ico"><use href="#i-locate"/></svg><span data-t="loc.nearest"></span></button>
+        <small data-t="loc.geo.note"></small>
+      </div>
+      <div class="geo-msg" id="geoMsg" role="status" aria-live="polite"></div>
+      <div id="mapPending"></div>
+    </div>
+    <div class="finder">
+      <div class="search">
+        <label class="vh" for="locSearch" data-t="loc.search.label"></label>
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="locSearch" type="text" inputmode="search" autocomplete="off" data-t-ph="loc.search.ph">
+      </div>
+      <div class="chips" id="chips" role="group" data-t-aria="loc.areas"></div>
+    </div>
+    <div class="loc-list" id="locList" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- SUPPLIES -->
+<section class="sec band" id="necesidades" aria-labelledby="sup-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="sup.eyebrow"></p>
+      <h2 id="sup-title" data-t="sup.title"></h2>
+      <p class="lead" data-t="sup.lead"></p>
+    </div>
+    <div class="sup-meta" id="supMeta"></div>
+    <div class="sup-grid" id="supGrid"></div>
+    <div class="guide">
+      <h3><svg class="ico"><use href="#i-clip"/></svg><span data-t="guide.title"></span></h3>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.1"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.2"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.3"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.4"></span></li>
+        <li><svg class="ico"><use href="#i-alert"/></svg><span data-t="guide.5"></span></li>
+        <li><svg class="ico"><use href="#i-truck"/></svg><span><span data-t="guide.6"></span> <a href="#recogida" data-t="guide.6link"></a></span></li>
+        <li id="guideContact" hidden></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MONEY -->
+<section class="sec" id="donaciones" aria-labelledby="money-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="money.eyebrow"></p>
+      <h2 id="money-title" data-t="money.title"></h2>
+      <p class="lead" data-t="money.lead"></p>
+    </div>
+    <div class="memo">
+      <p class="eyebrow" data-t="memo.label"></p>
+      <div class="memo-code"><code id="memoCode">Providence Earthquake Relief</code><button class="copy" type="button" data-copy-from="memoCode"><svg class="ico"><use href="#i-copy"/></svg><span data-t="copy"></span></button></div>
+      <small data-t="memo.why"></small>
+    </div>
+    <div class="pay-grid">
+      <article class="pay" id="yappyCard"></article>
+      <article class="pay" id="bankCard"></article>
+    </div>
+    <p class="safety"><svg class="ico"><use href="#i-lock"/></svg><span data-t="pay.safety"></span></p>
+    <div class="cash" id="cashBox" aria-labelledby="cash-title">
+      <h3 id="cash-title" data-t="cash.title"></h3>
+      <p class="loc-comm" data-t="cash.lead"></p>
+      <div id="cashList"></div>
+    </div>
+    <div class="fin" id="finBox"></div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="sec share" id="compartir" aria-labelledby="share-title">
+  <div class="wrap">
+    <div style="display:grid;gap:14px;min-width:0">
+      <p class="eyebrow" data-t="share.eyebrow"></p>
+      <h2 id="share-title" data-t="share.title"></h2>
+      <p class="lead" data-t="share.lead"></p>
+      <div id="shareBtns"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER + PARTNER + PICKUP -->
+<section class="sec band" id="voluntariado" aria-labelledby="vol-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="vol.eyebrow"></p>
+      <h2 id="vol-title" data-t="vol.title"></h2>
+      <p class="lead" data-t="vol.lead"></p>
+    </div>
+    <div class="forms">
+      <details class="fcard" id="socio">
+        <summary><span class="sup-ic"><svg class="ico"><use href="#i-building"/></svg></span><span><h3 data-t="partner.title"></h3><p data-t="partner.sub"></p></span><svg class="ico chev"><use href="#i-down"/></svg></summary>
+        <form novalidate data-form="partner">
+          <p class="lead" data-t="partner.lead" style="font-size:.97rem"></p>
+          <div class="form-status"></div>
+          <div class="fgrid">
+            <div class="field"><label for="p-org" data-t="partner.org"></label><input id="p-org" name="organization" type="text" required></div>
+            <div class="field"><label for="p-contact" data-t="partner.contact"></label><input id="p-contact" name="contact" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="p-wa" data-t="form.wa"></label><input id="p-wa" name="whatsapp" type="tel" inputmode="tel" required data-phone><span class="hint" data-t="form.wa.hint"></span></div>
+            <div class="field"><label for="p-area" data-t="form.community"></label><select id="p-area" name="community" required data-area-select></select></div>
+            <div class="field full"><label for="p-place" data-t="partner.place"></label><input id="p-place" name="location" type="text" required data-t-ph="partner.place.ph"></div>
+            <div class="field full"><label for="p-access" data-t="partner.access"></label><input id="p-access" name="access" type="text" required data-t-ph="partner.access.ph"></div>
+            <div class="field full"><label for="p-notes" data-t="form.notes"></label><textarea id="p-notes" name="notes"></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-navy" type="submit" data-submit></button>
+            <p class="private"><svg class="ico"><use href="#i-lock"/></svg><span data-t="partner.approval"></span></p>
+          </div>
+        </form>
+      </details>
+
+      <details class="fcard" id="recogida">
+        <summary><span class="sup-ic"><svg class="ico"><use href="#i-truck"/></svg></span><span><h3 data-t="pickup.title"></h3><p data-t="pickup.sub"></p></span><svg class="ico chev"><use href="#i-down"/></svg></summary>
+        <form novalidate data-form="pickup">
+          <p class="notice warn"><svg class="ico"><use href="#i-info"/></svg><span data-t="pickup.lead"></span></p>
+          <div class="form-status"></div>
+          <div class="fgrid">
+            <div class="field"><label for="k-name" data-t="form.name"></label><input id="k-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="k-wa" data-t="form.wa"></label><input id="k-wa" name="whatsapp" type="tel" inputmode="tel" required data-phone><span class="hint" data-t="form.wa.hint"></span></div>
+            <div class="field full"><label for="k-area" data-t="form.community"></label><select id="k-area" name="community" required data-area-select></select></div>
+            <div class="field full"><label for="k-types" data-t="pickup.types"></label><input id="k-types" name="types" type="text" required data-t-ph="pickup.types.ph"></div>
+            <div class="field full"><label for="k-qty" data-t="pickup.qty"></label><input id="k-qty" name="quantity" type="text" required data-t-ph="pickup.qty.ph"></div>
+            <div class="field full"><label for="k-notes" data-t="form.notes"></label><textarea id="k-notes" name="notes"></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-navy" type="submit" data-submit></button>
+            <p class="private"><svg class="ico"><use href="#i-lock"/></svg><span data-t="form.privacy"></span></p>
+          </div>
+        </form>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- DONATIONS RECEIVED -->
+<section class="sec" id="actualizaciones" aria-labelledby="rec-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="upd.title"></p>
+      <h2 id="rec-title" data-t="rec.title"></h2>
+      <p class="lead" data-t="rec.lead"></p>
+    </div>
+    <div class="finder">
+      <div class="search">
+        <label class="vh" for="recSearch" data-t="rec.search"></label>
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="recSearch" type="text" inputmode="search" autocomplete="off" data-t-ph="rec.search.ph">
+      </div>
+      <div class="chips" id="recChips" role="group" data-t-aria="rec.filter"></div>
+    </div>
+    <p class="rec-sum" id="recSum"></p>
+    <div class="rec-list" id="recList" aria-live="polite"></div>
+    <p class="rec-howto" id="recHowto"></p>
+  </div>
+</section>
+
+<!-- DELIVERIES -->
+<section class="sec band" id="entregas" aria-labelledby="dist-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="upd.title"></p>
+      <h2 id="dist-title" data-t="dist.title"></h2>
+      <p class="lead" data-t="dist.lead"></p>
+    </div>
+    <div class="dist-list" id="distList"></div>
+    <p class="private" style="margin-top:18px"><svg class="ico"><use href="#i-lock"/></svg><span data-t="dist.consent"></span></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="nosotros" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div style="min-width:0">
+      <div class="sec-head">
+        <p class="eyebrow" data-t="about.eyebrow"></p>
+        <h2 id="about-title" data-t="about.title"></h2>
+      </div>
+      <p data-t="about.p1"></p>
+      <ul class="steps">
+        <li><svg class="ico"><use href="#i-heart"/></svg><span data-t="about.s1"></span></li>
+        <li><svg class="ico"><use href="#i-package"/></svg><span data-t="about.s2"></span></li>
+        <li><svg class="ico"><use href="#i-msg"/></svg><span data-t="about.s3"></span></li>
+        <li><svg class="ico"><use href="#i-clip"/></svg><span data-t="about.s4"></span></li>
+        <li><svg class="ico"><use href="#i-users"/></svg><span data-t="about.s5"></span></li>
+      </ul>
+      <p class="notice" style="margin-top:20px"><svg class="ico"><use href="#i-info"/></svg><span data-t="about.independent"></span></p>
+      <div class="contact" id="contactCard" hidden></div>
+    </div>
+    <aside class="church">
+      <img class="logo" alt="Providence Church Coronado" width="84" height="84">
+      <h3>Providence Church Coronado</h3>
+      <p class="muted">Iglesia Providencia</p>
+      <p data-t="about.church"></p>
+      <a class="btn btn-line" href="https://providencechurchpa.org/" target="_blank" rel="noopener"><span data-t="about.link"></span><svg class="ico"><use href="#i-ext"/></svg></a>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b data-t="foot.title">Providence Church — Ayuda por el Sismo</b>
+    <p data-t="foot.body"></p>
+    <p id="footContact" hidden></p>
+    <p><a href="https://providencechurchpa.org/" target="_blank" rel="noopener">providencechurchpa.org</a></p>
+    <p>© 2026 Providence Church Coronado</p>
+  </div>
+</footer>
+
+<!-- Icon sprite (Lucide-style, 24px stroke icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-locate" viewBox="0 0 24 24"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  </defs>
+</svg>
+
+<script>
+/* =====================================================================
+   CONFIGURATION — the only part you need to edit.
+   Everything here is PUBLIC: anyone can read this page's source.
+   Never put private volunteer contacts, unapproved apartment numbers,
+   bank records or passwords here.
+   ===================================================================== */
+const CONFIG = {
+  // Public address of the live site (e.g. "https://relief.providencechurchpa.org/").
+  // Leave "" until it really exists. When the site runs on its own host,
+  // the current address is used automatically.
+  publicUrl: "https://providenceearthquakerelief.netlify.app/",
+
+  // Public mission contact. textOnly: true shows "WhatsApp text messages only, please don't call".
+  contact: { name: "Pastor Marc O", shortName: "Pastor Marc", whatsapp: "50765756765", display: "+507 6575-6765", textOnly: true },
+
+  // WhatsApp number the forms open a pre-filled message to (digits only, with country code).
+  // Set to "" to switch the forms back off.
+  coordinatorWhatsApp: "50765756765",
+
+  // Optional secure form endpoint (e.g. a Google Apps Script web app URL).
+  // When set, forms POST JSON here. Leave "" until it is set up and tested.
+  formEndpoint: "",
+
+  // Optional announcement shown under the hero. null = hidden.
+  // Example: { es: "Texto…", en: "Text…", tone: "warn" }   tone: info | warn | ok
+  announcement: null,
+
+  // Base map (OpenStreetMap, zoom 14) and the area it covers. Stars outside it aren't drawn.
+  map: { z: 14, west: -79.925, south: 8.515, east: -79.845, north: 8.575, width: 932, height: 707 },
+
+  // Publish tower/unit numbers? Keep false until each resident authorizes it.
+  publishUnitDetails: false,
+
+  /* Collection points. Only approved:true appear.
+     status: "accepting" | "full" | "closed" | "awaiting"
+     area:   "coronado" | "nueva-gorgona" | "san-carlos" | "other"
+     type:   "residence" (default) | "business" — businesses show business-hours drop-off and no unit details
+     lat/lng, mapsUrl, wazeUrl: fill ONLY with verified values.
+     tower/unit: leave "" here; fill in only once publication is authorized. */
+  locations: [
+    { id: "cgt", approved: true, mapLabel: "Golf Tower", name: "Coronado Golf Tower", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: true, lat: 8.5376201, lng: -79.8861447,               // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/wBvzzqbu51KWPivY8", wazeUrl: "https://waze.com/ul?ll=8.5376201,-79.8861447&navigate=yes",
+      instructions: { es: "Si tienes acceso a la torre, también puedes colocar tus donaciones en la tina identificada frente al apartamento de recolección.",
+                      en: "If you have access to the tower, you can also place donations in the designated tub outside the collection apartment." } },
+    { id: "redbarn", approved: true, mapLabel: "Red Barn", type: "business", name: "Red Barn Market", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5440563, lng: -79.9126136,              // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/ujKmgWR11NVhCzJ57", wazeUrl: "https://waze.com/ul?ll=8.5440563,-79.9126136&navigate=yes",
+      placeLabel: { es: "Bayside Center, Las Lajas", en: "Bayside Center, Las Lajas" },
+      address: "Carr. Panamericana 41-31, Bayside Center, Las Lajas, Panamá Oeste",
+      // Opening hours, Panama time. 0 = Sunday … 6 = Saturday; [open, close] in 24h decimal; null = closed
+      openHours: { 0: null, 1: [8.5, 17], 2: [8.5, 17], 3: [8.5, 17], 4: [8.5, 17], 5: [8.5, 17], 6: [8.5, 15] },
+      hoursText: { es: "Lunes a viernes: 8:30 a. m. – 5:00 p. m. · Sábado: 8:30 a. m. – 3:00 p. m. · Domingo: cerrado",
+                   en: "Monday–Friday: 8:30 a.m. – 5:00 p.m. · Saturday: 8:30 a.m. – 3:00 p.m. · Sunday: closed" },
+      instructions: { es: "Lleva tus donaciones a Red Barn Market durante el horario de atención y pregunta al personal dónde dejarlas.",
+                      en: "Bring your donations to Red Barn Market during opening hours and ask the staff where to leave them." } },
+    { id: "zion", approved: true, mapLabel: "Zion Fitness", type: "business", name: "Zion Fitness Club", area: "nueva-gorgona", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5605221, lng: -79.9011055,              // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/iyVW7XZTYwquuBfJ9", wazeUrl: "https://waze.com/ul?ll=8.5605221,-79.9011055&navigate=yes",
+      placeLabel: { es: "Coronado Center, Nueva Gorgona", en: "Coronado Center, Nueva Gorgona" },
+      address: "Primer piso, Coronado Center, Nueva Gorgona, Panamá Oeste",
+      openHours: { 0: [8, 12], 1: [6, 21], 2: [6, 21], 3: [6, 21], 4: [6, 21], 5: [6, 21], 6: [8, 16] },
+      hoursText: { es: "Lunes a viernes: 6:00 a. m. – 9:00 p. m. · Sábado: 8:00 a. m. – 4:00 p. m. · Domingo: 8:00 a. m. – 12:00 p. m.",
+                   en: "Monday–Friday: 6:00 a.m. – 9:00 p.m. · Saturday: 8:00 a.m. – 4:00 p.m. · Sunday: 8:00 a.m. – 12:00 p.m." },
+      instructions: { es: "Lleva tus donaciones a Zion Fitness Club durante el horario de atención y pregunta en la recepción dónde dejarlas.",
+                      en: "Bring your donations to Zion Fitness Club during opening hours and ask at the front desk where to leave them." } },
+    { id: "bahia", approved: true, mapLabel: "Bahía Resort", name: "Bahía Resort", area: "nueva-gorgona", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/mUXPk9Qs1ya2m5T89", wazeUrl: "https://waze.com/ul?ll=8.5484357,-79.8715929&navigate=yes",
+      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
+                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } },
+    { id: "ccc", approved: true, mapLabel: "Country Club", name: "Coronado Country Club", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
+      // lat/lng: "P.H. Coronado Country Club" on OpenStreetMap (development area, not Tower 300 itself) — confirm
+      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
+                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } }
+  ],
+
+  /* Supplies requested by contacts in the affected communities.
+     priority: null (no ranking yet) | "urgent" | "needed" | "sufficient" | "notAccepting" */
+  suppliesLastUpdated: null,          // e.g. "2026-10-12"
+  supplies: [
+    { id: "food", icon: "i-food", items: [
+      { es: "Agua embotellada", en: "Bottled water", priority: null },
+      { es: "Arroz", en: "Rice", priority: null },
+      { es: "Frijoles / porotos", en: "Beans", priority: null },
+      { es: "Alimentos enlatados", en: "Canned goods", priority: null },
+      { es: "Alimentos no perecederos", en: "Nonperishable food", priority: null } ] },
+    { id: "shelter", icon: "i-tent", items: [
+      { es: "Mantas / frazadas", en: "Blankets", priority: null },
+      { es: "Tiendas de campaña", en: "Tents", priority: null } ] },
+    { id: "hygiene", icon: "i-sparkle", items: [
+      { es: "Jabón", en: "Soap", priority: null },
+      { es: "Productos de higiene personal", en: "Hygiene products", priority: null },
+      { es: "Toallas sanitarias femeninas", en: "Feminine sanitary products", priority: null },
+      { es: "Pañales para bebé", en: "Baby diapers", priority: null },
+      { es: "Pañales para adulto", en: "Adult diapers", priority: null },
+      { es: "Toallitas húmedas para bebé", en: "Baby wipes", priority: null } ] },
+    { id: "kids", icon: "i-palette", items: [
+      { es: "Libros para colorear", en: "Coloring books", priority: null },
+      { es: "Crayones", en: "Crayons", priority: null },
+      { es: "Otros artículos aprobados para el bienestar de los niños", en: "Other approved children's comfort supplies", priority: null } ] }
+  ],
+
+  // Yappy: fill all three before it shows. qrImage = a data: URI or a URL on your own host.
+  yappy: { recipientName: "", handle: "", qrImage: "" },
+
+  // Panama bank transfer. Shows once accountNumber is filled in.
+  bank: { bankName: "", accountHolder: "", accountType: "", accountNumber: "", extra: { es: "", en: "" } },
+
+  /* RECENT CASH DONATIONS — publish only after the money is confirmed received.
+     Show a name ONLY if the donor agreed; leave name "" to show "Anonymous".
+     method: "yappy" | "transfer" | "cash" | "" ; amount in US dollars.
+     Example (do not uncomment with made-up data):
+     { date: "2026-10-12", name: "", amount: 25, method: "yappy", note: "" } */
+  cashDonations: [],
+
+  // Financial transparency. Leave published:false until totals are verified.
+  finance: { published: false, totalCollected: null, approvedExpenses: null, lastUpdated: null,
+             categories: [] /* e.g. { es: "Agua y alimentos", en: "Water and food", amount: 0 } */ },
+
+  /* DONATIONS RECEIVED — logged by the team after collecting from a drop-off point.
+     Show a donor's name ONLY if they agreed; leave donor "" to show "Anonymous donor".
+     location: a location id above ("cgt", "bahia", "ccc") or any place name.
+     items: plain text, or { es: "…", en: "…" }. photo: optional (see deployment notes).
+     Example (do not uncomment with made-up data):
+     { date: "2026-10-12", time: "15:30", location: "cgt",
+       items: { es: "2 cajas de agua y 1 paca de pañales", en: "2 cases of water and 1 pack of diapers" },
+       donor: "", photo: "" } */
+  received: [],
+
+  /* DELIVERIES — handing out aid in Azuero. Photos only with consent of the people shown.
+     { date: "2026-10-18",
+       place: { es: "Playa Venao", en: "Playa Venao" },
+       description: { es: "…", en: "…" },
+       items: [ { es: "40 pacas de agua", en: "40 cases of water" } ],      // verified quantities
+       photos: [ { src: "photos/entrega-1.jpg", alt: { es: "…", en: "…" } } ],
+       confirmedBy: { es: "…", en: "…" },                                    // receiving team
+       notes: { es: "…", en: "…" } } */
+  distributions: [],
+
+  /* Phase 2 — optional Google Sheets ("File → Share → Publish to web → CSV") links.
+     When set, the live site loads these and falls back to the data above if loading fails.
+     Columns are described in the deployment notes. */
+  sheets: { locationsCsv: "", suppliesCsv: "", receivedCsv: "", distributionsCsv: "", cashCsv: "" }
+};
+/* ============================ END OF CONFIG ============================ */
+
+const LOGO = "data:image/webp;base64,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";
+
+const AREAS = ["coronado", "nueva-gorgona", "san-carlos", "other"];
+const HELP_TYPES = ["transport", "sorting", "pickup", "storage", "host", "distribution", "comms", "other"];
+
+const T = {
+es: {
+  "skip":"Saltar a los puntos de recolección", "brand.sub":"Ayuda por el Sismo", "menu":"Menú", "menu.close":"Cerrar",
+  "nav.label":"Principal", "nav.home":"Inicio","nav.locations":"Puntos de Recolección","nav.supplies":"Qué Necesitamos","nav.money":"Donaciones","nav.volunteer":"Colabora","nav.updates":"Recibido","nav.deliveries":"Entregas","nav.about":"Sobre Nosotros",
+  "doc.title":"Providence Church — Ayuda por el Sismo",
+  "hero.eyebrow":"Sismo del 9 de octubre de 2026 · Península de Azuero",
+  "hero.title":"Juntos Podemos Ayudar a Azuero a Recuperarse.",
+  "hero.mission":"Providence Church Coronado y voluntarios de la comunidad estamos recolectando y llevando suministros esenciales a las comunidades afectadas por el sismo en la península de Azuero. Con el apoyo de nuestros vecinos, comercios y toda la comunidad, podemos brindar ayuda concreta donde más se necesita.",
+  "hero.route":"Recolectamos en Coronado, Nueva Gorgona y San Carlos. Primer destino: Playa Venao y las comunidades afectadas de los alrededores.",
+  "cta.find":"Buscar un punto de recolección","cta.supplies":"Donar suministros","cta.money":"Donar dinero","cta.volunteer":"Ser voluntario",
+  "hero.gate":"En Coronado Golf Tower puedes dejar tus donaciones en la garita.",
+  "loc.eyebrow":"Puntos de Recolección","loc.title":"¿Dónde dejo mis donaciones?",
+  "loc.lead":"Lleva tus donaciones al punto más cercano. En los edificios residenciales, respeta siempre las normas de acceso y seguridad.",
+  "loc.search.label":"Buscar por edificio o comunidad","loc.search.ph":"Buscar edificio o comunidad…","loc.areas":"Filtrar por zona",
+  "loc.nearest":"Buscar el punto más cercano","loc.geo.note":"Opcional. Tu ubicación se usa solo en tu teléfono; no se guarda ni se envía.",
+  "loc.geo.working":"Buscando tu ubicación…",
+  "loc.geo.denied":"No pudimos usar tu ubicación. Toca dónde estás:","loc.geo.choose":"Toca dónde estás y te mostramos el punto más cercano:","loc.whereAreYou":"¿Dónde estás?","loc.geo.fromArea":"Desde {area}, el punto más cercano es {name}, a unos {km} km en línea recta.",
+  "loc.geo.unsupported":"Este navegador no permite compartir tu ubicación aquí. Elige tu zona en la lista de arriba.",
+  "loc.geo.nocoords":"Todavía no tenemos los puntos marcados en el mapa. Elige tu zona para ver los puntos disponibles.",
+  "loc.geo.found":"El punto más cercano es {name}, a unos {km} km en línea recta.",
+  "area.all":"Todas","area.coronado":"Coronado","area.nueva-gorgona":"Nueva Gorgona","area.san-carlos":"San Carlos","area.other":"Otras áreas",
+  "loc.empty.title":"Aún no hay puntos de recolección aquí","loc.empty.body":"¿Tu iglesia, edificio o negocio puede recibir donaciones en esta zona?","loc.empty.cta":"Conviértete en un Punto de Recolección",
+  "loc.nomatch":"Ningún punto coincide con tu búsqueda.",
+  "loc.hours":"Entrega: A cualquier hora, sujeto al acceso del edificio.",
+  "loc.private":"Residencia privada","loc.business":"Comercio","loc.openNow":"Abierto ahora","loc.closedNow":"Cerrado ahora","loc.hoursBiz":"Entrega: durante el horario de atención del local.",
+  "loc.unitHidden":"El lugar exacto dentro del edificio se publicará cuando el equipo lo autorice.",
+  "loc.tower":"Torre","loc.unit":"Apto.",
+  "loc.gate.title":"Puedes dejar tus donaciones en la garita.",
+  "loc.gate.body":"Entrega tus donaciones al personal de seguridad en la entrada. Un coordinador local bajará a recogerlas. No necesitas subir a la torre.",
+  "loc.gate.tip":"Al entregarlas, menciona «Providence Earthquake Relief».",
+  "loc.respect":"Por favor, no intentes entrar a áreas restringidas sin autorización.",
+  "loc.directions":"Cómo llegar","loc.dirPending":"Indicaciones de ruta verificadas disponibles pronto.",
+  "status.accepting":"Recibiendo donaciones","status.full":"Lleno por ahora","status.closed":"Cerrado temporalmente","status.awaiting":"Por confirmar",
+  "sup.eyebrow":"Qué Necesitamos","sup.title":"Suministros solicitados",
+  "sup.lead":"Nuestros contactos en las comunidades afectadas nos pidieron estos artículos. Por favor, trae solo lo que está en la lista.",
+  "sup.updated":"Última actualización: {date}","sup.requested":"Lista confirmada por nuestros contactos en Azuero",
+  "sup.food":"Alimentos y agua","sup.food.d":"Agua embotellada y alimentos que no necesitan refrigeración.",
+  "sup.shelter":"Abrigo y descanso","sup.shelter.d":"Para ayudar a las familias a descansar y resguardarse.",
+  "sup.hygiene":"Higiene personal","sup.hygiene.d":"Artículos de aseo sellados y sin usar.",
+  "sup.kids":"Para niñas y niños","sup.kids.d":"Pequeños consuelos para los más pequeños.",
+  "pr.urgent":"Urgente","pr.needed":"Se necesita","pr.sufficient":"Suficiente por ahora","pr.notAccepting":"No se recibe por ahora",
+  "guide.title":"Antes de donar",
+  "guide.1":"Los alimentos deben estar cerrados y sin vencer.","guide.2":"Las mantas deben estar limpias.","guide.3":"Las tiendas de campaña deben estar completas y en buen estado.","guide.4":"Los productos de higiene deben estar sellados y sin usar.","guide.5":"No dones medicamentos vencidos.","guide.6":"Si tienes una cantidad muy grande, coordina con el equipo antes de llevarla.","guide.6link":"Solicitar recogida",
+  "money.eyebrow":"Donaciones","money.title":"Apoya con una donación",
+  "money.lead":"Las donaciones en dinero se usarán según los recursos disponibles y las necesidades confirmadas de la misión.",
+  "memo.label":"Referencia de pago","memo.why":"Escríbela en la descripción de tu Yappy o transferencia.",
+  "copy":"Copiar","copied":"Copiado","copyFail":"No se pudo copiar. Selecciona el texto y cópialo manualmente.","copyAll":"Copiar todos los datos",
+  "yappy.title":"Yappy","yappy.sub":"Pago rápido desde tu teléfono",
+  "yappy.pending":"Próximamente estarán disponibles los datos para donar por Yappy.",
+  "yappy.recipient":"Destinatario","yappy.handle":"Número o directorio Yappy","yappy.qrAlt":"Código QR de Yappy para donaciones",
+  "yappy.steps":"Abre Yappy, busca al destinatario o escanea el código, ingresa el monto y escribe Providence Earthquake Relief en el mensaje.",
+  "bank.title":"Transferencia bancaria","bank.sub":"Desde cualquier banco en Panamá",
+  "bank.pending":"Próximamente estarán disponibles los datos para donar por transferencia bancaria.",
+  "bank.bank":"Banco","bank.holder":"Titular","bank.type":"Tipo de cuenta","bank.number":"Número de cuenta","bank.extra":"Información adicional",
+  "pay.safety":"Nunca te pediremos contraseñas, códigos ni claves de tu banca en línea. Si alguien lo hace en nombre de esta misión, no respondas.",
+  "fin.title":"Transparencia financiera","fin.pending":"Publicaremos aquí los totales verificados de donaciones y gastos a medida que avance la misión.",
+  "fin.collected":"Total recibido","fin.expenses":"Gastos aprobados","fin.balance":"Saldo disponible para la ayuda","fin.categories":"En qué se ha usado","fin.updated":"Última actualización financiera: {date}",
+  "share.eyebrow":"Comparte","share.title":"Ayúdanos a correr la voz",
+  "share.lead":"La mayoría de nuestros vecinos se entera por WhatsApp. Comparte este sitio con tus grupos y contactos.",
+  "share.wa":"Compartir por WhatsApp","share.fb":"Compartir en Facebook","share.copy":"Copiar enlace",
+  "share.pending":"Los botones para compartir se activan en cuanto el sitio tenga su dirección pública definitiva.",
+  "share.waMsg":"Providence Church Coronado está recolectando alimentos, agua, mantas, productos de higiene, pañales y otros suministros esenciales para apoyar a las comunidades afectadas por el sismo en Azuero, Panamá. Encuentra un punto de recolección o descubre cómo ayudar aquí: {url}",
+  "share.qrTitle":"Código QR para volantes","share.qrHint":"Escanéalo con la cámara del teléfono para abrir este sitio.","share.qrDownload":"Descargar código QR","share.qrLoading":"Generando código…","share.qrError":"No se pudo generar el código QR en este momento.","share.qrPending":"El código QR aparecerá aquí cuando el sitio tenga su dirección pública.",
+  "vol.eyebrow":"Colabora","vol.title":"Súmate a la ayuda",
+  "vol.lead":"Abre un punto de recolección en tu edificio, iglesia o negocio, o pide que recojamos una donación grande.",
+  "vol.formTitle":"Quiero ser voluntario","vol.formSub":"Transporte, clasificación, entregas y más.",
+  "form.name":"Nombre","form.wa":"Número de WhatsApp","form.wa.hint":"Incluye el código de país si tu número no es de Panamá.",
+  "form.area":"Comunidad o zona","form.community":"Comunidad","form.choose":"Elige una opción",
+  "form.help":"¿Cómo puedes ayudar?",
+  "help.transport":"Transporte","help.sorting":"Clasificar donaciones","help.pickup":"Recoger donaciones en mi zona","help.storage":"Espacio para almacenar","help.host":"Ser punto de recolección","help.distribution":"Ayudar en la entrega","help.comms":"Comunicaciones","help.other":"Otro tipo de apoyo",
+  "form.availability":"Disponibilidad","form.availability.ph":"Ej.: fines de semana, tardes…",
+  "form.message":"Mensaje (opcional)","form.notes":"Notas (opcional)",
+  "form.consent":"Acepto que el equipo de ayuda me contacte por WhatsApp sobre esta misión.",
+  "form.privacy":"Tus datos no se publican en este sitio.",
+  "form.submit":"Enviar","form.submitWa":"Enviar por WhatsApp",
+  "form.offline":"Este formulario todavía no está conectado, así que aún no puede enviarse. Nada de lo que escribas se envía ni se guarda.",
+  "err.required":"Completa este campo.","err.phone":"Escribe un número de WhatsApp válido (al menos 7 dígitos).","err.group":"Elige al menos una opción.","err.consent":"Necesitamos tu permiso para contactarte.","err.summary":"Revisa los campos marcados.",
+  "form.sending":"Enviando…","form.sent":"Recibimos tu información. El equipo te contactará por WhatsApp.","form.failed":"No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.",
+  "form.waReady":"Abrimos WhatsApp con tu mensaje listo. Envíalo desde WhatsApp para completar el registro.","form.waLink":"Si WhatsApp no se abrió, toca aquí.",
+  "partner.title":"Conviértete en un Punto de Recolección","partner.sub":"Iglesias, edificios, negocios y voluntarios.",
+  "partner.lead":"Queremos crecer por todo Panamá. Cuéntanos dónde podrías recibir donaciones. Cada punto nuevo se revisa y aprueba antes de aparecer en el directorio.",
+  "partner.org":"Organización o edificio","partner.contact":"Persona de contacto","partner.place":"Lugar propuesto para recibir donaciones","partner.place.ph":"Ej.: recepción del edificio, oficina de la iglesia…","partner.access":"Acceso para donantes","partner.access.ph":"Ej.: garita 24 horas, lunes a viernes de 8 a 5…","partner.approval":"Ningún punto se publica sin aprobación del equipo.",
+  "pickup.title":"Recogida de donaciones grandes","pickup.sub":"Para negocios o personas con mucha mercancía.",
+  "pickup.lead":"La recogida depende de la disponibilidad de voluntarios y transporte. Te avisaremos si podemos ir; no está garantizada hasta que la confirmemos.",
+  "pickup.types":"Tipo de donaciones","pickup.types.ph":"Ej.: agua, arroz, pañales…","pickup.qty":"Cantidad aproximada","pickup.qty.ph":"Ej.: 20 cajas, 3 pacas de agua…",
+  "upd.eyebrow":"Actualizaciones","upd.title":"Actualizaciones de la Misión",
+  "upd.empty":"Nuestra comunidad está recolectando suministros esenciales para las familias afectadas. Aquí compartiremos información confirmada sobre las donaciones y entregas.",
+  "upd.area":"Zona atendida","upd.qty":"Cantidades verificadas","upd.confirmed":"Confirmado por","upd.notes":"Notas",
+  "about.eyebrow":"Sobre Nosotros","about.title":"Sobre esta misión",
+  "about.p1":"Esta es una iniciativa comunitaria e independiente, coordinada por Providence Church Coronado junto con voluntarios locales. Es para todos: no necesitas ser miembro de la iglesia ni compartir sus creencias para ayudar.",
+  "about.s1":"Providence Church Coronado ayuda a coordinar la misión.","about.s2":"Voluntarios locales reciben los suministros en los puntos de recolección.","about.s3":"Nuestros contactos en las comunidades afectadas nos indican qué se necesita.","about.s4":"Las donaciones se organizan según los recursos disponibles y las necesidades confirmadas.","about.s5":"Toda la comunidad es bienvenida a participar.",
+  "about.independent":"Es un esfuerzo independiente de la iglesia y la comunidad. No está afiliado a SINAPROC, la Cruz Roja, entidades del gobierno ni otras organizaciones.",
+  "about.church":"Una iglesia reformada en Coronado, Panamá, que se reúne en la Ave. Roberto Eisenmann. Su congregación reúne a panameños y extranjeros, con cultos en inglés y traducción al español.",
+  "about.link":"Visitar el sitio oficial de la iglesia",
+  "foot.title":"Providence Church — Ayuda por el Sismo","foot.body":"Esfuerzo comunitario independiente coordinado por Providence Church Coronado para las comunidades afectadas por el sismo en Azuero.",
+  "data.loading":"Cargando la información más reciente…","data.error":"No se pudo cargar la información más reciente. Mostramos la última versión guardada.",
+  "cash.title":"Donaciones en dinero recientes","cash.lead":"Publicamos cada donación cuando confirmamos que la recibimos.",
+  "cash.total1":"en 1 donación publicada","cash.totalN":"en {n} donaciones publicadas","cash.anon":"Donante anónimo",
+  "cash.m.yappy":"Yappy","cash.m.transfer":"Transferencia","cash.m.cash":"Efectivo","cash.more":"Ver más",
+  "cash.empty":"Aún no hay donaciones en dinero publicadas.",
+  "cash.privacy":"Mostramos tu nombre y el monto solo con tu permiso. Si prefieres aparecer como anónimo, avísale a {name} por WhatsApp (solo texto).","cash.privacyNoContact":"Mostramos tu nombre y el monto solo con tu permiso; si no, aparecerás como donante anónimo.",
+  "map.title":"Mapa de los puntos de recolección","map.you":"Tú","map.pending":"Aún sin estrella en el mapa (ubicación por confirmar): {names}.","map.outside":"Estás fuera del área del mapa. El punto más cercano es {name}, a unos {km} km en línea recta.",
+  "rec.title":"Donaciones recibidas","rec.lead":"Cuando el equipo recoge lo que dejaste en un punto de recolección, lo registra aquí con la fecha y el lugar.",
+  "rec.search":"Buscar donaciones recibidas","rec.search.ph":"Buscar por artículo, nombre o lugar…","rec.filter":"Filtrar por punto de recolección","rec.all":"Todos",
+  "rec.sum1":"1 donación registrada · Última: {date}","rec.sumN":"{n} donaciones registradas · Última: {date}",
+  "rec.anon":"Donante anónimo","rec.more":"Ver más","rec.nomatch":"Ninguna donación coincide con tu búsqueda.",
+  "rec.empty.title":"Aún no hay donaciones registradas","rec.empty.body":"En cuanto el equipo recoja las primeras donaciones de los puntos de recolección, aparecerán aquí.",
+  "rec.howto":"¿Dejaste una donación? Envía un mensaje de texto por WhatsApp a {name} ({phone}) con la fecha, el lugar y lo que dejaste. Si quieres que aparezca tu nombre, dilo en el mensaje; si no, aparecerás como donante anónimo.",
+  "rec.howtoNoContact":"Si quieres que aparezca tu nombre, avísale al equipo; si no, aparecerás como donante anónimo.",
+  "dist.title":"Así entregamos la ayuda","dist.lead":"Fotos y reportes de las entregas en Playa Venao y las comunidades cercanas, con las cantidades verificadas por el equipo.",
+  "dist.empty":"Nuestra comunidad está recolectando suministros esenciales para las familias afectadas. Aquí compartiremos información confirmada sobre las donaciones y entregas.",
+  "dist.place":"Lugar","dist.items":"Lo que se entregó (cantidades verificadas)","dist.confirmed":"Confirmado por","dist.notes":"Notas","dist.photoOpen":"Abrir foto",
+  "dist.consent":"Solo publicamos fotos con el permiso de las personas que aparecen, y cuidamos especialmente la privacidad de niñas y niños.",
+  "contact.title":"Contacto de la misión","contact.textOnly":"Solo mensajes de texto por WhatsApp. Por favor, no llames.","contact.textOnlyShort":"solo texto",
+  "contact.open":"Escribir por WhatsApp","contact.body":"Escríbele para preguntas, la ubicación exacta de un punto de recolección o donaciones grandes.",
+  "contact.hero":"¿Preguntas? WhatsApp ({textOnly}): {name}","contact.guide":"¿Dudas antes de donar? Escribe por WhatsApp a {name}: {phone} (solo mensajes de texto).",
+  "loc.unitAsk":"Para la ubicación exacta dentro del edificio, escribe por WhatsApp a {name} ({phone}, solo texto)."
+},
+en: {
+  "skip":"Skip to drop-off locations", "brand.sub":"Earthquake Relief", "menu":"Menu", "menu.close":"Close",
+  "nav.label":"Main", "nav.home":"Home","nav.locations":"Donation Locations","nav.supplies":"Needed Supplies","nav.money":"Donate Money","nav.volunteer":"Get Involved","nav.updates":"Received","nav.deliveries":"Deliveries","nav.about":"About",
+  "doc.title":"Providence Church — Earthquake Relief",
+  "hero.eyebrow":"October 9, 2026 earthquake · Azuero Peninsula",
+  "hero.title":"Together, We Can Help Azuero Recover.",
+  "hero.mission":"Providence Church Coronado and local volunteers are collecting and delivering essential supplies to communities affected by the earthquake in Panama's Azuero Peninsula. With the support of our neighbors, businesses, and community, we can provide practical assistance where it is needed most.",
+  "hero.route":"Collecting in Coronado, Nueva Gorgona and San Carlos. First destination: Playa Venao and the surrounding affected communities.",
+  "cta.find":"Find a Drop-Off Location","cta.supplies":"Donate Supplies","cta.money":"Donate Money","cta.volunteer":"Volunteer",
+  "hero.gate":"At Coronado Golf Tower you can leave donations with front gate security.",
+  "loc.eyebrow":"Donation Locations","loc.title":"Where can I drop off donations?",
+  "loc.lead":"Take your donations to the closest point. At residential buildings, please always follow the access and security rules.",
+  "loc.search.label":"Search by building or community","loc.search.ph":"Search building or community…","loc.areas":"Filter by area",
+  "loc.nearest":"Find Closest Location","loc.geo.note":"Optional. Your location stays on your phone; it isn't saved or sent anywhere.",
+  "loc.geo.working":"Finding your location…",
+  "loc.geo.denied":"We couldn't use your location. Tap where you are:","loc.geo.choose":"Tap where you are and we'll show the closest point:","loc.whereAreYou":"Where are you?","loc.geo.fromArea":"From {area}, the closest point is {name}, about {km} km away in a straight line.",
+  "loc.geo.unsupported":"This browser can't share your location here. Choose your area from the list above.",
+  "loc.geo.nocoords":"Exact map positions for the collection points aren't published yet. Choose your area to see what's available.",
+  "loc.geo.found":"The closest point is {name}, about {km} km away in a straight line.",
+  "area.all":"All areas","area.coronado":"Coronado","area.nueva-gorgona":"Nueva Gorgona","area.san-carlos":"San Carlos","area.other":"Other Areas",
+  "loc.empty.title":"No collection points here yet","loc.empty.body":"Could your church, building or business collect donations in this area?","loc.empty.cta":"Become a Collection Partner",
+  "loc.nomatch":"No collection point matches your search.",
+  "loc.hours":"Drop-off: Anytime, subject to building access.",
+  "loc.private":"Private residence","loc.business":"Business","loc.openNow":"Open now","loc.closedNow":"Closed now","loc.hoursBiz":"Drop-off: during the store's opening hours.",
+  "loc.unitHidden":"The exact spot inside the building will be published once the team approves it.",
+  "loc.tower":"Tower","loc.unit":"Unit",
+  "loc.gate.title":"Front Gate Drop-Off Available",
+  "loc.gate.body":"Hand your donations to the security staff at the front gate. A local coordinator will come down to collect them. You don't need to go up into the tower.",
+  "loc.gate.tip":"When you hand them over, mention “Providence Earthquake Relief.”",
+  "loc.respect":"Please don't enter restricted areas without permission.",
+  "loc.directions":"Directions","loc.dirPending":"Verified directions coming soon.",
+  "status.accepting":"Accepting Donations","status.full":"Temporarily Full","status.closed":"Temporarily Closed","status.awaiting":"Awaiting Confirmation",
+  "sup.eyebrow":"Needed Supplies","sup.title":"Requested supplies",
+  "sup.lead":"Our contacts in the affected communities asked for these items. Please bring only what's on the list.",
+  "sup.updated":"Last updated: {date}","sup.requested":"List confirmed by our contacts in Azuero",
+  "sup.food":"Food and Water","sup.food.d":"Bottled water and food that doesn't need refrigeration.",
+  "sup.shelter":"Shelter and Comfort","sup.shelter.d":"To help families rest and stay sheltered.",
+  "sup.hygiene":"Personal Hygiene","sup.hygiene.d":"Sealed, unused personal care items.",
+  "sup.kids":"Children's Items","sup.kids.d":"Small comforts for the youngest.",
+  "pr.urgent":"Urgently Needed","pr.needed":"Needed","pr.sufficient":"Sufficient for Now","pr.notAccepting":"Not Currently Accepting",
+  "guide.title":"Before you donate",
+  "guide.1":"Food must be unopened and unexpired.","guide.2":"Blankets must be clean.","guide.3":"Tents should be complete and usable.","guide.4":"Personal hygiene products should be sealed and unused.","guide.5":"Do not donate expired medication.","guide.6":"Contact the relief team before bringing exceptionally large quantities.","guide.6link":"Request a pickup",
+  "money.eyebrow":"Donate Money","money.title":"Give financially",
+  "money.lead":"Financial gifts will be used according to available resources and the mission's confirmed needs.",
+  "memo.label":"Payment reference","memo.why":"Add it to your Yappy or transfer description.",
+  "copy":"Copy","copied":"Copied","copyFail":"Couldn't copy. Select the text and copy it manually.","copyAll":"Copy all details",
+  "yappy.title":"Yappy","yappy.sub":"Quick payment from your phone",
+  "yappy.pending":"Yappy donation details coming soon.",
+  "yappy.recipient":"Recipient","yappy.handle":"Yappy number or handle","yappy.qrAlt":"Yappy QR code for donations",
+  "yappy.steps":"Open Yappy, find the recipient or scan the code, enter the amount and write Providence Earthquake Relief in the message.",
+  "bank.title":"Bank transfer","bank.sub":"From any bank in Panama",
+  "bank.pending":"Bank transfer details coming soon.",
+  "bank.bank":"Bank","bank.holder":"Account holder","bank.type":"Account type","bank.number":"Account number","bank.extra":"Additional details",
+  "pay.safety":"We will never ask for your online banking passwords or codes. If anyone does so in this mission's name, don't respond.",
+  "fin.title":"Financial transparency","fin.pending":"Verified totals for donations and expenses will be published here as the mission develops.",
+  "fin.collected":"Total donations collected","fin.expenses":"Total approved expenses","fin.balance":"Remaining relief balance","fin.categories":"Relief purchase categories","fin.updated":"Last financial update: {date}",
+  "share.eyebrow":"Share","share.title":"Help spread the word",
+  "share.lead":"Most of our neighbors hear about this on WhatsApp. Share this site with your groups and contacts.",
+  "share.wa":"Share on WhatsApp","share.fb":"Share on Facebook","share.copy":"Copy link",
+  "share.pending":"Sharing buttons switch on as soon as the site has its permanent public address.",
+  "share.waMsg":"Providence Church Coronado is collecting food, water, blankets, hygiene products, diapers, and other essential supplies to help communities affected by the earthquake in Azuero, Panama. Find a donation location or learn how to help here: {url}",
+  "share.qrTitle":"QR code for flyers","share.qrHint":"Scan it with a phone camera to open this site.","share.qrDownload":"Download QR code","share.qrLoading":"Creating code…","share.qrError":"The QR code couldn't be created right now.","share.qrPending":"The QR code will appear here once the site has its public address.",
+  "vol.eyebrow":"Get Involved","vol.title":"Join the relief effort",
+  "vol.lead":"Host a collection point at your building, church or business, or ask us to pick up a large donation.",
+  "vol.formTitle":"I want to volunteer","vol.formSub":"Transportation, sorting, deliveries and more.",
+  "form.name":"Name","form.wa":"WhatsApp number","form.wa.hint":"Include the country code if your number isn't Panamanian.",
+  "form.area":"Community or area","form.community":"Community","form.choose":"Choose an option",
+  "form.help":"How can you help?",
+  "help.transport":"Transportation","help.sorting":"Donation sorting","help.pickup":"Local pickup assistance","help.storage":"Storage space","help.host":"Hosting a donation point","help.distribution":"Distribution assistance","help.comms":"Communications","help.other":"Other support",
+  "form.availability":"Availability","form.availability.ph":"e.g. weekends, evenings…",
+  "form.message":"Message (optional)","form.notes":"Notes (optional)",
+  "form.consent":"I agree to be contacted on WhatsApp by the relief team about this mission.",
+  "form.privacy":"Your details are never shown on this website.",
+  "form.submit":"Submit","form.submitWa":"Send via WhatsApp",
+  "form.offline":"This form isn't connected yet, so it can't be sent. Nothing you type here is sent or saved.",
+  "err.required":"Please fill in this field.","err.phone":"Enter a valid WhatsApp number (at least 7 digits).","err.group":"Choose at least one option.","err.consent":"We need your permission to contact you.","err.summary":"Please review the highlighted fields.",
+  "form.sending":"Sending…","form.sent":"We received your details. The team will contact you on WhatsApp.","form.failed":"It couldn't be sent. Check your connection and try again.",
+  "form.waReady":"WhatsApp opened with your message ready. Send it from WhatsApp to finish.","form.waLink":"If WhatsApp didn't open, tap here.",
+  "partner.title":"Become a Collection Partner","partner.sub":"Churches, buildings, businesses and volunteers.",
+  "partner.lead":"We want to grow across Panama. Tell us where you could collect donations. Every new point is reviewed and approved before it appears in the directory.",
+  "partner.org":"Organization or building name","partner.contact":"Contact person","partner.place":"Proposed collection location","partner.place.ph":"e.g. building reception, church office…","partner.access":"General collection access","partner.access.ph":"e.g. 24-hour front gate, weekdays 8–5…","partner.approval":"No location is published without the team's approval.",
+  "pickup.title":"Large donation pickup","pickup.sub":"For businesses or people with large quantities.",
+  "pickup.lead":"Pickup depends on volunteer and transportation availability. We'll let you know if we can come; it isn't guaranteed until we confirm.",
+  "pickup.types":"Types of donations","pickup.types.ph":"e.g. water, rice, diapers…","pickup.qty":"Approximate quantity","pickup.qty.ph":"e.g. 20 boxes, 3 cases of water…",
+  "upd.eyebrow":"Mission Updates","upd.title":"Relief Mission Updates",
+  "upd.empty":"Our community is collecting essential supplies for affected families. Verified updates about collections and deliveries will be shared here.",
+  "upd.area":"Area assisted","upd.qty":"Verified quantities","upd.confirmed":"Confirmed by","upd.notes":"Notes",
+  "about.eyebrow":"About","about.title":"About this relief mission",
+  "about.p1":"This is an independent community initiative coordinated by Providence Church Coronado together with local volunteers. It's for everyone: you don't need to be a church member or share its beliefs to help.",
+  "about.s1":"Providence Church Coronado is helping coordinate the mission.","about.s2":"Local volunteers collect supplies at the drop-off points.","about.s3":"Our contacts in the affected communities tell us what's needed.","about.s4":"Donations are organized according to available resources and confirmed needs.","about.s5":"The whole community is welcome to take part.",
+  "about.independent":"This is an independent, church-led community effort. It is not affiliated with SINAPROC, the Red Cross, government agencies or other organizations.",
+  "about.church":"A Reformed church in Coronado, Panamá, gathering on Ave. Roberto Eisenmann. Its congregation brings together Panamanians and expatriates, with services in English and Spanish translation.",
+  "about.link":"Visit the church's official website",
+  "foot.title":"Providence Church — Earthquake Relief","foot.body":"An independent community effort coordinated by Providence Church Coronado for communities affected by the earthquake in Azuero.",
+  "data.loading":"Loading the latest information…","data.error":"The latest information couldn't be loaded. Showing the last saved version.",
+  "cash.title":"Recent financial donations","cash.lead":"Each gift is posted once we confirm we've received it.",
+  "cash.total1":"from 1 posted gift","cash.totalN":"from {n} posted gifts","cash.anon":"Anonymous donor",
+  "cash.m.yappy":"Yappy","cash.m.transfer":"Bank transfer","cash.m.cash":"Cash","cash.more":"Show more",
+  "cash.empty":"No financial donations posted yet.",
+  "cash.privacy":"We show your name and amount only with your permission. If you'd rather appear as anonymous, text {name} on WhatsApp.","cash.privacyNoContact":"We show your name and amount only with your permission; otherwise you'll appear as an anonymous donor.",
+  "map.title":"Map of collection points","map.you":"You","map.pending":"Not starred on the map yet (location being confirmed): {names}.","map.outside":"You're outside the map area. The closest point is {name}, about {km} km away in a straight line.",
+  "rec.title":"Donations received","rec.lead":"When the team collects what you left at a drop-off point, they log it here with the date and place.",
+  "rec.search":"Search donations received","rec.search.ph":"Search by item, name or place…","rec.filter":"Filter by collection point","rec.all":"All",
+  "rec.sum1":"1 donation logged · Latest: {date}","rec.sumN":"{n} donations logged · Latest: {date}",
+  "rec.anon":"Anonymous donor","rec.more":"Show more","rec.nomatch":"No donation matches your search.",
+  "rec.empty.title":"No donations logged yet","rec.empty.body":"As soon as the team collects the first donations from the drop-off points, they'll appear here.",
+  "rec.howto":"Left a donation? Text {name} on WhatsApp ({phone}) with the date, the place and what you left. If you'd like your name shown, say so in your message; otherwise you'll appear as an anonymous donor.",
+  "rec.howtoNoContact":"If you'd like your name shown, let the team know; otherwise you'll appear as an anonymous donor.",
+  "dist.title":"Handing out the aid","dist.lead":"Photos and reports from deliveries in Playa Venao and nearby communities, with quantities verified by the team.",
+  "dist.empty":"Our community is collecting essential supplies for affected families. Verified updates about collections and deliveries will be shared here.",
+  "dist.place":"Place","dist.items":"What was delivered (verified quantities)","dist.confirmed":"Confirmed by","dist.notes":"Notes","dist.photoOpen":"Open photo",
+  "dist.consent":"We only publish photos with permission from the people shown, and take special care with children's privacy.",
+  "contact.title":"Mission contact","contact.textOnly":"WhatsApp text messages only. Please don't call.","contact.textOnlyShort":"text only",
+  "contact.open":"Message on WhatsApp","contact.body":"Message him with questions, for the exact spot of a collection point, or about large donations.",
+  "contact.hero":"Questions? WhatsApp ({textOnly}): {name}","contact.guide":"Questions before donating? Message {name} on WhatsApp: {phone} (text messages only).",
+  "loc.unitAsk":"For the exact spot inside the building, message {name} on WhatsApp ({phone}, text only)."
+}};
+
+/* ------------------------------ helpers ------------------------------ */
+// Language: /en/ and /es/ pages are fixed; the main page follows the phone's language (Spanish phones → Spanish, otherwise English).
+const PAGE_LANG = document.documentElement.getAttribute("data-page-lang");
+let lang = PAGE_LANG || (/^es\b/i.test(navigator.language || "") ? "es" : "en");
+try { const s = localStorage.getItem("relief-lang"); if (!PAGE_LANG && (s === "en" || s === "es")) lang = s; } catch (e) {}
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const t = (k, vars) => { let s = (T[lang][k] ?? T.es[k] ?? k); if (vars) for (const v in vars) s = s.replace("{" + v + "}", vars[v]); return s; };
+const L = o => (o && typeof o === "object") ? (o[lang] || o.es || o.en || "") : (o || "");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const ico = id => `<svg class="ico" aria-hidden="true"><use href="#${id}"/></svg>`;
+const fmtDate = d => { try { return new Date(d + (String(d).length === 10 ? "T12:00:00" : "")).toLocaleDateString(lang === "es" ? "es-PA" : "en-US", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return d; } };
+const money = n => (n == null ? "—" : new Intl.NumberFormat(lang === "es" ? "es-PA" : "en-US", { style: "currency", currency: "USD", currencyDisplay: "narrowSymbol" }).format(n));
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+function onOwnHost() {
+  const h = location.hostname;
+  return /^https?:$/.test(location.protocol) && !!h && !/claude|anthropic|localhost|127\.0\.0\.1|usercontent|sandbox/i.test(h);
+}
+// Shared links point to the language page that matches what the sender is reading: …/en/ or …/es/
+function sitePublicUrl() {
+  const base = CONFIG.publicUrl ? CONFIG.publicUrl.replace(/\/?$/, "/")
+    : onOwnHost() ? location.origin + location.pathname.replace(/index\.html$/, "").replace(/(?:en|es)\/?$/, "").replace(/\/?$/, "/") : "";
+  return base ? base + (lang === "en" ? "en/" : "es/") : "";
+}
+
+async function copyText(text, btn) {
+  const label = btn.querySelector("span");
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.classList.add("done"); if (label) label.textContent = t("copied");
+    setTimeout(() => { btn.classList.remove("done"); if (label) label.textContent = t(btn.dataset.labelKey || "copy"); }, 1800);
+  } catch (e) {
+    const src = btn.dataset.copyFrom && document.getElementById(btn.dataset.copyFrom);
+    if (src) { const r = document.createRange(); r.selectNodeContents(src); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    if (label) label.textContent = t("copyFail");
+    setTimeout(() => { if (label) label.textContent = t(btn.dataset.labelKey || "copy"); }, 3500);
+  }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy-from],[data-copy-text]");
+  if (!b) return;
+  const text = b.dataset.copyText ?? document.getElementById(b.dataset.copyFrom)?.textContent ?? "";
+  copyText(text.trim(), b);
+});
+
+/* ---------------------------- static text ---------------------------- */
+function applyText() {
+  document.documentElement.lang = lang === "es" ? "es-PA" : "en";
+  document.title = t("doc.title");
+  $$("[data-t]").forEach(el => { el.textContent = t(el.dataset.t); });
+  $$("[data-t-ph]").forEach(el => { el.placeholder = t(el.dataset.tPh); });
+  $$("[data-t-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.tAria)); });
+  $$("[data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+}
+
+/* ------------------------------ locations ---------------------------- */
+const state = { area: "all", q: "", nearest: null, me: null };
+function visibleLocations() { return CONFIG.locations.filter(l => l.approved !== false); }
+
+function renderChips() {
+  const locs = visibleLocations();
+  const count = a => a === "all" ? locs.length : locs.filter(l => l.area === a).length;
+  $("#chips").innerHTML = ["all", ...AREAS].map(a =>
+    `<button type="button" class="chip" data-area="${a}" aria-pressed="${state.area === a}">${esc(t("area." + a))}<span class="n">${count(a)}</span></button>`).join("");
+}
+
+function locCard(l) {
+  const st = ["accepting", "full", "closed", "awaiting"].includes(l.status) ? l.status : "awaiting";
+  const unitBits = [];
+  if (CONFIG.publishUnitDetails && l.tower) unitBits.push(`${t("loc.tower")} ${esc(l.tower)}`);
+  if (CONFIG.publishUnitDetails && l.unit) unitBits.push(`${t("loc.unit")} ${esc(l.unit)}`);
+  const dirs = [];
+  if (l.mapsUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.mapsUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Google Maps</a>`);
+  if (l.wazeUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.wazeUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Waze</a>`);
+  const near = state.nearest && state.nearest.id === l.id;
+  const biz = l.type === "business";
+  const openNow = isOpenNow(l);
+  return `<article class="loc${near ? " highlight" : ""}" id="loc-${esc(l.id)}">
+    <div class="loc-head">
+      <div class="loc-top">
+        <div class="loc-name">${ico("i-building")}<div><h3>${esc(l.name)}</h3><p class="loc-comm">${esc(l.placeLabel ? L(l.placeLabel) : t("area." + l.area) + ", Panamá")} · ${esc(t(biz ? "loc.business" : "loc.private"))}</p></div></div>
+        <span style="display:flex;flex-wrap:wrap;gap:6px"><span class="pill st-${st}">${esc(t("status." + st))}</span>${openNow === null ? "" : `<span class="pill ${openNow ? "st-accepting" : "st-closed"}">${esc(t(openNow ? "loc.openNow" : "loc.closedNow"))}</span>`}</span>
+      </div>
+    </div>
+    <div class="loc-body">
+      ${l.frontGate ? `<div class="gate"><strong>${ico("i-shield")}${esc(t("loc.gate.title"))}</strong><p>${esc(t("loc.gate.body"))}</p><p class="tip">${esc(t("loc.gate.tip"))}</p></div>` : ""}
+      <p class="row">${ico("i-clock")}<span><b>${l.hoursText ? L(l.hoursText).split(" · ").map(esc).join("<br>") : esc(t(biz ? "loc.hoursBiz" : "loc.hours"))}</b></span></p>
+      ${l.address ? `<p class="row">${ico("i-pin")}<span>${esc(l.address)}</span></p>` : ""}
+      <p class="row">${ico("i-package")}<span>${esc(L(l.instructions))}</span></p>
+      ${biz ? "" : unitBits.length ? `<p class="row">${ico("i-pin")}<span><b>${unitBits.join(" · ")}</b></span></p>`
+                        : `<p class="row muted">${ico("i-lock")}<span>${esc(hasContact() ? t("loc.unitAsk", { name: CONFIG.contact.shortName || CONFIG.contact.name, phone: CONFIG.contact.display }) : t("loc.unitHidden"))}</span></p>`}
+      ${biz ? "" : `<p class="row muted">${ico("i-alert")}<span>${esc(t("loc.respect"))}</span></p>`}
+    </div>
+    <div class="loc-foot">${dirs.length ? `<span>${esc(t("loc.directions"))}:</span>${dirs.join("")}` : `${ico("i-nav")}<span>${esc(t("loc.dirPending"))}</span>`}</div>
+  </article>`;
+}
+
+function isOpenNow(l) {
+  if (!l.openHours) return null;
+  const pa = new Date(Date.now() - 5 * 3600 * 1000);            // Panama is UTC-5 all year
+  const h = l.openHours[pa.getUTCDay()], now = pa.getUTCHours() + pa.getUTCMinutes() / 60;
+  return !!(h && now >= h[0] && now < h[1]);
+}
+function renderLocations() {
+  renderChips();
+  const q = norm(state.q);
+  let list = visibleLocations().filter(l => (state.area === "all" || l.area === state.area) &&
+    (!q || norm(l.name + " " + t("area." + l.area) + " " + l.area).includes(q)));
+  if (state.nearest) list.sort((a, b) => (a.id === state.nearest.id ? -1 : b.id === state.nearest.id ? 1 : 0));
+  const box = $("#locList");
+  if (list.length) { box.innerHTML = list.map(locCard).join(""); return; }
+  box.innerHTML = q
+    ? `<div class="empty">${ico("i-search")}<h3>${esc(t("loc.nomatch"))}</h3></div>`
+    : `<div class="empty">${ico("i-pin")}<h3>${esc(t("loc.empty.title"))}</h3><p>${esc(t("loc.empty.body"))}</p><a class="btn btn-gold" href="#socio" data-open="socio">${esc(t("loc.empty.cta"))}</a></div>`;
+}
+
+$("#chips").addEventListener("click", e => {
+  const c = e.target.closest("[data-area]"); if (!c) return;
+  state.area = c.dataset.area; renderLocations();
+});
+$("#locSearch").addEventListener("input", e => { state.q = e.target.value; renderLocations(); });
+
+function haversineKm(a, b) {
+  const R = 6371, rad = x => x * Math.PI / 180;
+  const dLat = rad(b.lat - a.lat), dLng = rad(b.lng - a.lng);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+// Community centres (OpenStreetMap place points) for the "where are you?" fallback
+const AREA_POINTS = {
+  "coronado": { lat: 8.5338496, lng: -79.8952709 },
+  "nueva-gorgona": { lat: 8.5582285, lng: -79.8756078 },
+  "san-carlos": { lat: 8.4727060, lng: -79.9561983 }
+};
+function geoMsg(key, tone, vars, choose) {
+  const box = $("#geoMsg");
+  let html = key ? `<p class="notice ${tone || ""}">${ico("i-info")}<span>${esc(t(key, vars))}</span></p>` : "";
+  if (choose) html += `<div class="chips" style="margin-top:10px" role="group" aria-label="${esc(t("loc.whereAreYou"))}">${Object.keys(AREA_POINTS).map(a => `<button type="button" class="chip" data-from="${a}">${ico("i-pin")}${esc(t("area." + a))}</button>`).join("")}</div>`;
+  box.innerHTML = html;
+  box.dataset.key = key || ""; box.dataset.tone = tone || ""; box.dataset.vars = vars ? JSON.stringify(vars) : ""; box.dataset.choose = choose ? "1" : "";
+}
+function pointsWithCoords() { return visibleLocations().filter(l => typeof l.lat === "number" && typeof l.lng === "number" && l.status !== "closed"); }
+function showNearest(me, fromArea) {
+  const withCoords = pointsWithCoords();
+  if (!withCoords.length) return geoMsg("loc.geo.nocoords");
+  const best = withCoords.map(l => ({ l, d: haversineKm(me, l) })).sort((a, b) => a.d - b.d)[0];
+  state.me = fromArea ? null : me;
+  state.nearest = best.l; state.area = "all"; state.q = ""; $("#locSearch").value = "";
+  renderLocations(); renderMap();
+  const km = best.d < 10 ? best.d.toFixed(1) : Math.round(best.d);
+  if (fromArea) geoMsg("loc.geo.fromArea", "ok", { area: t("area." + fromArea), name: best.l.name, km });
+  else geoMsg(project(me.lat, me.lng) ? "loc.geo.found" : "map.outside", "ok", { name: best.l.name, km });
+  const card = document.getElementById("loc-" + best.l.id);
+  if (card) { $$(".loc.highlight").forEach(x => x.classList.remove("highlight")); card.classList.add("highlight"); card.scrollIntoView({ behavior: "smooth", block: "center" }); }
+}
+$("#geoMsg").addEventListener("click", e => { const b = e.target.closest("[data-from]"); if (b) showNearest(AREA_POINTS[b.dataset.from], b.dataset.from); });
+$("#nearBtn").addEventListener("click", () => {
+  const askArea = key => geoMsg(key, "warn", null, true);
+  // Claude's viewer never shares location with pages, so go straight to the area choice there.
+  if (!onOwnHost() || !navigator.geolocation) return askArea("loc.geo.choose");
+  geoMsg("loc.geo.working");
+  let done = false;
+  const fail = () => { if (!done) { done = true; askArea("loc.geo.denied"); } };
+  const timer = setTimeout(fail, 9000);
+  try {
+    navigator.geolocation.getCurrentPosition(pos => {
+      if (done) return; done = true; clearTimeout(timer);
+      showNearest({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+    }, () => { clearTimeout(timer); fail(); }, { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 });
+  } catch (e) { clearTimeout(timer); fail(); }
+});
+
+/* -------------------------------- map -------------------------------- */
+const MAP_IMG = "data:image/webp;base64,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";
+const mx = lon => (lon + 180) / 360 * 256 * 2 ** CONFIG.map.z;
+const my = lat => { const r = lat * Math.PI / 180; return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * 256 * 2 ** CONFIG.map.z; };
+function project(lat, lng) {
+  const m = CONFIG.map, x = mx(lng) - mx(m.west), y = my(lat) - my(m.north);
+  return (x >= 0 && y >= 0 && x <= m.width && y <= m.height) ? { x, y } : null;
+}
+function starPath(cx, cy, R) {
+  const r = R * 0.45; let d = "";
+  for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rad = i % 2 ? r : R; d += (i ? "L" : "M") + (cx + rad * Math.cos(a)).toFixed(1) + " " + (cy + rad * Math.sin(a)).toFixed(1); }
+  return d + "Z";
+}
+function renderMap() {
+  const img = $("#mapImg"); if (img.getAttribute("href") !== MAP_IMG) img.setAttribute("href", MAP_IMG);
+  const phone = window.innerWidth <= 520, R = phone ? 30 : 22;
+  const locs = visibleLocations();
+  const placed = locs.map(l => ({ l, p: (typeof l.lat === "number" && typeof l.lng === "number") ? project(l.lat, l.lng) : null }));
+  let g = "";
+  if (state.me) { const p = project(state.me.lat, state.me.lng); if (p) g += `<g><circle class="me-ring" cx="${p.x}" cy="${p.y}" r="${R * 1.4}"/><circle class="me-dot" cx="${p.x}" cy="${p.y}" r="${R * 0.45}"/><text x="${p.x}" y="${p.y - R * 0.9}" text-anchor="middle" style="font:700 ${phone ? 32 : 24}px var(--sans);fill:#2B6BE0;paint-order:stroke;stroke:#fff;stroke-width:7px">${esc(t("map.you"))}</text></g>`; }
+  const fs = phone ? 34 : 25, boxes = [], W = CONFIG.map.width;
+  placed.filter(x => x.p).forEach(({ p }) => boxes.push([p.x - R, p.x + R, p.y - R, p.y + R]));
+  const hit = b => boxes.some(o => b[0] < o[1] && b[1] > o[0] && b[2] < o[3] && b[3] > o[2]);
+  placed.filter(x => x.p).sort((a, b) => a.p.y - b.p.y).forEach(({ l, p }) => {
+    const label = phone && l.mapLabel ? l.mapLabel : l.name;
+    const wEst = label.length * fs * 0.58, gap = R * 1.2;
+    const cand = [];
+    const sideBox = (side, y) => side === "l" ? [p.x - gap - wEst, p.x - gap, y - fs * 0.85, y + fs * 0.3]
+      : side === "r" ? [p.x + gap, p.x + gap + wEst, y - fs * 0.85, y + fs * 0.3]
+      : [p.x - wEst / 2, p.x + wEst / 2, y - fs * 0.85, y + fs * 0.3];
+    const base = p.y + 9, below = p.y + R + fs * 0.95, above = p.y - R - fs * 0.35;
+    [["r", base], ["l", base], ["c", below], ["c", above], ["r", base + fs * 1.1], ["l", base + fs * 1.1], ["r", base - fs * 1.1], ["l", base - fs * 1.1], ["c", below + fs * 1.1]].forEach(c => cand.push(c));
+    let pick = cand.find(([sd, y]) => { const b = sideBox(sd, y); return b[0] >= 4 && b[1] <= W - 4 && b[2] >= 2 && b[3] <= CONFIG.map.height - 2 && !hit(b); })
+      || (p.x + gap + wEst > W - 4 ? ["l", base] : ["r", base]);
+    const [side, ly] = pick;
+    const box = () => sideBox(side, ly);
+    boxes.push(box());
+    const tx = side === "l" ? p.x - gap : side === "r" ? p.x + gap : p.x, anchor = side === "l" ? "end" : side === "r" ? "start" : "middle";
+    g += `<g class="pin${state.nearest && state.nearest.id === l.id ? " nearest" : ""}" tabindex="0" role="button" data-pin="${esc(l.id)}" aria-label="${esc(l.name)}">
+      <ellipse class="halo" cx="${p.x}" cy="${p.y + R * 0.9}" rx="${R * 0.8}" ry="${R * 0.25}"/>
+      <path class="star" d="${starPath(p.x, p.y, R)}"/>
+      <text x="${tx}" y="${ly}" text-anchor="${anchor}">${esc(label)}</text></g>`;
+  });
+  $("#mapPins").innerHTML = g;
+  const missing = placed.filter(x => !x.p).map(x => x.l.name);
+  $("#mapPending").innerHTML = missing.length ? `<p class="map-pending">${ico("i-pin")}<span>${esc(t("map.pending", { names: missing.join(", ") }))}</span></p>` : "";
+}
+function focusLocation(id) {
+  state.area = "all"; state.q = ""; $("#locSearch").value = "";
+  renderLocations();
+  const el = document.getElementById("loc-" + id); if (!el) return;
+  $$(".loc.highlight").forEach(x => x.classList.remove("highlight")); el.classList.add("highlight");
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+$("#mapPins").addEventListener("click", e => { const p = e.target.closest("[data-pin]"); if (p) focusLocation(p.dataset.pin); });
+$("#mapPins").addEventListener("keydown", e => { const p = e.target.closest("[data-pin]"); if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); focusLocation(p.dataset.pin); } });
+let mapResize; window.addEventListener("resize", () => { clearTimeout(mapResize); mapResize = setTimeout(renderMap, 150); });
+
+/* ------------------------------ supplies ----------------------------- */
+function renderSupplies() {
+  $("#supMeta").innerHTML = `<span class="row">${ico("i-check")}<span>${esc(t("sup.requested"))}</span></span>` +
+    (CONFIG.suppliesLastUpdated ? `<span class="row">${ico("i-clock")}<span>${esc(t("sup.updated", { date: fmtDate(CONFIG.suppliesLastUpdated) }))}</span></span>` : "");
+  $("#supGrid").innerHTML = CONFIG.supplies.map(c => `
+    <article class="sup">
+      <div class="sup-h"><span class="sup-ic">${ico(c.icon || "i-package")}</span><div><h3>${esc(t("sup." + c.id) !== "sup." + c.id ? t("sup." + c.id) : L(c.title))}</h3><p>${esc(T[lang]["sup." + c.id + ".d"] ? t("sup." + c.id + ".d") : L(c.description))}</p></div></div>
+      <ul class="items">${c.items.map(i => `<li class="${i.priority === "notAccepting" ? "off" : ""}"><span>${esc(L(i))}</span>${i.priority ? `<span class="pill pr-${esc(i.priority)}">${esc(t("pr." + i.priority))}</span>` : ""}</li>`).join("")}</ul>
+    </article>`).join("");
+}
+
+/* ------------------------------ payments ----------------------------- */
+function kvRow(label, value, id) {
+  return `<div><span class="txt"><dt>${esc(label)}</dt><dd id="${id}">${esc(value)}</dd></span><button class="copy" type="button" data-copy-from="${id}">${ico("i-copy")}<span>${esc(t("copy"))}</span></button></div>`;
+}
+function renderPayments() {
+  const y = CONFIG.yappy, yOk = y.recipientName && y.handle;
+  $("#yappyCard").innerHTML = `<div class="pay-h"><span class="sup-ic">${ico("i-phone")}</span><div><h3>${esc(t("yappy.title"))}</h3><p class="loc-comm">${esc(t("yappy.sub"))}</p></div></div>` +
+    (yOk ? `<dl class="kv">${kvRow(t("yappy.recipient"), y.recipientName, "yName")}${kvRow(t("yappy.handle"), y.handle, "yHandle")}</dl>
+            ${y.qrImage ? `<img class="qr-img" src="${esc(y.qrImage)}" alt="${esc(t("yappy.qrAlt"))}">` : ""}
+            <p class="row">${ico("i-info")}<span>${esc(t("yappy.steps"))}</span></p>`
+         : `<p class="pending">${ico("i-clock")}<span>${esc(t("yappy.pending"))}</span></p>`);
+  const b = CONFIG.bank, bOk = b.bankName && b.accountHolder && b.accountNumber;
+  let all = "";
+  if (bOk) all = [[t("bank.bank"), b.bankName], [t("bank.holder"), b.accountHolder], [t("bank.type"), b.accountType], [t("bank.number"), b.accountNumber], [t("bank.extra"), L(b.extra)]]
+    .filter(r => r[1]).map(r => r[0] + ": " + r[1]).join("\n") + "\n" + (lang === "es" ? "Referencia" : "Reference") + ": Providence Earthquake Relief";
+  $("#bankCard").innerHTML = `<div class="pay-h"><span class="sup-ic">${ico("i-bank")}</span><div><h3>${esc(t("bank.title"))}</h3><p class="loc-comm">${esc(t("bank.sub"))}</p></div></div>` +
+    (bOk ? `<dl class="kv">${kvRow(t("bank.bank"), b.bankName, "bBank")}${kvRow(t("bank.holder"), b.accountHolder, "bHolder")}${b.accountType ? kvRow(t("bank.type"), b.accountType, "bType") : ""}${kvRow(t("bank.number"), b.accountNumber, "bNum")}${L(b.extra) ? kvRow(t("bank.extra"), L(b.extra), "bExtra") : ""}</dl>
+            <button class="btn btn-navy" type="button" data-copy-text="${esc(all)}" data-label-key="copyAll">${ico("i-copy")}<span>${esc(t("copyAll"))}</span></button>`
+         : `<p class="pending">${ico("i-clock")}<span>${esc(t("bank.pending"))}</span></p>`);
+
+  const f = CONFIG.finance;
+  if (!f.published) {
+    $("#finBox").innerHTML = `<h3>${esc(t("fin.title"))}</h3><p class="pending">${ico("i-info")}<span>${esc(t("fin.pending"))}</span></p>`;
+  } else {
+    const bal = (f.totalCollected != null && f.approvedExpenses != null) ? f.totalCollected - f.approvedExpenses : null;
+    $("#finBox").innerHTML = `<h3>${esc(t("fin.title"))}</h3>
+      <div class="tiles"><div class="tile"><b>${money(f.totalCollected)}</b><span>${esc(t("fin.collected"))}</span></div><div class="tile"><b>${money(f.approvedExpenses)}</b><span>${esc(t("fin.expenses"))}</span></div><div class="tile"><b>${money(bal)}</b><span>${esc(t("fin.balance"))}</span></div></div>
+      ${f.categories?.length ? `<div><h3 style="font-size:1.1rem;margin-bottom:6px">${esc(t("fin.categories"))}</h3><dl class="kv">${f.categories.map(c => `<div><dt>${esc(L(c))}</dt><dd>${money(c.amount)}</dd></div>`).join("")}</dl></div>` : ""}
+      ${f.lastUpdated ? `<p class="loc-comm">${esc(t("fin.updated", { date: fmtDate(f.lastUpdated) }))}</p>` : ""}`;
+  }
+}
+
+/* ----------------------------- cash gifts ----------------------------- */
+let cashShown = 10;
+function renderCash() {
+  const list = sortByDate((CONFIG.cashDonations || []).filter(d => typeof d.amount === "number" && d.amount > 0));
+  const c = CONFIG.contact;
+  const note = `<p class="cash-note">${ico("i-lock")}<span>${esc(hasContact() ? t("cash.privacy", { name: c.shortName || c.name }) : t("cash.privacyNoContact"))}</span></p>`;
+  if (!list.length) { $("#cashList").innerHTML = `<p class="pending">${ico("i-heart")}<span>${esc(t("cash.empty"))}</span></p>` + note; return; }
+  const total = list.reduce((a, d) => a + d.amount, 0);
+  $("#cashList").innerHTML = `<p class="cash-sum"><b>${money(total)}</b><span>${esc(t(list.length === 1 ? "cash.total1" : "cash.totalN", { n: list.length }))}</span></p>
+    <ul class="cash-list">${list.slice(0, cashShown).map(d => `<li>
+      <span class="cash-who"><b>${esc(d.name || t("cash.anon"))}</b><small>${esc(fmtDate(d.date))}${d.method ? " · " + esc(t("cash.m." + d.method) !== "cash.m." + d.method ? t("cash.m." + d.method) : d.method) : ""}${L(d.note) ? " · " + esc(L(d.note)) : ""}</small></span>
+      <span class="cash-amt">${money(d.amount)}</span></li>`).join("")}</ul>
+    ${list.length > cashShown ? `<button class="btn btn-line btn-sm" type="button" id="cashMore" style="justify-self:start">${esc(t("cash.more"))}</button>` : ""}` + note;
+}
+$("#cashList").addEventListener("click", e => { if (e.target.closest("#cashMore")) { cashShown += 10; renderCash(); } });
+
+/* -------------------------------- share ------------------------------ */
+function renderShare() {
+  const url = sitePublicUrl();
+  if (!url) { $("#shareBtns").innerHTML = `<p class="pending">${ico("i-info")}<span>${esc(t("share.pending"))}</span></p>`; return; }
+  const wa = "https://wa.me/?text=" + encodeURIComponent(t("share.waMsg", { url }));
+  const fb = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+  $("#shareBtns").innerHTML = `<div class="share-btns">
+    <a class="btn btn-wa" href="${esc(wa)}" target="_blank" rel="noopener">${ico("i-msg")}${esc(t("share.wa"))}</a>
+    <a class="btn btn-fb" href="${esc(fb)}" target="_blank" rel="noopener">${ico("i-fb")}${esc(t("share.fb"))}</a>
+    <button class="btn copy" style="min-height:48px" type="button" data-copy-text="${esc(url)}" data-label-key="share.copy">${ico("i-link")}<span>${esc(t("share.copy"))}</span></button>
+  </div>`;
+}
+
+/* -------------------------------- forms ------------------------------ */
+const FORM_FIELDS = {
+  volunteer: { es: "Voluntario", en: "Volunteer" },
+  partner: { es: "Nuevo punto de recolección", en: "New collection point" },
+  pickup: { es: "Recogida de donación grande", en: "Large donation pickup" }
+};
+function formChannel() { return CONFIG.formEndpoint ? "endpoint" : CONFIG.coordinatorWhatsApp ? "whatsapp" : null; }
+
+function renderFormControls() {
+  const keep = {};
+  $$("[data-area-select]").forEach(s => keep[s.id] = s.value);
+  $$("[data-area-select]").forEach(s => {
+    s.innerHTML = `<option value="">${esc(t("form.choose"))}</option>` + AREAS.map(a => `<option value="${a}">${esc(t("area." + a))}</option>`).join("");
+    s.value = keep[s.id] || "";
+  });
+  const checked = $$("#helpChecks input:checked").map(i => i.value);
+  if ($("#helpChecks")) $("#helpChecks").innerHTML = HELP_TYPES.map(h => `<label class="check"><input type="checkbox" id="help-${h}" name="help" value="${h}" ${checked.includes(h) ? "checked" : ""}><span>${esc(t("help." + h))}</span></label>`).join("");
+  const ch = formChannel();
+  $$("[data-form]").forEach(f => {
+    const btn = $("[data-submit]", f);
+    btn.textContent = ch === "whatsapp" ? t("form.submitWa") : t("form.submit");
+    btn.disabled = !ch;
+    const st = $(".form-status", f);
+    if (!ch) st.innerHTML = `<p class="notice warn">${ico("i-info")}<span>${esc(t("form.offline"))}</span></p>`;
+    else if (st.dataset.sticky !== "1") st.innerHTML = "";
+  });
+}
+
+function setErr(el, key) {
+  const field = el.closest(".field");
+  field.querySelector(".err")?.remove();
+  if (key) {
+    el.setAttribute("aria-invalid", "true");
+    const p = document.createElement("p"); p.className = "err"; p.textContent = t(key); p.id = (el.id || field.dataset.group) + "-err";
+    field.appendChild(p); el.setAttribute("aria-describedby", p.id);
+  } else { el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+}
+function validate(form) {
+  let first = null;
+  $$("input[required],select[required],textarea[required]", form).forEach(el => {
+    let key = null;
+    if (el.type === "checkbox") { if (!el.checked) key = el.hasAttribute("data-consent") ? "err.consent" : "err.required"; }
+    else if (!el.value.trim()) key = "err.required";
+    else if (el.hasAttribute("data-phone") && (el.value.replace(/\D/g, "").length < 7 || /[^\d\s+\-()]/.test(el.value))) key = "err.phone";
+    setErr(el, key); if (key && !first) first = el;
+  });
+  $$("[data-required-group]", form).forEach(g => {
+    const any = $$("input:checked", g).length > 0;
+    g.querySelector(".err")?.remove();
+    if (!any) { const p = document.createElement("p"); p.className = "err"; p.textContent = t("err.group"); g.appendChild(p); if (!first) first = $("input", g); }
+  });
+  return first;
+}
+function collect(form) {
+  const data = {};
+  new FormData(form).forEach((v, k) => { if (data[k]) data[k] = [].concat(data[k], v); else data[k] = v; });
+  return data;
+}
+function waMessage(kind, data) {
+  const lines = ["*" + L(FORM_FIELDS[kind]) + " · Providence Earthquake Relief*"];
+  $$(`[data-form="${kind}"] .field`).forEach(f => {
+    const lab = f.querySelector("label, legend"); if (!lab) return;
+    const inputs = $$("input,select,textarea", f); if (!inputs.length) return;
+    const name = inputs[0].name; let v = data[name];
+    if (inputs[0].type === "checkbox" && name === "consent") return;
+    if (name === "help") v = [].concat(v || []).map(h => t("help." + h)).join(", ");
+    else if (inputs[0].tagName === "SELECT" && v) v = t("area." + v);
+    if (v) lines.push(lab.textContent.trim() + ": " + v);
+  });
+  return lines.join("\n");
+}
+$$("[data-form]").forEach(form => {
+  form.addEventListener("input", e => { if (e.target.getAttribute("aria-invalid") === "true") setErr(e.target, null); });
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const ch = formChannel(); if (!ch) return;
+    const st = $(".form-status", form); st.dataset.sticky = "1";
+    const bad = validate(form);
+    if (bad) { st.innerHTML = `<p class="notice stop" role="alert">${ico("i-alert")}<span>${esc(t("err.summary"))}</span></p>`; bad.focus(); return; }
+    const kind = form.dataset.form, data = collect(form);
+    if (ch === "endpoint") {
+      const btn = $("[data-submit]", form); btn.disabled = true; btn.textContent = t("form.sending");
+      try {
+        const r = await fetch(CONFIG.formEndpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ form: kind, lang, submittedAt: new Date().toISOString(), data }) });
+        if (!r.ok) throw new Error(r.status);
+        st.innerHTML = `<p class="notice ok" role="status">${ico("i-check")}<span>${esc(t("form.sent"))}</span></p>`; form.reset();
+      } catch (err) {
+        st.innerHTML = `<p class="notice stop" role="alert">${ico("i-alert")}<span>${esc(t("form.failed"))}</span></p>`;
+      } finally { btn.disabled = false; btn.textContent = t("form.submit"); }
+    } else {
+      const href = "https://wa.me/" + CONFIG.coordinatorWhatsApp.replace(/\D/g, "") + "?text=" + encodeURIComponent(waMessage(kind, data));
+      st.innerHTML = `<p class="notice ok" role="status">${ico("i-msg")}<span>${esc(t("form.waReady"))} <a href="${esc(href)}" target="_blank" rel="noopener">${esc(t("form.waLink"))}</a></span></p>`;
+      const a = document.createElement("a"); a.href = href; a.target = "_blank"; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove();
+    }
+  });
+});
+document.addEventListener("click", e => {
+  const o = e.target.closest("[data-open], a[href='#recogida'], a[href='#socio']");
+  if (!o) return;
+  const id = o.dataset.open || o.getAttribute("href").slice(1);
+  const d = document.getElementById(id); if (d && d.tagName === "DETAILS") d.open = true;
+});
+
+/* ------------------------- received & deliveries -------------------------- */
+const recState = { loc: "all", q: "", shown: 12 };
+function imgSrc(u) {
+  if (!u) return "";
+  const m = String(u).match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600` : String(u);
+}
+function locName(id) { const l = CONFIG.locations.find(x => x.id === id); return l ? l.name : (id || ""); }
+function sortByDate(list) { return [...list].sort((a, b) => String(b.date + " " + (b.time || "")).localeCompare(String(a.date + " " + (a.time || "")))); }
+function fmtTime(tm) {
+  if (!tm) return "";
+  const [h, m] = String(tm).split(":").map(Number); if (isNaN(h)) return tm;
+  const d = new Date(2000, 0, 1, h, m || 0);
+  return d.toLocaleTimeString(lang === "es" ? "es-PA" : "en-US", { hour: "numeric", minute: "2-digit" });
+}
+function renderReceived() {
+  const all = sortByDate(CONFIG.received || []);
+  const locs = [...new Set(all.map(r => r.location).filter(Boolean))];
+  if (recState.loc !== "all" && !locs.includes(recState.loc)) recState.loc = "all";
+  $("#recChips").innerHTML = all.length ? ["all", ...locs].map(id => `<button type="button" class="chip" data-rec="${esc(id)}" aria-pressed="${recState.loc === id}">${esc(id === "all" ? t("rec.all") : locName(id))}<span class="n">${id === "all" ? all.length : all.filter(r => r.location === id).length}</span></button>`).join("") : "";
+  $("#recSearch").closest(".finder").hidden = !all.length;
+  $("#recSum").textContent = all.length ? t(all.length === 1 ? "rec.sum1" : "rec.sumN", { n: all.length, date: fmtDate(all[0].date) }) : "";
+  const q = norm(recState.q);
+  const list = all.filter(r => (recState.loc === "all" || r.location === recState.loc) &&
+    (!q || norm([L(r.items), r.donor, locName(r.location)].join(" ")).includes(q)));
+  const box = $("#recList");
+  if (!all.length) {
+    box.innerHTML = "";
+    box.insertAdjacentHTML("afterend", "");
+    $("#recSum").innerHTML = `<span class="empty" style="display:grid">${ico("i-package")}<b style="font:600 1.25rem var(--serif);color:var(--navy)">${esc(t("rec.empty.title"))}</b><span>${esc(t("rec.empty.body"))}</span></span>`;
+  } else if (!list.length) {
+    box.innerHTML = `<div class="empty" style="border:0">${ico("i-search")}<h3>${esc(t("rec.nomatch"))}</h3></div>`;
+  } else {
+    const d = s => { try { const x = new Date(s + "T12:00:00"); return { day: x.getDate(), mon: x.toLocaleDateString(lang === "es" ? "es-PA" : "en-US", { month: "short" }).replace(".", "") }; } catch (e) { return { day: "", mon: s }; } };
+    box.innerHTML = list.slice(0, recState.shown).map(r => { const dt = d(r.date); const ph = imgSrc(r.photo); return `<article class="rec">
+      <div class="rec-date" aria-label="${esc(fmtDate(r.date))}"><b>${dt.day}</b><span>${esc(dt.mon)}</span></div>
+      <div style="min-width:0"><p class="rec-items">${esc(L(r.items))}</p>
+        <p class="rec-meta"><span>${ico("i-pin")}${esc(locName(r.location))}</span><span>${ico("i-heart")}${esc(r.donor ? r.donor : t("rec.anon"))}</span>${r.time ? `<span>${ico("i-clock")}${esc(fmtTime(r.time))}</span>` : ""}</p></div>
+      ${ph ? `<img class="rec-thumb" src="${esc(ph)}" alt="" loading="lazy">` : "<span></span>"}
+    </article>`; }).join("") +
+      (list.length > recState.shown ? `<div class="rec-more"><button class="btn btn-line btn-sm" type="button" id="recMore">${esc(t("rec.more"))}</button></div>` : "");
+  }
+  const c = CONFIG.contact;
+  $("#recHowto").innerHTML = `${ico("i-msg")}<span>${esc(hasContact() ? t("rec.howto", { name: c.shortName || c.name, phone: c.display }) : t("rec.howtoNoContact"))}</span>`;
+}
+$("#recChips").addEventListener("click", e => { const c = e.target.closest("[data-rec]"); if (!c) return; recState.loc = c.dataset.rec; recState.shown = 12; renderReceived(); });
+$("#recSearch").addEventListener("input", e => { recState.q = e.target.value; recState.shown = 12; renderReceived(); });
+$("#recList").addEventListener("click", e => { if (e.target.closest("#recMore")) { recState.shown += 12; renderReceived(); } });
+
+function renderDistributions() {
+  const list = sortByDate(CONFIG.distributions?.length ? CONFIG.distributions : (CONFIG.updates || []));
+  if (!list.length) { $("#distList").innerHTML = `<p class="pending">${ico("i-truck")}<span>${esc(t("dist.empty"))}</span></p>`; return; }
+  $("#distList").innerHTML = list.map(x => {
+    const photos = (x.photos || []).filter(p => p && p.src);
+    const place = L(x.place || x.area);
+    const items = x.items || x.quantities || [];
+    const ph = photos.map(p => { const src = imgSrc(p.src), img = `<img src="${esc(src)}" alt="${esc(L(p.alt))}" loading="lazy">`;
+      return /^https?:/.test(src) ? `<a href="${esc(src)}" target="_blank" rel="noopener" aria-label="${esc(t("dist.photoOpen"))}">${img}</a>` : `<figure>${img}</figure>`; }).join("");
+    return `<article class="dist${photos.length ? " has-photos" : ""}">
+      ${photos.length ? `<div class="dist-photos">${ph}</div>` : ""}
+      <div class="dist-body">
+        <time datetime="${esc(x.date)}">${esc(fmtDate(x.date))}</time>
+        ${place ? `<h3>${esc(place)}</h3>` : ""}
+        ${L(x.description) ? `<p>${esc(L(x.description))}</p>` : ""}
+        <dl>
+          ${items.length ? `<dt>${esc(t("dist.items"))}</dt><dd><ul>${items.map(q => `<li>${esc(L(q))}</li>`).join("")}</ul></dd>` : ""}
+          ${x.confirmedBy && L(x.confirmedBy) ? `<dt>${esc(t("dist.confirmed"))}</dt><dd>${esc(L(x.confirmedBy))}</dd>` : ""}
+          ${x.notes && L(x.notes) ? `<dt>${esc(t("dist.notes"))}</dt><dd>${esc(L(x.notes))}</dd>` : ""}
+        </dl>
+      </div></article>`;
+  }).join("");
+}
+
+function hasContact() { return !!(CONFIG.contact && CONFIG.contact.whatsapp && CONFIG.contact.display); }
+function renderContact() {
+  const els = ["#heroContact", "#guideContact", "#contactCard", "#footContact"].map(s => $(s));
+  if (!hasContact()) { els.forEach(e => e.hidden = true); return; }
+  const c = CONFIG.contact, name = c.shortName || c.name;
+  const wa = "https://wa.me/" + c.whatsapp.replace(/\D/g, "");
+  els.forEach(e => e.hidden = false);
+  $("#heroContact").innerHTML = `${ico("i-msg")}<span>${esc(t("contact.hero", { textOnly: t("contact.textOnlyShort"), name }))} · <a href="${wa}" target="_blank" rel="noopener">${esc(c.display)}</a></span>`;
+  $("#guideContact").innerHTML = `${ico("i-msg")}<span>${esc(t("contact.guide", { name, phone: c.display }))}</span>`;
+  $("#contactCard").innerHTML = `<h3>${ico("i-msg")}<span>${esc(t("contact.title"))}</span></h3>
+    <p><b>${esc(c.name)}</b></p>
+    <div class="num"><b id="contactNum">${esc(c.display)}</b><button class="copy" type="button" data-copy-from="contactNum">${ico("i-copy")}<span>${esc(t("copy"))}</span></button></div>
+    ${c.textOnly ? `<p class="textonly">${ico("i-alert")}<span>${esc(t("contact.textOnly"))}</span></p>` : ""}
+    <p class="loc-comm">${esc(t("contact.body"))}</p>
+    <a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener" style="justify-self:start">${ico("i-msg")}${esc(t("contact.open"))}</a>`;
+  $("#footContact").innerHTML = `${esc(t("contact.title"))}: ${esc(c.name)} · WhatsApp <a href="${wa}" target="_blank" rel="noopener">${esc(c.display)}</a> (${esc(t("contact.textOnlyShort"))})`;
+}
+function renderAnnouncement() {
+  const a = CONFIG.announcement, box = $("#announce");
+  if (!a || !L(a)) { box.hidden = true; return; }
+  box.hidden = false;
+  box.innerHTML = `<p class="notice ${a.tone === "warn" ? "warn" : a.tone === "ok" ? "ok" : ""}">${ico("i-info")}<span>${esc(L(a))}</span></p>`;
+}
+
+/* ---------------------- Phase 2: Google Sheets CSV --------------------- */
+function parseCSV(text) {
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"' && text[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; }
+    else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  const head = (rows.shift() || []).map(h => h.trim().toLowerCase());
+  return rows.filter(r => r.some(v => v.trim())).map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
+}
+const yes = v => /^(yes|si|sí|true|1|x)$/i.test(String(v).trim());
+const numOrNull = v => (v === "" || v == null || isNaN(+v)) ? null : +v;
+async function loadSheets() {
+  const s = CONFIG.sheets; const distCsv = s.distributionsCsv || s.updatesCsv;
+  if (!s.locationsCsv && !s.suppliesCsv && !s.receivedCsv && !distCsv && !s.cashCsv) return;
+  const status = $("#dataStatus"); status.hidden = false;
+  status.innerHTML = `<p class="notice">${ico("i-clock")}<span>${esc(t("data.loading"))}</span></p>`;
+  const get = u => fetch(u, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); }).then(parseCSV);
+  try {
+    if (s.locationsCsv) {
+      const rows = await get(s.locationsCsv);
+      CONFIG.locations = rows.map(r => ({ id: r.id || norm(r.name).replace(/\W+/g, "-"), approved: yes(r.approved), name: r.name, area: AREAS.includes(r.area) ? r.area : "other",
+        status: r.status || "awaiting", frontGate: yes(r.frontgate), tower: yes(r.publishdetails) ? r.tower : "", unit: yes(r.publishdetails) ? r.unit : "",
+        lat: numOrNull(r.lat), lng: numOrNull(r.lng), mapsUrl: r.mapsurl || "", wazeUrl: r.wazeurl || "",
+        instructions: { es: r.instructions_es, en: r.instructions_en } }));
+    }
+    if (s.suppliesCsv) {
+      const rows = await get(s.suppliesCsv), byCat = {};
+      rows.forEach(r => { const id = r.category || "other"; (byCat[id] = byCat[id] || []).push({ es: r.item_es, en: r.item_en || r.item_es, priority: r.priority || null }); if (r.last_updated) CONFIG.suppliesLastUpdated = r.last_updated; });
+      const icons = { food: "i-food", shelter: "i-tent", hygiene: "i-sparkle", kids: "i-palette" };
+      CONFIG.supplies = Object.keys(byCat).map(id => ({ id, icon: icons[id] || "i-package", title: { es: id, en: id }, items: byCat[id] }));
+    }
+    if (s.cashCsv) {
+      const rows = await get(s.cashCsv);
+      CONFIG.cashDonations = rows.filter(r => r.date && !/^(no|false|0)$/i.test(r.publish || ""))
+        .map(r => ({ date: r.date, name: r.name || "", amount: parseFloat(String(r.amount).replace(/[^\d.]/g, "")) || 0, method: (r.method || "").toLowerCase(), note: r.note || "" }));
+    }
+    if (s.receivedCsv) {
+      const rows = await get(s.receivedCsv);
+      const idFor = v => (CONFIG.locations.find(l => l.id === v || norm(l.name) === norm(v)) || {}).id || v;
+      CONFIG.received = rows.filter(r => r.date && !/^(no|false|0)$/i.test(r.publish || ""))
+        .map(r => ({ date: r.date, time: r.time || "", location: idFor(r.location), items: { es: r.items_es || r.items, en: r.items_en || r.items_es || r.items }, donor: r.donor || "", photo: r.photo_url || "" }));
+    }
+    if (distCsv) {
+      const rows = await get(distCsv);
+      CONFIG.distributions = rows.filter(r => r.date).map(r => {
+        const urls = (r.photo_urls || r.photo_url || "").split(/[\s;]+/).filter(Boolean);
+        const split = v => (v || "").split(";").map(x => x.trim()).filter(Boolean);
+        const ies = split(r.items_es || r.quantities_es), ien = split(r.items_en || r.quantities_en);
+        return { date: r.date, place: { es: r.place_es || r.area_es, en: r.place_en || r.area_en || r.place_es || r.area_es },
+          description: { es: r.description_es, en: r.description_en || r.description_es },
+          items: ies.map((q, i) => ({ es: q, en: ien[i] || q })),
+          photos: urls.map(u => ({ src: u, alt: { es: r.photo_alt_es || "", en: r.photo_alt_en || r.photo_alt_es || "" } })),
+          confirmedBy: r.confirmed_by_es ? { es: r.confirmed_by_es, en: r.confirmed_by_en || r.confirmed_by_es } : null,
+          notes: { es: r.notes_es, en: r.notes_en || r.notes_es } };
+      });
+    }
+    status.hidden = true;
+  } catch (e) {
+    status.innerHTML = `<p class="notice warn">${ico("i-alert")}<span>${esc(t("data.error"))}</span></p>`;
+  }
+  renderAll();
+}
+
+/* ------------------------------- wiring ------------------------------ */
+function renderAll() {
+  applyText(); renderAnnouncement(); renderContact(); renderLocations(); renderMap(); renderSupplies(); renderPayments(); renderCash(); renderShare(); renderFormControls(); renderReceived(); renderDistributions();
+  const g = $("#geoMsg"); if (g.dataset.key) geoMsg(g.dataset.key, g.dataset.tone, g.dataset.vars ? JSON.parse(g.dataset.vars) : null, g.dataset.choose === "1");
+}
+$$("img.logo").forEach(i => { i.src = LOGO; i.decoding = "async"; });
+$$("[data-lang]").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang; try { localStorage.setItem("relief-lang", lang); } catch (e) {}
+  renderAll();
+}));
+const menuBtn = $("#menuBtn"), nav = $("#nav");
+menuBtn.addEventListener("click", () => { const o = !nav.classList.contains("open"); nav.classList.toggle("open", o); menuBtn.setAttribute("aria-expanded", String(o)); });
+nav.addEventListener("click", e => { if (e.target.closest("a")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); } });
+renderAll();
+loadSheets();
+</script>
+
+</body>
+</html>

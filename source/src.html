@@ -1,0 +1,1644 @@
+<title>Providence Church — Ayuda por el Sismo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one scrolling page; navy header and hero as on providencechurchpa.org, paper sections, cream bands for alternating sections. */
+:root{
+  /* Brand tokens copied from providencechurchpa.org stylesheet (:root) */
+  --navy:#1B2A4A; --navy-deep:#0E1830; --gold:#B8934A; --gold-lt:#D9BA7C;
+  --cream:#F7F3E9; --paper:#FFFDF9; --ink:#23252B; --muted:#5A5F6B; --rule:#DED6C4;
+  /* Derived */
+  --gold-ink:#7E6026; --on-navy:#EFE9DC; --on-navy-muted:#BEB6A5; --navy-line:rgba(239,233,220,.18);
+  --ok:#2E6A4C; --ok-bg:#E4EFE8; --warn:#85570F; --warn-bg:#F5EAD3;
+  --stop:#8C2E29; --stop-bg:#F5E2DF; --wait:#46516E; --wait-bg:#E7E9EF;
+  --wa:#1C7348; --fb:#2550A0; --field:#FFFFFF; --focus:#2550A0;
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --shadow:0 1px 3px rgba(14,24,48,.07),0 6px 18px rgba(14,24,48,.05);
+  --r:4px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto}
+a{color:var(--navy)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--navy);line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,5vw,2.4rem);letter-spacing:-.01em}
+h3{font-size:1.3rem}
+p{margin:0}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy-deep);padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:28px}}
+.ico{width:1.25em;height:1.25em;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.22em}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.lead{color:var(--muted);font-size:1.06rem;max-width:62ch}
+.sec{padding-block:56px}
+.sec.band{background:var(--cream);border-block:1px solid var(--rule)}
+.sec-head{display:grid;gap:10px;margin-bottom:28px}
+.rule{width:44px;height:2px;background:var(--gold);border:0;margin:0}
+
+/* Buttons — church style: 2px radius, uppercase, letterspaced */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:2px;border:1px solid transparent;font:600 .9rem/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;color:inherit;text-align:center}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover:not([disabled]){background:var(--gold-lt)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover:not([disabled]){background:var(--navy-deep)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover:not([disabled]){background:var(--cream)}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-fb{background:var(--fb);color:#fff}
+.btn-sm{min-height:40px;padding:8px 14px;font-size:.78rem}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy-deep);color:var(--on-navy);border-bottom:1px solid var(--navy-line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-navy);min-width:0}
+.brand img{width:42px;height:42px;border-radius:50%;flex:none}
+.brand b{display:block;font:600 1.2rem/1.05 var(--serif);color:#fff}
+.brand small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:2px;overflow:hidden}
+.lang button{min-width:44px;min-height:40px;border:0;background:none;color:var(--on-navy);font:600 .85rem var(--sans);letter-spacing:.06em;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--navy-deep)}
+.menu-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.4);border-radius:2px;background:none;color:#fff;font:600 .85rem var(--sans);cursor:pointer}
+.nav{display:none;order:3;flex-basis:100%;border-top:1px solid var(--navy-line)}
+.nav.open{display:block}
+.nav ul{list-style:none;margin:0;padding:8px 0 14px;display:grid}
+.nav a{display:block;padding:12px 2px;color:var(--gold-lt);text-decoration:none;font-size:1.05rem;border-bottom:1px solid var(--navy-line)}
+.nav a:hover{color:#fff}
+@media (min-width:1120px){
+  .menu-btn{display:none}
+  .nav{display:block;order:0;flex-basis:auto;border:0;margin-left:auto}
+  .top-in{flex-wrap:nowrap}
+  .nav ul{display:flex;gap:2px;padding:0}
+  .nav a{border:0;padding:8px 7px;font-size:.9rem}
+  .top-actions{margin-left:6px}
+}
+
+/* Hero */
+.hero{background:var(--navy-deep);color:var(--on-navy);padding-block:40px 48px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -1px -10%;height:46%;background:linear-gradient(180deg,rgba(27,42,74,0),rgba(27,42,74,.65));pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;gap:26px}
+.hero-logo{width:132px;height:132px;border-radius:50%;box-shadow:0 0 0 6px rgba(217,186,124,.16)}
+.hero .eyebrow{color:var(--gold-lt)}
+.hero h1{color:#fff;font-size:clamp(2.1rem,7.4vw,3.5rem);letter-spacing:-.015em;max-width:16ch}
+.hero .mission{font-size:1.1rem;color:var(--on-navy);max-width:60ch}
+.route{display:flex;gap:10px;align-items:flex-start;color:var(--on-navy-muted);font-size:.98rem;border-left:2px solid var(--gold);padding-left:12px;max-width:60ch}
+.ctas{display:grid;gap:10px;grid-template-columns:1fr 1fr;max-width:640px}
+.ctas .primary{grid-column:1/-1;min-height:60px;font-size:1rem}
+.ctas .btn{width:100%}
+.gate-note{display:flex;gap:10px;align-items:center;font-size:.95rem;color:var(--gold-lt)}
+@media (min-width:860px){
+  .hero{padding-block:64px 72px}
+  .hero-grid{grid-template-columns:1fr auto;align-items:start}
+  .hero-logo{width:200px;height:200px;order:2}
+}
+
+/* Announcement / status strip */
+.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:var(--r);background:var(--wait-bg);color:var(--wait);font-size:.95rem}
+.notice.warn{background:var(--warn-bg);color:var(--warn)}
+.notice.ok{background:var(--ok-bg);color:var(--ok)}
+.notice.stop{background:var(--stop-bg);color:var(--stop)}
+
+/* Finder */
+.finder{display:grid;gap:14px;margin-bottom:22px}
+.search{position:relative}
+.search .ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;min-height:52px;padding:12px 14px 12px 44px;border:1px solid var(--rule);border-radius:var(--r);background:var(--field);font:inherit;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:8px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--field);font:600 .92rem var(--sans);color:var(--navy);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chip .n{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip[aria-pressed="true"] .n{color:var(--gold-lt)}
+.near{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.near small{color:var(--muted);font-size:.88rem}
+.geo-msg{min-height:0}
+.map-block{display:grid;gap:12px;margin-bottom:26px}
+.map{position:relative;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;background:#E9E6DF;box-shadow:var(--shadow)}
+.map svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.map-attr{position:absolute;right:0;bottom:0;margin:0;padding:2px 6px;font-size:.68rem;background:rgba(255,253,249,.85);color:var(--muted)}
+.map-attr a{color:var(--muted)}
+.pin{cursor:pointer}
+.pin .star{fill:var(--gold);stroke:var(--navy-deep);stroke-width:3;stroke-linejoin:round}
+.pin:hover .star,.pin:focus .star{fill:var(--gold-lt)}
+.pin.nearest .star{fill:#E8B23A}
+.pin .halo{fill:rgba(14,24,48,.18)}
+.pin text{font:700 25px var(--sans);fill:var(--navy-deep);paint-order:stroke;stroke:#FFFDF9;stroke-width:7px;stroke-linejoin:round}
+.pin:focus{outline:none}
+.pin:focus-visible .star{stroke:var(--focus);stroke-width:5}
+.me-dot{fill:#2B6BE0;stroke:#fff;stroke-width:5}
+.me-ring{fill:rgba(43,107,224,.18)}
+.map-pending{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--muted)}
+@media (max-width:520px){.pin text{font-size:34px;stroke-width:9px}}
+.loc-list{display:grid;gap:16px}
+@media (min-width:900px){.loc-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.loc{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.loc.highlight{outline:3px solid var(--gold);outline-offset:2px}
+.loc-head{padding:18px 18px 12px;display:grid;gap:8px}
+.loc-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.loc-name{display:flex;gap:10px;align-items:flex-start}
+.loc-name .ico{color:var(--gold-ink);margin-top:.25em}
+.loc-name h3{font-size:1.45rem}
+.loc-comm{color:var(--muted);font-size:.95rem}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-accepting{background:var(--ok-bg);color:var(--ok)}
+.st-full{background:var(--warn-bg);color:var(--warn)}
+.st-closed{background:var(--stop-bg);color:var(--stop)}
+.st-awaiting{background:var(--wait-bg);color:var(--wait)}
+.loc-body{padding:0 18px 18px;display:grid;gap:12px}
+.row{display:flex;gap:10px;align-items:flex-start;font-size:.97rem}
+.row .ico{color:var(--navy);margin-top:.15em}
+.row.muted{color:var(--muted)}
+.gate{background:var(--navy);color:var(--on-navy);border-radius:var(--r);padding:16px;display:grid;gap:6px}
+.gate strong{display:flex;gap:10px;align-items:center;color:#fff;font:600 1.2rem/1.2 var(--serif)}
+.gate strong .ico{color:var(--gold-lt)}
+.gate p{font-size:.95rem}
+.gate .tip{color:var(--gold-lt);font-size:.9rem}
+.loc-foot{margin-top:auto;padding:12px 18px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem;color:var(--muted)}
+.empty{border:1px dashed var(--rule);border-radius:var(--r);padding:26px 20px;text-align:center;display:grid;gap:10px;justify-items:center;background:var(--field)}
+.empty h3{font-size:1.25rem}
+
+/* Supplies */
+.sup-grid{display:grid;gap:16px}
+@media (min-width:700px){.sup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sup{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:12px;align-content:start;min-width:0}
+.sup-h{display:flex;gap:14px;align-items:center}
+.sup-ic{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--gold-lt);display:grid;place-items:center;flex:none}
+.sup-ic .ico{width:24px;height:24px}
+.sup-h p{color:var(--muted);font-size:.93rem;margin-top:2px}
+.items{list-style:none;margin:0;padding:0;display:grid}
+.items li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--rule)}
+.items li:first-child{border-top:0}
+.pr-urgent{background:var(--stop-bg);color:var(--stop)}
+.pr-needed{background:var(--warn-bg);color:var(--warn)}
+.pr-sufficient{background:var(--ok-bg);color:var(--ok)}
+.pr-notAccepting{background:var(--wait-bg);color:var(--wait)}
+.items li.off span:first-child{color:var(--muted);text-decoration:line-through}
+.sup-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px;color:var(--muted);font-size:.92rem}
+.guide{margin-top:22px;background:var(--navy-deep);color:var(--on-navy);border-radius:var(--r);padding:22px;display:grid;gap:14px}
+.guide h3{color:#fff;display:flex;gap:10px;align-items:center}
+.guide h3 .ico{color:var(--gold-lt)}
+.guide ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+@media (min-width:700px){.guide ul{grid-template-columns:1fr 1fr;column-gap:28px}}
+.guide li{display:flex;gap:10px}
+.guide li .ico{color:var(--gold-lt);margin-top:.15em}
+.guide a{color:var(--gold-lt)}
+
+/* Money */
+.memo{background:var(--navy);color:var(--on-navy);border-radius:var(--r);padding:22px;display:grid;gap:10px;margin-bottom:18px}
+.memo .eyebrow{color:var(--gold-lt)}
+.memo-code{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.memo-code code{font:600 clamp(1.35rem,5.6vw,1.9rem)/1.2 var(--sans);letter-spacing:.08em;color:#fff;background:rgba(255,255,255,.07);padding:10px 14px;border:1px dashed var(--gold-lt);border-radius:2px;user-select:all;overflow-wrap:anywhere}
+.memo small{color:var(--on-navy-muted);font-size:.93rem}
+.pay-grid{display:grid;gap:16px}
+@media (min-width:800px){.pay-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pay{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:14px;align-content:start;min-width:0}
+.pay-h{display:flex;gap:12px;align-items:center}
+.pay-h .sup-ic{width:42px;height:42px}
+.kv{display:grid;gap:0}
+.kv div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--rule)}
+.kv div:first-child{border-top:0}
+.kv dt{color:var(--muted);font-size:.88rem}
+.kv dd{margin:0;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.kv .txt{min-width:0}
+.copy{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border:1px solid var(--rule);background:var(--paper);border-radius:2px;font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);cursor:pointer;flex:none}
+.copy.done{background:var(--ok-bg);border-color:var(--ok-bg);color:var(--ok)}
+.memo .copy{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+.pending{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border:1px dashed var(--rule);border-radius:var(--r);padding:14px;color:var(--muted);font-size:.97rem}
+.qr-img{width:180px;max-width:100%;border:1px solid var(--rule);border-radius:var(--r);padding:8px;background:#fff}
+.safety{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:.93rem;margin-top:16px}
+.fin{margin-top:22px;border-top:1px solid var(--rule);padding-top:22px;display:grid;gap:14px}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:16px}
+.tile b{display:block;font:600 1.7rem/1.1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.tile span{color:var(--muted);font-size:.9rem}
+
+/* Cash gifts */
+.cash{margin-top:26px;display:grid;gap:10px}
+.cash h3{font-size:1.5rem}
+.cash-sum{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin:4px 0 2px}
+.cash-sum b{font:600 1.9rem/1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.cash-sum span{color:var(--muted);font-size:.92rem}
+.cash-list{list-style:none;margin:0;padding:0;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
+.cash-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--rule)}
+.cash-list li:first-child{border-top:0}
+.cash-who{min-width:0}
+.cash-who b{display:block;font-weight:600;overflow-wrap:anywhere}
+.cash-who small{color:var(--muted);font-size:.86rem}
+.cash-amt{font:600 1.15rem var(--sans);color:var(--ok);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cash-note{color:var(--muted);font-size:.9rem;display:flex;gap:8px;align-items:flex-start}
+/* Share */
+.share{background:var(--navy-deep);color:var(--on-navy)}
+.share h2{color:#fff}
+.share .eyebrow{color:var(--gold-lt)}
+.share .lead{color:var(--on-navy-muted)}
+.share-btns{display:grid;gap:10px}
+@media (min-width:520px){.share-btns{grid-template-columns:repeat(3,auto);justify-content:start}}
+.share .pending{background:rgba(255,255,255,.05);border-color:var(--navy-line);color:var(--on-navy-muted)}
+.share .copy{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+/* Forms */
+.forms{display:grid;gap:18px}
+.fcard{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}
+.fcard>summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.fcard>summary::-webkit-details-marker{display:none}
+.fcard>summary h3{font-size:1.35rem}
+.fcard>summary p{color:var(--muted);font-size:.95rem;margin-top:2px}
+.fcard>summary .chev{margin-left:auto;color:var(--navy);transition:transform .2s}
+.fcard[open]>summary .chev{transform:rotate(180deg)}
+.fcard form{padding:0 20px 22px;display:grid;gap:16px;border-top:1px solid var(--rule);padding-top:18px}
+.fgrid{display:grid;gap:16px}
+@media (min-width:700px){.fgrid{grid-template-columns:1fr 1fr}.fgrid .full{grid-column:1/-1}}
+.field{display:grid;gap:6px;min-width:0}
+.field label,.field legend{font-weight:600;font-size:.95rem;color:var(--navy)}
+.field .hint{font-size:.85rem;color:var(--muted)}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{width:100%;min-height:48px;padding:10px 12px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);font:inherit;color:var(--ink)}
+.field textarea{min-height:96px;resize:vertical}
+.field [aria-invalid="true"]{border-color:var(--stop);background:var(--stop-bg)}
+.err{color:var(--stop);font-size:.88rem;font-weight:600}
+fieldset.field{border:0;padding:0;margin:0}
+.checks{display:grid;gap:8px}
+@media (min-width:520px){.checks{grid-template-columns:1fr 1fr}}
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);cursor:pointer;font-size:.97rem;min-height:48px}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--navy);flex:none}
+.form-foot{display:grid;gap:10px}
+.form-foot .btn{justify-self:start}
+.private{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:.88rem}
+
+/* Updates */
+.upd-list{display:grid;gap:16px}
+.upd{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:10px}
+.upd time{color:var(--gold-ink);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase}
+.upd-photos{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.upd-photos img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+.upd dl{margin:0;display:grid;gap:6px;font-size:.95rem}
+.upd dt{font-weight:600;color:var(--navy)}
+.upd dd{margin:0 0 6px}
+
+/* Donations received */
+.rec-sum{color:var(--muted);font-size:.95rem;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.rec-list{display:grid;gap:0;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
+.rec-list:empty{display:none}
+.rec{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border-top:1px solid var(--rule)}
+.rec:first-child{border-top:0}
+.rec-date{width:54px;text-align:center;border-right:1px solid var(--rule);padding-right:12px;line-height:1.05}
+.rec-date b{display:block;font:600 1.6rem/1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.rec-date span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);font-weight:600}
+.rec-items{font-weight:600;color:var(--ink)}
+.rec-meta{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--muted);font-size:.9rem;margin-top:3px}
+.rec-meta span{display:inline-flex;gap:5px;align-items:center}
+.rec-meta .ico{width:1em;height:1em}
+.rec-thumb{width:64px;height:64px;border-radius:var(--r);object-fit:cover;border:1px solid var(--rule)}
+.rec-more{display:flex;justify-content:center;padding:12px;border-top:1px solid var(--rule)}
+.rec-howto{display:flex;gap:10px;align-items:flex-start;margin-top:16px;color:var(--muted);font-size:.95rem;max-width:70ch}
+.rec-howto .ico{color:var(--wa);margin-top:.15em}
+/* Deliveries */
+.dist-list{display:grid;gap:22px}
+.dist{background:var(--field);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:grid;min-width:0}
+@media (min-width:860px){.dist.has-photos{grid-template-columns:1.15fr 1fr}}
+.dist-photos{display:grid;gap:4px;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--navy-deep)}
+.dist-photos a,.dist-photos figure{margin:0;display:block;min-width:0}
+.dist-photos img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+.dist-photos > :first-child{grid-column:1/-1}
+.dist-photos > :first-child img{aspect-ratio:16/10}
+.dist-body{padding:20px;display:grid;gap:12px;align-content:start}
+.dist-body time{color:var(--gold-ink);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+.dist-body dl{margin:0;display:grid;gap:4px;font-size:.95rem}
+.dist-body dt{font-weight:600;color:var(--navy);margin-top:6px}
+.dist-body dd{margin:0}
+.dist-body ul{margin:0;padding-left:1.1em}
+/* About */
+.about-grid{display:grid;gap:26px}
+@media (min-width:860px){.about-grid{grid-template-columns:1.25fr 1fr}}
+.about-grid p{max-width:62ch}
+.steps{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.steps li{display:flex;gap:12px;align-items:flex-start}
+.steps li .ico{color:var(--gold-ink);margin-top:.15em}
+.church{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start}
+.church img{width:84px;height:84px;border-radius:50%}
+.church .muted{color:var(--muted);font-size:.95rem}
+
+.contact{margin-top:20px;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);padding:20px;display:grid;gap:10px;box-shadow:var(--shadow)}
+.contact h3{display:flex;gap:10px;align-items:center}
+.contact h3 .ico{color:var(--wa)}
+.contact .num{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.contact .num b{font:600 1.45rem/1.2 var(--sans);letter-spacing:.02em;color:var(--navy);font-variant-numeric:tabular-nums;user-select:all}
+.textonly{display:flex;gap:8px;align-items:flex-start;color:var(--warn);background:var(--warn-bg);border-radius:var(--r);padding:8px 12px;font-size:.93rem;font-weight:600}
+.gate-note a,.guide li a{color:var(--gold-lt)}
+footer{background:var(--navy-deep);color:var(--on-navy-muted);padding-block:34px;font-size:.93rem}
+footer .wrap{display:grid;gap:10px}
+footer b{color:#fff;font:600 1.15rem var(--serif)}
+footer a{color:var(--gold-lt)}
+.data-status{margin-bottom:16px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+
+<a class="skip" href="#puntos" data-t="skip">Saltar a los puntos de recolección</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-in">
+      <a class="brand" href="#inicio">
+        <img class="logo" alt="Providence Church Coronado" width="42" height="42">
+        <span><b>Providence Church</b><small data-t="brand.sub">Ayuda por el Sismo</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal" data-t-aria="nav.label">
+        <ul>
+          <li><a href="#inicio" data-t="nav.home">Inicio</a></li>
+          <li><a href="#puntos" data-t="nav.locations">Puntos de Recolección</a></li>
+          <li><a href="#necesidades" data-t="nav.supplies">Qué Necesitamos</a></li>
+          <li><a href="#donaciones" data-t="nav.money">Donaciones</a></li>
+          <li><a href="#voluntariado" data-t="nav.volunteer">Voluntariado</a></li>
+          <li><a href="#actualizaciones" data-t="nav.updates">Recibido</a></li>
+          <li><a href="#entregas" data-t="nav.deliveries">Entregas</a></li>
+          <li><a href="#nosotros" data-t="nav.about">Sobre Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="top-actions">
+        <div class="lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+        <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" id="menuBtn">
+          <svg class="ico"><use href="#i-menu"/></svg><span data-t="menu">Menú</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <img class="logo hero-logo" alt="Providence Church Coronado · Iglesia Providencia" width="200" height="200">
+    <div style="display:grid;gap:20px;min-width:0">
+      <hr class="rule">
+      <p class="eyebrow" data-t="hero.eyebrow">Sismo del 9 de octubre de 2026 · Península de Azuero</p>
+      <h1 data-t="hero.title">Juntos Podemos Ayudar a Azuero a Recuperarse.</h1>
+      <p class="mission" data-t="hero.mission"></p>
+      <p class="route"><svg class="ico"><use href="#i-truck"/></svg><span data-t="hero.route"></span></p>
+      <div class="ctas">
+        <a class="btn btn-gold primary" href="#puntos"><svg class="ico"><use href="#i-pin"/></svg><span data-t="cta.find">Buscar un punto de recolección</span></a>
+        <a class="btn btn-ghost" href="#necesidades"><svg class="ico"><use href="#i-package"/></svg><span data-t="cta.supplies"></span></a>
+        <a class="btn btn-ghost" href="#donaciones"><svg class="ico"><use href="#i-heart"/></svg><span data-t="cta.money"></span></a>
+      </div>
+      <p class="gate-note"><svg class="ico"><use href="#i-shield"/></svg><span data-t="hero.gate"></span></p>
+      <p class="gate-note" id="heroContact" hidden></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="announce" hidden style="padding-top:20px"></div>
+
+<!-- DROP-OFF LOCATIONS -->
+<section class="sec" id="puntos" aria-labelledby="loc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="loc.eyebrow"></p>
+      <h2 id="loc-title" data-t="loc.title"></h2>
+      <p class="lead" data-t="loc.lead"></p>
+    </div>
+    <div class="data-status" id="dataStatus" hidden></div>
+    <div class="map-block">
+      <div class="map" id="map">
+        <svg id="mapSvg" viewBox="0 0 932 707" role="img" aria-labelledby="mapTitle">
+          <title id="mapTitle" data-t="map.title"></title>
+          <image id="mapImg" x="0" y="0" width="932" height="707"/>
+          <g id="mapPins"></g>
+        </svg>
+        <p class="map-attr">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>
+      </div>
+      <div class="near">
+        <button class="btn btn-gold" type="button" id="nearBtn"><svg class="ico"><use href="#i-locate"/></svg><span data-t="loc.nearest"></span></button>
+        <small data-t="loc.geo.note"></small>
+      </div>
+      <div class="geo-msg" id="geoMsg" role="status" aria-live="polite"></div>
+      <div id="mapPending"></div>
+    </div>
+    <div class="finder">
+      <div class="search">
+        <label class="vh" for="locSearch" data-t="loc.search.label"></label>
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="locSearch" type="text" inputmode="search" autocomplete="off" data-t-ph="loc.search.ph">
+      </div>
+      <div class="chips" id="chips" role="group" data-t-aria="loc.areas"></div>
+    </div>
+    <div class="loc-list" id="locList" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- SUPPLIES -->
+<section class="sec band" id="necesidades" aria-labelledby="sup-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="sup.eyebrow"></p>
+      <h2 id="sup-title" data-t="sup.title"></h2>
+      <p class="lead" data-t="sup.lead"></p>
+    </div>
+    <div class="sup-meta" id="supMeta"></div>
+    <div class="sup-grid" id="supGrid"></div>
+    <div class="guide">
+      <h3><svg class="ico"><use href="#i-clip"/></svg><span data-t="guide.title"></span></h3>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.1"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.2"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.3"></span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-t="guide.4"></span></li>
+        <li><svg class="ico"><use href="#i-alert"/></svg><span data-t="guide.5"></span></li>
+        <li><svg class="ico"><use href="#i-truck"/></svg><span><span data-t="guide.6"></span> <a href="#recogida" data-t="guide.6link"></a></span></li>
+        <li id="guideContact" hidden></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MONEY -->
+<section class="sec" id="donaciones" aria-labelledby="money-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="money.eyebrow"></p>
+      <h2 id="money-title" data-t="money.title"></h2>
+      <p class="lead" data-t="money.lead"></p>
+    </div>
+    <div class="memo">
+      <p class="eyebrow" data-t="memo.label"></p>
+      <div class="memo-code"><code id="memoCode">Providence Earthquake Relief</code><button class="copy" type="button" data-copy-from="memoCode"><svg class="ico"><use href="#i-copy"/></svg><span data-t="copy"></span></button></div>
+      <small data-t="memo.why"></small>
+    </div>
+    <div class="pay-grid">
+      <article class="pay" id="yappyCard"></article>
+      <article class="pay" id="bankCard"></article>
+    </div>
+    <p class="safety"><svg class="ico"><use href="#i-lock"/></svg><span data-t="pay.safety"></span></p>
+    <div class="cash" id="cashBox" aria-labelledby="cash-title">
+      <h3 id="cash-title" data-t="cash.title"></h3>
+      <p class="loc-comm" data-t="cash.lead"></p>
+      <div id="cashList"></div>
+    </div>
+    <div class="fin" id="finBox"></div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="sec share" id="compartir" aria-labelledby="share-title">
+  <div class="wrap">
+    <div style="display:grid;gap:14px;min-width:0">
+      <p class="eyebrow" data-t="share.eyebrow"></p>
+      <h2 id="share-title" data-t="share.title"></h2>
+      <p class="lead" data-t="share.lead"></p>
+      <div id="shareBtns"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER + PARTNER + PICKUP -->
+<section class="sec band" id="voluntariado" aria-labelledby="vol-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="vol.eyebrow"></p>
+      <h2 id="vol-title" data-t="vol.title"></h2>
+      <p class="lead" data-t="vol.lead"></p>
+    </div>
+    <div class="forms">
+      <details class="fcard" id="socio">
+        <summary><span class="sup-ic"><svg class="ico"><use href="#i-building"/></svg></span><span><h3 data-t="partner.title"></h3><p data-t="partner.sub"></p></span><svg class="ico chev"><use href="#i-down"/></svg></summary>
+        <form novalidate data-form="partner">
+          <p class="lead" data-t="partner.lead" style="font-size:.97rem"></p>
+          <div class="form-status"></div>
+          <div class="fgrid">
+            <div class="field"><label for="p-org" data-t="partner.org"></label><input id="p-org" name="organization" type="text" required></div>
+            <div class="field"><label for="p-contact" data-t="partner.contact"></label><input id="p-contact" name="contact" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="p-wa" data-t="form.wa"></label><input id="p-wa" name="whatsapp" type="tel" inputmode="tel" required data-phone><span class="hint" data-t="form.wa.hint"></span></div>
+            <div class="field"><label for="p-area" data-t="form.community"></label><select id="p-area" name="community" required data-area-select></select></div>
+            <div class="field full"><label for="p-place" data-t="partner.place"></label><input id="p-place" name="location" type="text" required data-t-ph="partner.place.ph"></div>
+            <div class="field full"><label for="p-access" data-t="partner.access"></label><input id="p-access" name="access" type="text" required data-t-ph="partner.access.ph"></div>
+            <div class="field full"><label for="p-notes" data-t="form.notes"></label><textarea id="p-notes" name="notes"></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-navy" type="submit" data-submit></button>
+            <p class="private"><svg class="ico"><use href="#i-lock"/></svg><span data-t="partner.approval"></span></p>
+          </div>
+        </form>
+      </details>
+
+      <details class="fcard" id="recogida">
+        <summary><span class="sup-ic"><svg class="ico"><use href="#i-truck"/></svg></span><span><h3 data-t="pickup.title"></h3><p data-t="pickup.sub"></p></span><svg class="ico chev"><use href="#i-down"/></svg></summary>
+        <form novalidate data-form="pickup">
+          <p class="notice warn"><svg class="ico"><use href="#i-info"/></svg><span data-t="pickup.lead"></span></p>
+          <div class="form-status"></div>
+          <div class="fgrid">
+            <div class="field"><label for="k-name" data-t="form.name"></label><input id="k-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="k-wa" data-t="form.wa"></label><input id="k-wa" name="whatsapp" type="tel" inputmode="tel" required data-phone><span class="hint" data-t="form.wa.hint"></span></div>
+            <div class="field full"><label for="k-area" data-t="form.community"></label><select id="k-area" name="community" required data-area-select></select></div>
+            <div class="field full"><label for="k-types" data-t="pickup.types"></label><input id="k-types" name="types" type="text" required data-t-ph="pickup.types.ph"></div>
+            <div class="field full"><label for="k-qty" data-t="pickup.qty"></label><input id="k-qty" name="quantity" type="text" required data-t-ph="pickup.qty.ph"></div>
+            <div class="field full"><label for="k-notes" data-t="form.notes"></label><textarea id="k-notes" name="notes"></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-navy" type="submit" data-submit></button>
+            <p class="private"><svg class="ico"><use href="#i-lock"/></svg><span data-t="form.privacy"></span></p>
+          </div>
+        </form>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- DONATIONS RECEIVED -->
+<section class="sec" id="actualizaciones" aria-labelledby="rec-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="upd.title"></p>
+      <h2 id="rec-title" data-t="rec.title"></h2>
+      <p class="lead" data-t="rec.lead"></p>
+    </div>
+    <div class="finder">
+      <div class="search">
+        <label class="vh" for="recSearch" data-t="rec.search"></label>
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="recSearch" type="text" inputmode="search" autocomplete="off" data-t-ph="rec.search.ph">
+      </div>
+      <div class="chips" id="recChips" role="group" data-t-aria="rec.filter"></div>
+    </div>
+    <p class="rec-sum" id="recSum"></p>
+    <div class="rec-list" id="recList" aria-live="polite"></div>
+    <p class="rec-howto" id="recHowto"></p>
+  </div>
+</section>
+
+<!-- DELIVERIES -->
+<section class="sec band" id="entregas" aria-labelledby="dist-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="upd.title"></p>
+      <h2 id="dist-title" data-t="dist.title"></h2>
+      <p class="lead" data-t="dist.lead"></p>
+    </div>
+    <div class="dist-list" id="distList"></div>
+    <p class="private" style="margin-top:18px"><svg class="ico"><use href="#i-lock"/></svg><span data-t="dist.consent"></span></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="nosotros" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div style="min-width:0">
+      <div class="sec-head">
+        <p class="eyebrow" data-t="about.eyebrow"></p>
+        <h2 id="about-title" data-t="about.title"></h2>
+      </div>
+      <p data-t="about.p1"></p>
+      <ul class="steps">
+        <li><svg class="ico"><use href="#i-heart"/></svg><span data-t="about.s1"></span></li>
+        <li><svg class="ico"><use href="#i-package"/></svg><span data-t="about.s2"></span></li>
+        <li><svg class="ico"><use href="#i-msg"/></svg><span data-t="about.s3"></span></li>
+        <li><svg class="ico"><use href="#i-clip"/></svg><span data-t="about.s4"></span></li>
+        <li><svg class="ico"><use href="#i-users"/></svg><span data-t="about.s5"></span></li>
+      </ul>
+      <p class="notice" style="margin-top:20px"><svg class="ico"><use href="#i-info"/></svg><span data-t="about.independent"></span></p>
+      <div class="contact" id="contactCard" hidden></div>
+    </div>
+    <aside class="church">
+      <img class="logo" alt="Providence Church Coronado" width="84" height="84">
+      <h3>Providence Church Coronado</h3>
+      <p class="muted">Iglesia Providencia</p>
+      <p data-t="about.church"></p>
+      <a class="btn btn-line" href="https://providencechurchpa.org/" target="_blank" rel="noopener"><span data-t="about.link"></span><svg class="ico"><use href="#i-ext"/></svg></a>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b data-t="foot.title">Providence Church — Ayuda por el Sismo</b>
+    <p data-t="foot.body"></p>
+    <p id="footContact" hidden></p>
+    <p><a href="https://providencechurchpa.org/" target="_blank" rel="noopener">providencechurchpa.org</a></p>
+    <p>© 2026 Providence Church Coronado</p>
+  </div>
+</footer>
+
+<!-- Icon sprite (Lucide-style, 24px stroke icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-locate" viewBox="0 0 24 24"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  </defs>
+</svg>
+
+<script>
+/* =====================================================================
+   CONFIGURATION — the only part you need to edit.
+   Everything here is PUBLIC: anyone can read this page's source.
+   Never put private volunteer contacts, unapproved apartment numbers,
+   bank records or passwords here.
+   ===================================================================== */
+const CONFIG = {
+  // Public address of the live site (e.g. "https://relief.providencechurchpa.org/").
+  // Leave "" until it really exists. When the site runs on its own host,
+  // the current address is used automatically.
+  publicUrl: "https://providenceearthquakerelief.netlify.app/",
+
+  // Public mission contact. textOnly: true shows "WhatsApp text messages only, please don't call".
+  contact: { name: "Pastor Marc O", shortName: "Pastor Marc", whatsapp: "50765756765", display: "+507 6575-6765", textOnly: true },
+
+  // WhatsApp number the forms open a pre-filled message to (digits only, with country code).
+  // Set to "" to switch the forms back off.
+  coordinatorWhatsApp: "50765756765",
+
+  // Optional secure form endpoint (e.g. a Google Apps Script web app URL).
+  // When set, forms POST JSON here. Leave "" until it is set up and tested.
+  formEndpoint: "",
+
+  // Optional announcement shown under the hero. null = hidden.
+  // Example: { es: "Texto…", en: "Text…", tone: "warn" }   tone: info | warn | ok
+  announcement: null,
+
+  // Base map (OpenStreetMap, zoom 14) and the area it covers. Stars outside it aren't drawn.
+  map: { z: 14, west: -79.925, south: 8.515, east: -79.845, north: 8.575, width: 932, height: 707 },
+
+  // Publish tower/unit numbers? Keep false until each resident authorizes it.
+  publishUnitDetails: false,
+
+  /* Collection points. Only approved:true appear.
+     status: "accepting" | "full" | "closed" | "awaiting"
+     area:   "coronado" | "nueva-gorgona" | "san-carlos" | "other"
+     type:   "residence" (default) | "business" — businesses show business-hours drop-off and no unit details
+     lat/lng, mapsUrl, wazeUrl: fill ONLY with verified values.
+     tower/unit: leave "" here; fill in only once publication is authorized. */
+  locations: [
+    { id: "cgt", approved: true, mapLabel: "Golf Tower", name: "Coronado Golf Tower", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: true, lat: 8.5376201, lng: -79.8861447,               // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/wBvzzqbu51KWPivY8", wazeUrl: "https://waze.com/ul?ll=8.5376201,-79.8861447&navigate=yes",
+      instructions: { es: "Si tienes acceso a la torre, también puedes colocar tus donaciones en la tina identificada frente al apartamento de recolección.",
+                      en: "If you have access to the tower, you can also place donations in the designated tub outside the collection apartment." } },
+    { id: "redbarn", approved: true, mapLabel: "Red Barn", type: "business", name: "Red Barn Market", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5440563, lng: -79.9126136,              // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/ujKmgWR11NVhCzJ57", wazeUrl: "https://waze.com/ul?ll=8.5440563,-79.9126136&navigate=yes",
+      placeLabel: { es: "Bayside Center, Las Lajas", en: "Bayside Center, Las Lajas" },
+      address: "Carr. Panamericana 41-31, Bayside Center, Las Lajas, Panamá Oeste",
+      // Opening hours, Panama time. 0 = Sunday … 6 = Saturday; [open, close] in 24h decimal; null = closed
+      openHours: { 0: null, 1: [8.5, 17], 2: [8.5, 17], 3: [8.5, 17], 4: [8.5, 17], 5: [8.5, 17], 6: [8.5, 15] },
+      hoursText: { es: "Lunes a viernes: 8:30 a. m. – 5:00 p. m. · Sábado: 8:30 a. m. – 3:00 p. m. · Domingo: cerrado",
+                   en: "Monday–Friday: 8:30 a.m. – 5:00 p.m. · Saturday: 8:30 a.m. – 3:00 p.m. · Sunday: closed" },
+      instructions: { es: "Lleva tus donaciones a Red Barn Market durante el horario de atención y pregunta al personal dónde dejarlas.",
+                      en: "Bring your donations to Red Barn Market during opening hours and ask the staff where to leave them." } },
+    { id: "zion", approved: true, mapLabel: "Zion Fitness", type: "business", name: "Zion Fitness Club", area: "nueva-gorgona", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5605221, lng: -79.9011055,              // Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/iyVW7XZTYwquuBfJ9", wazeUrl: "https://waze.com/ul?ll=8.5605221,-79.9011055&navigate=yes",
+      placeLabel: { es: "Coronado Center, Nueva Gorgona", en: "Coronado Center, Nueva Gorgona" },
+      address: "Primer piso, Coronado Center, Nueva Gorgona, Panamá Oeste",
+      openHours: { 0: [8, 12], 1: [6, 21], 2: [6, 21], 3: [6, 21], 4: [6, 21], 5: [6, 21], 6: [8, 16] },
+      hoursText: { es: "Lunes a viernes: 6:00 a. m. – 9:00 p. m. · Sábado: 8:00 a. m. – 4:00 p. m. · Domingo: 8:00 a. m. – 12:00 p. m.",
+                   en: "Monday–Friday: 6:00 a.m. – 9:00 p.m. · Saturday: 8:00 a.m. – 4:00 p.m. · Sunday: 8:00 a.m. – 12:00 p.m." },
+      instructions: { es: "Lleva tus donaciones a Zion Fitness Club durante el horario de atención y pregunta en la recepción dónde dejarlas.",
+                      en: "Bring your donations to Zion Fitness Club during opening hours and ask at the front desk where to leave them." } },
+    { id: "bahia", approved: true, mapLabel: "Bahía Resort", name: "Bahía Resort", area: "nueva-gorgona", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
+      mapsUrl: "https://maps.app.goo.gl/mUXPk9Qs1ya2m5T89", wazeUrl: "https://waze.com/ul?ll=8.5484357,-79.8715929&navigate=yes",
+      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
+                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } },
+    { id: "ccc", approved: true, mapLabel: "Country Club", name: "Coronado Country Club", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
+      // lat/lng: "P.H. Coronado Country Club" on OpenStreetMap (development area, not Tower 300 itself) — confirm
+      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
+                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } }
+  ],
+
+  /* Supplies requested by contacts in the affected communities.
+     priority: null (no ranking yet) | "urgent" | "needed" | "sufficient" | "notAccepting" */
+  suppliesLastUpdated: null,          // e.g. "2026-10-12"
+  supplies: [
+    { id: "food", icon: "i-food", items: [
+      { es: "Agua embotellada", en: "Bottled water", priority: null },
+      { es: "Arroz", en: "Rice", priority: null },
+      { es: "Frijoles / porotos", en: "Beans", priority: null },
+      { es: "Alimentos enlatados", en: "Canned goods", priority: null },
+      { es: "Alimentos no perecederos", en: "Nonperishable food", priority: null } ] },
+    { id: "shelter", icon: "i-tent", items: [
+      { es: "Mantas / frazadas", en: "Blankets", priority: null },
+      { es: "Tiendas de campaña", en: "Tents", priority: null } ] },
+    { id: "hygiene", icon: "i-sparkle", items: [
+      { es: "Jabón", en: "Soap", priority: null },
+      { es: "Productos de higiene personal", en: "Hygiene products", priority: null },
+      { es: "Toallas sanitarias femeninas", en: "Feminine sanitary products", priority: null },
+      { es: "Pañales para bebé", en: "Baby diapers", priority: null },
+      { es: "Pañales para adulto", en: "Adult diapers", priority: null },
+      { es: "Toallitas húmedas para bebé", en: "Baby wipes", priority: null } ] },
+    { id: "kids", icon: "i-palette", items: [
+      { es: "Libros para colorear", en: "Coloring books", priority: null },
+      { es: "Crayones", en: "Crayons", priority: null },
+      { es: "Otros artículos aprobados para el bienestar de los niños", en: "Other approved children's comfort supplies", priority: null } ] }
+  ],
+
+  // Yappy: fill all three before it shows. qrImage = a data: URI or a URL on your own host.
+  yappy: { recipientName: "", handle: "", qrImage: "" },
+
+  // Panama bank transfer. Shows once accountNumber is filled in.
+  bank: { bankName: "", accountHolder: "", accountType: "", accountNumber: "", extra: { es: "", en: "" } },
+
+  /* RECENT CASH DONATIONS — publish only after the money is confirmed received.
+     Show a name ONLY if the donor agreed; leave name "" to show "Anonymous".
+     method: "yappy" | "transfer" | "cash" | "" ; amount in US dollars.
+     Example (do not uncomment with made-up data):
+     { date: "2026-10-12", name: "", amount: 25, method: "yappy", note: "" } */
+  cashDonations: [],
+
+  // Financial transparency. Leave published:false until totals are verified.
+  finance: { published: false, totalCollected: null, approvedExpenses: null, lastUpdated: null,
+             categories: [] /* e.g. { es: "Agua y alimentos", en: "Water and food", amount: 0 } */ },
+
+  /* DONATIONS RECEIVED — logged by the team after collecting from a drop-off point.
+     Show a donor's name ONLY if they agreed; leave donor "" to show "Anonymous donor".
+     location: a location id above ("cgt", "bahia", "ccc") or any place name.
+     items: plain text, or { es: "…", en: "…" }. photo: optional (see deployment notes).
+     Example (do not uncomment with made-up data):
+     { date: "2026-10-12", time: "15:30", location: "cgt",
+       items: { es: "2 cajas de agua y 1 paca de pañales", en: "2 cases of water and 1 pack of diapers" },
+       donor: "", photo: "" } */
+  received: [],
+
+  /* DELIVERIES — handing out aid in Azuero. Photos only with consent of the people shown.
+     { date: "2026-10-18",
+       place: { es: "Playa Venao", en: "Playa Venao" },
+       description: { es: "…", en: "…" },
+       items: [ { es: "40 pacas de agua", en: "40 cases of water" } ],      // verified quantities
+       photos: [ { src: "photos/entrega-1.jpg", alt: { es: "…", en: "…" } } ],
+       confirmedBy: { es: "…", en: "…" },                                    // receiving team
+       notes: { es: "…", en: "…" } } */
+  distributions: [],
+
+  /* Phase 2 — optional Google Sheets ("File → Share → Publish to web → CSV") links.
+     When set, the live site loads these and falls back to the data above if loading fails.
+     Columns are described in the deployment notes. */
+  sheets: { locationsCsv: "", suppliesCsv: "", receivedCsv: "", distributionsCsv: "", cashCsv: "" }
+};
+/* ============================ END OF CONFIG ============================ */
+
+const LOGO = "__LOGO_DATA_URI__";
+
+const AREAS = ["coronado", "nueva-gorgona", "san-carlos", "other"];
+const HELP_TYPES = ["transport", "sorting", "pickup", "storage", "host", "distribution", "comms", "other"];
+
+const T = {
+es: {
+  "skip":"Saltar a los puntos de recolección", "brand.sub":"Ayuda por el Sismo", "menu":"Menú", "menu.close":"Cerrar",
+  "nav.label":"Principal", "nav.home":"Inicio","nav.locations":"Puntos de Recolección","nav.supplies":"Qué Necesitamos","nav.money":"Donaciones","nav.volunteer":"Colabora","nav.updates":"Recibido","nav.deliveries":"Entregas","nav.about":"Sobre Nosotros",
+  "doc.title":"Providence Church — Ayuda por el Sismo",
+  "hero.eyebrow":"Sismo del 9 de octubre de 2026 · Península de Azuero",
+  "hero.title":"Juntos Podemos Ayudar a Azuero a Recuperarse.",
+  "hero.mission":"Providence Church Coronado y voluntarios de la comunidad estamos recolectando y llevando suministros esenciales a las comunidades afectadas por el sismo en la península de Azuero. Con el apoyo de nuestros vecinos, comercios y toda la comunidad, podemos brindar ayuda concreta donde más se necesita.",
+  "hero.route":"Recolectamos en Coronado, Nueva Gorgona y San Carlos. Primer destino: Playa Venao y las comunidades afectadas de los alrededores.",
+  "cta.find":"Buscar un punto de recolección","cta.supplies":"Donar suministros","cta.money":"Donar dinero","cta.volunteer":"Ser voluntario",
+  "hero.gate":"En Coronado Golf Tower puedes dejar tus donaciones en la garita.",
+  "loc.eyebrow":"Puntos de Recolección","loc.title":"¿Dónde dejo mis donaciones?",
+  "loc.lead":"Lleva tus donaciones al punto más cercano. En los edificios residenciales, respeta siempre las normas de acceso y seguridad.",
+  "loc.search.label":"Buscar por edificio o comunidad","loc.search.ph":"Buscar edificio o comunidad…","loc.areas":"Filtrar por zona",
+  "loc.nearest":"Buscar el punto más cercano","loc.geo.note":"Opcional. Tu ubicación se usa solo en tu teléfono; no se guarda ni se envía.",
+  "loc.geo.working":"Buscando tu ubicación…",
+  "loc.geo.denied":"No pudimos usar tu ubicación. Toca dónde estás:","loc.geo.choose":"Toca dónde estás y te mostramos el punto más cercano:","loc.whereAreYou":"¿Dónde estás?","loc.geo.fromArea":"Desde {area}, el punto más cercano es {name}, a unos {km} km en línea recta.",
+  "loc.geo.unsupported":"Este navegador no permite compartir tu ubicación aquí. Elige tu zona en la lista de arriba.",
+  "loc.geo.nocoords":"Todavía no tenemos los puntos marcados en el mapa. Elige tu zona para ver los puntos disponibles.",
+  "loc.geo.found":"El punto más cercano es {name}, a unos {km} km en línea recta.",
+  "area.all":"Todas","area.coronado":"Coronado","area.nueva-gorgona":"Nueva Gorgona","area.san-carlos":"San Carlos","area.other":"Otras áreas",
+  "loc.empty.title":"Aún no hay puntos de recolección aquí","loc.empty.body":"¿Tu iglesia, edificio o negocio puede recibir donaciones en esta zona?","loc.empty.cta":"Conviértete en un Punto de Recolección",
+  "loc.nomatch":"Ningún punto coincide con tu búsqueda.",
+  "loc.hours":"Entrega: A cualquier hora, sujeto al acceso del edificio.",
+  "loc.private":"Residencia privada","loc.business":"Comercio","loc.openNow":"Abierto ahora","loc.closedNow":"Cerrado ahora","loc.hoursBiz":"Entrega: durante el horario de atención del local.",
+  "loc.unitHidden":"El lugar exacto dentro del edificio se publicará cuando el equipo lo autorice.",
+  "loc.tower":"Torre","loc.unit":"Apto.",
+  "loc.gate.title":"Puedes dejar tus donaciones en la garita.",
+  "loc.gate.body":"Entrega tus donaciones al personal de seguridad en la entrada. Un coordinador local bajará a recogerlas. No necesitas subir a la torre.",
+  "loc.gate.tip":"Al entregarlas, menciona «Providence Earthquake Relief».",
+  "loc.respect":"Por favor, no intentes entrar a áreas restringidas sin autorización.",
+  "loc.directions":"Cómo llegar","loc.dirPending":"Indicaciones de ruta verificadas disponibles pronto.",
+  "status.accepting":"Recibiendo donaciones","status.full":"Lleno por ahora","status.closed":"Cerrado temporalmente","status.awaiting":"Por confirmar",
+  "sup.eyebrow":"Qué Necesitamos","sup.title":"Suministros solicitados",
+  "sup.lead":"Nuestros contactos en las comunidades afectadas nos pidieron estos artículos. Por favor, trae solo lo que está en la lista.",
+  "sup.updated":"Última actualización: {date}","sup.requested":"Lista confirmada por nuestros contactos en Azuero",
+  "sup.food":"Alimentos y agua","sup.food.d":"Agua embotellada y alimentos que no necesitan refrigeración.",
+  "sup.shelter":"Abrigo y descanso","sup.shelter.d":"Para ayudar a las familias a descansar y resguardarse.",
+  "sup.hygiene":"Higiene personal","sup.hygiene.d":"Artículos de aseo sellados y sin usar.",
+  "sup.kids":"Para niñas y niños","sup.kids.d":"Pequeños consuelos para los más pequeños.",
+  "pr.urgent":"Urgente","pr.needed":"Se necesita","pr.sufficient":"Suficiente por ahora","pr.notAccepting":"No se recibe por ahora",
+  "guide.title":"Antes de donar",
+  "guide.1":"Los alimentos deben estar cerrados y sin vencer.","guide.2":"Las mantas deben estar limpias.","guide.3":"Las tiendas de campaña deben estar completas y en buen estado.","guide.4":"Los productos de higiene deben estar sellados y sin usar.","guide.5":"No dones medicamentos vencidos.","guide.6":"Si tienes una cantidad muy grande, coordina con el equipo antes de llevarla.","guide.6link":"Solicitar recogida",
+  "money.eyebrow":"Donaciones","money.title":"Apoya con una donación",
+  "money.lead":"Las donaciones en dinero se usarán según los recursos disponibles y las necesidades confirmadas de la misión.",
+  "memo.label":"Referencia de pago","memo.why":"Escríbela en la descripción de tu Yappy o transferencia.",
+  "copy":"Copiar","copied":"Copiado","copyFail":"No se pudo copiar. Selecciona el texto y cópialo manualmente.","copyAll":"Copiar todos los datos",
+  "yappy.title":"Yappy","yappy.sub":"Pago rápido desde tu teléfono",
+  "yappy.pending":"Próximamente estarán disponibles los datos para donar por Yappy.",
+  "yappy.recipient":"Destinatario","yappy.handle":"Número o directorio Yappy","yappy.qrAlt":"Código QR de Yappy para donaciones",
+  "yappy.steps":"Abre Yappy, busca al destinatario o escanea el código, ingresa el monto y escribe Providence Earthquake Relief en el mensaje.",
+  "bank.title":"Transferencia bancaria","bank.sub":"Desde cualquier banco en Panamá",
+  "bank.pending":"Próximamente estarán disponibles los datos para donar por transferencia bancaria.",
+  "bank.bank":"Banco","bank.holder":"Titular","bank.type":"Tipo de cuenta","bank.number":"Número de cuenta","bank.extra":"Información adicional",
+  "pay.safety":"Nunca te pediremos contraseñas, códigos ni claves de tu banca en línea. Si alguien lo hace en nombre de esta misión, no respondas.",
+  "fin.title":"Transparencia financiera","fin.pending":"Publicaremos aquí los totales verificados de donaciones y gastos a medida que avance la misión.",
+  "fin.collected":"Total recibido","fin.expenses":"Gastos aprobados","fin.balance":"Saldo disponible para la ayuda","fin.categories":"En qué se ha usado","fin.updated":"Última actualización financiera: {date}",
+  "share.eyebrow":"Comparte","share.title":"Ayúdanos a correr la voz",
+  "share.lead":"La mayoría de nuestros vecinos se entera por WhatsApp. Comparte este sitio con tus grupos y contactos.",
+  "share.wa":"Compartir por WhatsApp","share.fb":"Compartir en Facebook","share.copy":"Copiar enlace",
+  "share.pending":"Los botones para compartir se activan en cuanto el sitio tenga su dirección pública definitiva.",
+  "share.waMsg":"Providence Church Coronado está recolectando alimentos, agua, mantas, productos de higiene, pañales y otros suministros esenciales para apoyar a las comunidades afectadas por el sismo en Azuero, Panamá. Encuentra un punto de recolección o descubre cómo ayudar aquí: {url}",
+  "share.qrTitle":"Código QR para volantes","share.qrHint":"Escanéalo con la cámara del teléfono para abrir este sitio.","share.qrDownload":"Descargar código QR","share.qrLoading":"Generando código…","share.qrError":"No se pudo generar el código QR en este momento.","share.qrPending":"El código QR aparecerá aquí cuando el sitio tenga su dirección pública.",
+  "vol.eyebrow":"Colabora","vol.title":"Súmate a la ayuda",
+  "vol.lead":"Abre un punto de recolección en tu edificio, iglesia o negocio, o pide que recojamos una donación grande.",
+  "vol.formTitle":"Quiero ser voluntario","vol.formSub":"Transporte, clasificación, entregas y más.",
+  "form.name":"Nombre","form.wa":"Número de WhatsApp","form.wa.hint":"Incluye el código de país si tu número no es de Panamá.",
+  "form.area":"Comunidad o zona","form.community":"Comunidad","form.choose":"Elige una opción",
+  "form.help":"¿Cómo puedes ayudar?",
+  "help.transport":"Transporte","help.sorting":"Clasificar donaciones","help.pickup":"Recoger donaciones en mi zona","help.storage":"Espacio para almacenar","help.host":"Ser punto de recolección","help.distribution":"Ayudar en la entrega","help.comms":"Comunicaciones","help.other":"Otro tipo de apoyo",
+  "form.availability":"Disponibilidad","form.availability.ph":"Ej.: fines de semana, tardes…",
+  "form.message":"Mensaje (opcional)","form.notes":"Notas (opcional)",
+  "form.consent":"Acepto que el equipo de ayuda me contacte por WhatsApp sobre esta misión.",
+  "form.privacy":"Tus datos no se publican en este sitio.",
+  "form.submit":"Enviar","form.submitWa":"Enviar por WhatsApp",
+  "form.offline":"Este formulario todavía no está conectado, así que aún no puede enviarse. Nada de lo que escribas se envía ni se guarda.",
+  "err.required":"Completa este campo.","err.phone":"Escribe un número de WhatsApp válido (al menos 7 dígitos).","err.group":"Elige al menos una opción.","err.consent":"Necesitamos tu permiso para contactarte.","err.summary":"Revisa los campos marcados.",
+  "form.sending":"Enviando…","form.sent":"Recibimos tu información. El equipo te contactará por WhatsApp.","form.failed":"No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.",
+  "form.waReady":"Abrimos WhatsApp con tu mensaje listo. Envíalo desde WhatsApp para completar el registro.","form.waLink":"Si WhatsApp no se abrió, toca aquí.",
+  "partner.title":"Conviértete en un Punto de Recolección","partner.sub":"Iglesias, edificios, negocios y voluntarios.",
+  "partner.lead":"Queremos crecer por todo Panamá. Cuéntanos dónde podrías recibir donaciones. Cada punto nuevo se revisa y aprueba antes de aparecer en el directorio.",
+  "partner.org":"Organización o edificio","partner.contact":"Persona de contacto","partner.place":"Lugar propuesto para recibir donaciones","partner.place.ph":"Ej.: recepción del edificio, oficina de la iglesia…","partner.access":"Acceso para donantes","partner.access.ph":"Ej.: garita 24 horas, lunes a viernes de 8 a 5…","partner.approval":"Ningún punto se publica sin aprobación del equipo.",
+  "pickup.title":"Recogida de donaciones grandes","pickup.sub":"Para negocios o personas con mucha mercancía.",
+  "pickup.lead":"La recogida depende de la disponibilidad de voluntarios y transporte. Te avisaremos si podemos ir; no está garantizada hasta que la confirmemos.",
+  "pickup.types":"Tipo de donaciones","pickup.types.ph":"Ej.: agua, arroz, pañales…","pickup.qty":"Cantidad aproximada","pickup.qty.ph":"Ej.: 20 cajas, 3 pacas de agua…",
+  "upd.eyebrow":"Actualizaciones","upd.title":"Actualizaciones de la Misión",
+  "upd.empty":"Nuestra comunidad está recolectando suministros esenciales para las familias afectadas. Aquí compartiremos información confirmada sobre las donaciones y entregas.",
+  "upd.area":"Zona atendida","upd.qty":"Cantidades verificadas","upd.confirmed":"Confirmado por","upd.notes":"Notas",
+  "about.eyebrow":"Sobre Nosotros","about.title":"Sobre esta misión",
+  "about.p1":"Esta es una iniciativa comunitaria e independiente, coordinada por Providence Church Coronado junto con voluntarios locales. Es para todos: no necesitas ser miembro de la iglesia ni compartir sus creencias para ayudar.",
+  "about.s1":"Providence Church Coronado ayuda a coordinar la misión.","about.s2":"Voluntarios locales reciben los suministros en los puntos de recolección.","about.s3":"Nuestros contactos en las comunidades afectadas nos indican qué se necesita.","about.s4":"Las donaciones se organizan según los recursos disponibles y las necesidades confirmadas.","about.s5":"Toda la comunidad es bienvenida a participar.",
+  "about.independent":"Es un esfuerzo independiente de la iglesia y la comunidad. No está afiliado a SINAPROC, la Cruz Roja, entidades del gobierno ni otras organizaciones.",
+  "about.church":"Una iglesia reformada en Coronado, Panamá, que se reúne en la Ave. Roberto Eisenmann. Su congregación reúne a panameños y extranjeros, con cultos en inglés y traducción al español.",
+  "about.link":"Visitar el sitio oficial de la iglesia",
+  "foot.title":"Providence Church — Ayuda por el Sismo","foot.body":"Esfuerzo comunitario independiente coordinado por Providence Church Coronado para las comunidades afectadas por el sismo en Azuero.",
+  "data.loading":"Cargando la información más reciente…","data.error":"No se pudo cargar la información más reciente. Mostramos la última versión guardada.",
+  "cash.title":"Donaciones en dinero recientes","cash.lead":"Publicamos cada donación cuando confirmamos que la recibimos.",
+  "cash.total1":"en 1 donación publicada","cash.totalN":"en {n} donaciones publicadas","cash.anon":"Donante anónimo",
+  "cash.m.yappy":"Yappy","cash.m.transfer":"Transferencia","cash.m.cash":"Efectivo","cash.more":"Ver más",
+  "cash.empty":"Aún no hay donaciones en dinero publicadas.",
+  "cash.privacy":"Mostramos tu nombre y el monto solo con tu permiso. Si prefieres aparecer como anónimo, avísale a {name} por WhatsApp (solo texto).","cash.privacyNoContact":"Mostramos tu nombre y el monto solo con tu permiso; si no, aparecerás como donante anónimo.",
+  "map.title":"Mapa de los puntos de recolección","map.you":"Tú","map.pending":"Aún sin estrella en el mapa (ubicación por confirmar): {names}.","map.outside":"Estás fuera del área del mapa. El punto más cercano es {name}, a unos {km} km en línea recta.",
+  "rec.title":"Donaciones recibidas","rec.lead":"Cuando el equipo recoge lo que dejaste en un punto de recolección, lo registra aquí con la fecha y el lugar.",
+  "rec.search":"Buscar donaciones recibidas","rec.search.ph":"Buscar por artículo, nombre o lugar…","rec.filter":"Filtrar por punto de recolección","rec.all":"Todos",
+  "rec.sum1":"1 donación registrada · Última: {date}","rec.sumN":"{n} donaciones registradas · Última: {date}",
+  "rec.anon":"Donante anónimo","rec.more":"Ver más","rec.nomatch":"Ninguna donación coincide con tu búsqueda.",
+  "rec.empty.title":"Aún no hay donaciones registradas","rec.empty.body":"En cuanto el equipo recoja las primeras donaciones de los puntos de recolección, aparecerán aquí.",
+  "rec.howto":"¿Dejaste una donación? Envía un mensaje de texto por WhatsApp a {name} ({phone}) con la fecha, el lugar y lo que dejaste. Si quieres que aparezca tu nombre, dilo en el mensaje; si no, aparecerás como donante anónimo.",
+  "rec.howtoNoContact":"Si quieres que aparezca tu nombre, avísale al equipo; si no, aparecerás como donante anónimo.",
+  "dist.title":"Así entregamos la ayuda","dist.lead":"Fotos y reportes de las entregas en Playa Venao y las comunidades cercanas, con las cantidades verificadas por el equipo.",
+  "dist.empty":"Nuestra comunidad está recolectando suministros esenciales para las familias afectadas. Aquí compartiremos información confirmada sobre las donaciones y entregas.",
+  "dist.place":"Lugar","dist.items":"Lo que se entregó (cantidades verificadas)","dist.confirmed":"Confirmado por","dist.notes":"Notas","dist.photoOpen":"Abrir foto",
+  "dist.consent":"Solo publicamos fotos con el permiso de las personas que aparecen, y cuidamos especialmente la privacidad de niñas y niños.",
+  "contact.title":"Contacto de la misión","contact.textOnly":"Solo mensajes de texto por WhatsApp. Por favor, no llames.","contact.textOnlyShort":"solo texto",
+  "contact.open":"Escribir por WhatsApp","contact.body":"Escríbele para preguntas, la ubicación exacta de un punto de recolección o donaciones grandes.",
+  "contact.hero":"¿Preguntas? WhatsApp ({textOnly}): {name}","contact.guide":"¿Dudas antes de donar? Escribe por WhatsApp a {name}: {phone} (solo mensajes de texto).",
+  "loc.unitAsk":"Para la ubicación exacta dentro del edificio, escribe por WhatsApp a {name} ({phone}, solo texto)."
+},
+en: {
+  "skip":"Skip to drop-off locations", "brand.sub":"Earthquake Relief", "menu":"Menu", "menu.close":"Close",
+  "nav.label":"Main", "nav.home":"Home","nav.locations":"Donation Locations","nav.supplies":"Needed Supplies","nav.money":"Donate Money","nav.volunteer":"Get Involved","nav.updates":"Received","nav.deliveries":"Deliveries","nav.about":"About",
+  "doc.title":"Providence Church — Earthquake Relief",
+  "hero.eyebrow":"October 9, 2026 earthquake · Azuero Peninsula",
+  "hero.title":"Together, We Can Help Azuero Recover.",
+  "hero.mission":"Providence Church Coronado and local volunteers are collecting and delivering essential supplies to communities affected by the earthquake in Panama's Azuero Peninsula. With the support of our neighbors, businesses, and community, we can provide practical assistance where it is needed most.",
+  "hero.route":"Collecting in Coronado, Nueva Gorgona and San Carlos. First destination: Playa Venao and the surrounding affected communities.",
+  "cta.find":"Find a Drop-Off Location","cta.supplies":"Donate Supplies","cta.money":"Donate Money","cta.volunteer":"Volunteer",
+  "hero.gate":"At Coronado Golf Tower you can leave donations with front gate security.",
+  "loc.eyebrow":"Donation Locations","loc.title":"Where can I drop off donations?",
+  "loc.lead":"Take your donations to the closest point. At residential buildings, please always follow the access and security rules.",
+  "loc.search.label":"Search by building or community","loc.search.ph":"Search building or community…","loc.areas":"Filter by area",
+  "loc.nearest":"Find Closest Location","loc.geo.note":"Optional. Your location stays on your phone; it isn't saved or sent anywhere.",
+  "loc.geo.working":"Finding your location…",
+  "loc.geo.denied":"We couldn't use your location. Tap where you are:","loc.geo.choose":"Tap where you are and we'll show the closest point:","loc.whereAreYou":"Where are you?","loc.geo.fromArea":"From {area}, the closest point is {name}, about {km} km away in a straight line.",
+  "loc.geo.unsupported":"This browser can't share your location here. Choose your area from the list above.",
+  "loc.geo.nocoords":"Exact map positions for the collection points aren't published yet. Choose your area to see what's available.",
+  "loc.geo.found":"The closest point is {name}, about {km} km away in a straight line.",
+  "area.all":"All areas","area.coronado":"Coronado","area.nueva-gorgona":"Nueva Gorgona","area.san-carlos":"San Carlos","area.other":"Other Areas",
+  "loc.empty.title":"No collection points here yet","loc.empty.body":"Could your church, building or business collect donations in this area?","loc.empty.cta":"Become a Collection Partner",
+  "loc.nomatch":"No collection point matches your search.",
+  "loc.hours":"Drop-off: Anytime, subject to building access.",
+  "loc.private":"Private residence","loc.business":"Business","loc.openNow":"Open now","loc.closedNow":"Closed now","loc.hoursBiz":"Drop-off: during the store's opening hours.",
+  "loc.unitHidden":"The exact spot inside the building will be published once the team approves it.",
+  "loc.tower":"Tower","loc.unit":"Unit",
+  "loc.gate.title":"Front Gate Drop-Off Available",
+  "loc.gate.body":"Hand your donations to the security staff at the front gate. A local coordinator will come down to collect them. You don't need to go up into the tower.",
+  "loc.gate.tip":"When you hand them over, mention “Providence Earthquake Relief.”",
+  "loc.respect":"Please don't enter restricted areas without permission.",
+  "loc.directions":"Directions","loc.dirPending":"Verified directions coming soon.",
+  "status.accepting":"Accepting Donations","status.full":"Temporarily Full","status.closed":"Temporarily Closed","status.awaiting":"Awaiting Confirmation",
+  "sup.eyebrow":"Needed Supplies","sup.title":"Requested supplies",
+  "sup.lead":"Our contacts in the affected communities asked for these items. Please bring only what's on the list.",
+  "sup.updated":"Last updated: {date}","sup.requested":"List confirmed by our contacts in Azuero",
+  "sup.food":"Food and Water","sup.food.d":"Bottled water and food that doesn't need refrigeration.",
+  "sup.shelter":"Shelter and Comfort","sup.shelter.d":"To help families rest and stay sheltered.",
+  "sup.hygiene":"Personal Hygiene","sup.hygiene.d":"Sealed, unused personal care items.",
+  "sup.kids":"Children's Items","sup.kids.d":"Small comforts for the youngest.",
+  "pr.urgent":"Urgently Needed","pr.needed":"Needed","pr.sufficient":"Sufficient for Now","pr.notAccepting":"Not Currently Accepting",
+  "guide.title":"Before you donate",
+  "guide.1":"Food must be unopened and unexpired.","guide.2":"Blankets must be clean.","guide.3":"Tents should be complete and usable.","guide.4":"Personal hygiene products should be sealed and unused.","guide.5":"Do not donate expired medication.","guide.6":"Contact the relief team before bringing exceptionally large quantities.","guide.6link":"Request a pickup",
+  "money.eyebrow":"Donate Money","money.title":"Give financially",
+  "money.lead":"Financial gifts will be used according to available resources and the mission's confirmed needs.",
+  "memo.label":"Payment reference","memo.why":"Add it to your Yappy or transfer description.",
+  "copy":"Copy","copied":"Copied","copyFail":"Couldn't copy. Select the text and copy it manually.","copyAll":"Copy all details",
+  "yappy.title":"Yappy","yappy.sub":"Quick payment from your phone",
+  "yappy.pending":"Yappy donation details coming soon.",
+  "yappy.recipient":"Recipient","yappy.handle":"Yappy number or handle","yappy.qrAlt":"Yappy QR code for donations",
+  "yappy.steps":"Open Yappy, find the recipient or scan the code, enter the amount and write Providence Earthquake Relief in the message.",
+  "bank.title":"Bank transfer","bank.sub":"From any bank in Panama",
+  "bank.pending":"Bank transfer details coming soon.",
+  "bank.bank":"Bank","bank.holder":"Account holder","bank.type":"Account type","bank.number":"Account number","bank.extra":"Additional details",
+  "pay.safety":"We will never ask for your online banking passwords or codes. If anyone does so in this mission's name, don't respond.",
+  "fin.title":"Financial transparency","fin.pending":"Verified totals for donations and expenses will be published here as the mission develops.",
+  "fin.collected":"Total donations collected","fin.expenses":"Total approved expenses","fin.balance":"Remaining relief balance","fin.categories":"Relief purchase categories","fin.updated":"Last financial update: {date}",
+  "share.eyebrow":"Share","share.title":"Help spread the word",
+  "share.lead":"Most of our neighbors hear about this on WhatsApp. Share this site with your groups and contacts.",
+  "share.wa":"Share on WhatsApp","share.fb":"Share on Facebook","share.copy":"Copy link",
+  "share.pending":"Sharing buttons switch on as soon as the site has its permanent public address.",
+  "share.waMsg":"Providence Church Coronado is collecting food, water, blankets, hygiene products, diapers, and other essential supplies to help communities affected by the earthquake in Azuero, Panama. Find a donation location or learn how to help here: {url}",
+  "share.qrTitle":"QR code for flyers","share.qrHint":"Scan it with a phone camera to open this site.","share.qrDownload":"Download QR code","share.qrLoading":"Creating code…","share.qrError":"The QR code couldn't be created right now.","share.qrPending":"The QR code will appear here once the site has its public address.",
+  "vol.eyebrow":"Get Involved","vol.title":"Join the relief effort",
+  "vol.lead":"Host a collection point at your building, church or business, or ask us to pick up a large donation.",
+  "vol.formTitle":"I want to volunteer","vol.formSub":"Transportation, sorting, deliveries and more.",
+  "form.name":"Name","form.wa":"WhatsApp number","form.wa.hint":"Include the country code if your number isn't Panamanian.",
+  "form.area":"Community or area","form.community":"Community","form.choose":"Choose an option",
+  "form.help":"How can you help?",
+  "help.transport":"Transportation","help.sorting":"Donation sorting","help.pickup":"Local pickup assistance","help.storage":"Storage space","help.host":"Hosting a donation point","help.distribution":"Distribution assistance","help.comms":"Communications","help.other":"Other support",
+  "form.availability":"Availability","form.availability.ph":"e.g. weekends, evenings…",
+  "form.message":"Message (optional)","form.notes":"Notes (optional)",
+  "form.consent":"I agree to be contacted on WhatsApp by the relief team about this mission.",
+  "form.privacy":"Your details are never shown on this website.",
+  "form.submit":"Submit","form.submitWa":"Send via WhatsApp",
+  "form.offline":"This form isn't connected yet, so it can't be sent. Nothing you type here is sent or saved.",
+  "err.required":"Please fill in this field.","err.phone":"Enter a valid WhatsApp number (at least 7 digits).","err.group":"Choose at least one option.","err.consent":"We need your permission to contact you.","err.summary":"Please review the highlighted fields.",
+  "form.sending":"Sending…","form.sent":"We received your details. The team will contact you on WhatsApp.","form.failed":"It couldn't be sent. Check your connection and try again.",
+  "form.waReady":"WhatsApp opened with your message ready. Send it from WhatsApp to finish.","form.waLink":"If WhatsApp didn't open, tap here.",
+  "partner.title":"Become a Collection Partner","partner.sub":"Churches, buildings, businesses and volunteers.",
+  "partner.lead":"We want to grow across Panama. Tell us where you could collect donations. Every new point is reviewed and approved before it appears in the directory.",
+  "partner.org":"Organization or building name","partner.contact":"Contact person","partner.place":"Proposed collection location","partner.place.ph":"e.g. building reception, church office…","partner.access":"General collection access","partner.access.ph":"e.g. 24-hour front gate, weekdays 8–5…","partner.approval":"No location is published without the team's approval.",
+  "pickup.title":"Large donation pickup","pickup.sub":"For businesses or people with large quantities.",
+  "pickup.lead":"Pickup depends on volunteer and transportation availability. We'll let you know if we can come; it isn't guaranteed until we confirm.",
+  "pickup.types":"Types of donations","pickup.types.ph":"e.g. water, rice, diapers…","pickup.qty":"Approximate quantity","pickup.qty.ph":"e.g. 20 boxes, 3 cases of water…",
+  "upd.eyebrow":"Mission Updates","upd.title":"Relief Mission Updates",
+  "upd.empty":"Our community is collecting essential supplies for affected families. Verified updates about collections and deliveries will be shared here.",
+  "upd.area":"Area assisted","upd.qty":"Verified quantities","upd.confirmed":"Confirmed by","upd.notes":"Notes",
+  "about.eyebrow":"About","about.title":"About this relief mission",
+  "about.p1":"This is an independent community initiative coordinated by Providence Church Coronado together with local volunteers. It's for everyone: you don't need to be a church member or share its beliefs to help.",
+  "about.s1":"Providence Church Coronado is helping coordinate the mission.","about.s2":"Local volunteers collect supplies at the drop-off points.","about.s3":"Our contacts in the affected communities tell us what's needed.","about.s4":"Donations are organized according to available resources and confirmed needs.","about.s5":"The whole community is welcome to take part.",
+  "about.independent":"This is an independent, church-led community effort. It is not affiliated with SINAPROC, the Red Cross, government agencies or other organizations.",
+  "about.church":"A Reformed church in Coronado, Panamá, gathering on Ave. Roberto Eisenmann. Its congregation brings together Panamanians and expatriates, with services in English and Spanish translation.",
+  "about.link":"Visit the church's official website",
+  "foot.title":"Providence Church — Earthquake Relief","foot.body":"An independent community effort coordinated by Providence Church Coronado for communities affected by the earthquake in Azuero.",
+  "data.loading":"Loading the latest information…","data.error":"The latest information couldn't be loaded. Showing the last saved version.",
+  "cash.title":"Recent financial donations","cash.lead":"Each gift is posted once we confirm we've received it.",
+  "cash.total1":"from 1 posted gift","cash.totalN":"from {n} posted gifts","cash.anon":"Anonymous donor",
+  "cash.m.yappy":"Yappy","cash.m.transfer":"Bank transfer","cash.m.cash":"Cash","cash.more":"Show more",
+  "cash.empty":"No financial donations posted yet.",
+  "cash.privacy":"We show your name and amount only with your permission. If you'd rather appear as anonymous, text {name} on WhatsApp.","cash.privacyNoContact":"We show your name and amount only with your permission; otherwise you'll appear as an anonymous donor.",
+  "map.title":"Map of collection points","map.you":"You","map.pending":"Not starred on the map yet (location being confirmed): {names}.","map.outside":"You're outside the map area. The closest point is {name}, about {km} km away in a straight line.",
+  "rec.title":"Donations received","rec.lead":"When the team collects what you left at a drop-off point, they log it here with the date and place.",
+  "rec.search":"Search donations received","rec.search.ph":"Search by item, name or place…","rec.filter":"Filter by collection point","rec.all":"All",
+  "rec.sum1":"1 donation logged · Latest: {date}","rec.sumN":"{n} donations logged · Latest: {date}",
+  "rec.anon":"Anonymous donor","rec.more":"Show more","rec.nomatch":"No donation matches your search.",
+  "rec.empty.title":"No donations logged yet","rec.empty.body":"As soon as the team collects the first donations from the drop-off points, they'll appear here.",
+  "rec.howto":"Left a donation? Text {name} on WhatsApp ({phone}) with the date, the place and what you left. If you'd like your name shown, say so in your message; otherwise you'll appear as an anonymous donor.",
+  "rec.howtoNoContact":"If you'd like your name shown, let the team know; otherwise you'll appear as an anonymous donor.",
+  "dist.title":"Handing out the aid","dist.lead":"Photos and reports from deliveries in Playa Venao and nearby communities, with quantities verified by the team.",
+  "dist.empty":"Our community is collecting essential supplies for affected families. Verified updates about collections and deliveries will be shared here.",
+  "dist.place":"Place","dist.items":"What was delivered (verified quantities)","dist.confirmed":"Confirmed by","dist.notes":"Notes","dist.photoOpen":"Open photo",
+  "dist.consent":"We only publish photos with permission from the people shown, and take special care with children's privacy.",
+  "contact.title":"Mission contact","contact.textOnly":"WhatsApp text messages only. Please don't call.","contact.textOnlyShort":"text only",
+  "contact.open":"Message on WhatsApp","contact.body":"Message him with questions, for the exact spot of a collection point, or about large donations.",
+  "contact.hero":"Questions? WhatsApp ({textOnly}): {name}","contact.guide":"Questions before donating? Message {name} on WhatsApp: {phone} (text messages only).",
+  "loc.unitAsk":"For the exact spot inside the building, message {name} on WhatsApp ({phone}, text only)."
+}};
+
+/* ------------------------------ helpers ------------------------------ */
+// Language: /en/ and /es/ pages are fixed; the main page follows the phone's language (Spanish phones → Spanish, otherwise English).
+const PAGE_LANG = document.documentElement.getAttribute("data-page-lang");
+let lang = PAGE_LANG || (/^es\b/i.test(navigator.language || "") ? "es" : "en");
+try { const s = localStorage.getItem("relief-lang"); if (!PAGE_LANG && (s === "en" || s === "es")) lang = s; } catch (e) {}
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const t = (k, vars) => { let s = (T[lang][k] ?? T.es[k] ?? k); if (vars) for (const v in vars) s = s.replace("{" + v + "}", vars[v]); return s; };
+const L = o => (o && typeof o === "object") ? (o[lang] || o.es || o.en || "") : (o || "");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const ico = id => `<svg class="ico" aria-hidden="true"><use href="#${id}"/></svg>`;
+const fmtDate = d => { try { return new Date(d + (String(d).length === 10 ? "T12:00:00" : "")).toLocaleDateString(lang === "es" ? "es-PA" : "en-US", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return d; } };
+const money = n => (n == null ? "—" : new Intl.NumberFormat(lang === "es" ? "es-PA" : "en-US", { style: "currency", currency: "USD", currencyDisplay: "narrowSymbol" }).format(n));
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+function onOwnHost() {
+  const h = location.hostname;
+  return /^https?:$/.test(location.protocol) && !!h && !/claude|anthropic|localhost|127\.0\.0\.1|usercontent|sandbox/i.test(h);
+}
+// Shared links point to the language page that matches what the sender is reading: …/en/ or …/es/
+function sitePublicUrl() {
+  const base = CONFIG.publicUrl ? CONFIG.publicUrl.replace(/\/?$/, "/")
+    : onOwnHost() ? location.origin + location.pathname.replace(/index\.html$/, "").replace(/(?:en|es)\/?$/, "").replace(/\/?$/, "/") : "";
+  return base ? base + (lang === "en" ? "en/" : "es/") : "";
+}
+
+async function copyText(text, btn) {
+  const label = btn.querySelector("span");
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.classList.add("done"); if (label) label.textContent = t("copied");
+    setTimeout(() => { btn.classList.remove("done"); if (label) label.textContent = t(btn.dataset.labelKey || "copy"); }, 1800);
+  } catch (e) {
+    const src = btn.dataset.copyFrom && document.getElementById(btn.dataset.copyFrom);
+    if (src) { const r = document.createRange(); r.selectNodeContents(src); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    if (label) label.textContent = t("copyFail");
+    setTimeout(() => { if (label) label.textContent = t(btn.dataset.labelKey || "copy"); }, 3500);
+  }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy-from],[data-copy-text]");
+  if (!b) return;
+  const text = b.dataset.copyText ?? document.getElementById(b.dataset.copyFrom)?.textContent ?? "";
+  copyText(text.trim(), b);
+});
+
+/* ---------------------------- static text ---------------------------- */
+function applyText() {
+  document.documentElement.lang = lang === "es" ? "es-PA" : "en";
+  document.title = t("doc.title");
+  $$("[data-t]").forEach(el => { el.textContent = t(el.dataset.t); });
+  $$("[data-t-ph]").forEach(el => { el.placeholder = t(el.dataset.tPh); });
+  $$("[data-t-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.tAria)); });
+  $$("[data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+}
+
+/* ------------------------------ locations ---------------------------- */
+const state = { area: "all", q: "", nearest: null, me: null };
+function visibleLocations() { return CONFIG.locations.filter(l => l.approved !== false); }
+
+function renderChips() {
+  const locs = visibleLocations();
+  const count = a => a === "all" ? locs.length : locs.filter(l => l.area === a).length;
+  $("#chips").innerHTML = ["all", ...AREAS].map(a =>
+    `<button type="button" class="chip" data-area="${a}" aria-pressed="${state.area === a}">${esc(t("area." + a))}<span class="n">${count(a)}</span></button>`).join("");
+}
+
+function locCard(l) {
+  const st = ["accepting", "full", "closed", "awaiting"].includes(l.status) ? l.status : "awaiting";
+  const unitBits = [];
+  if (CONFIG.publishUnitDetails && l.tower) unitBits.push(`${t("loc.tower")} ${esc(l.tower)}`);
+  if (CONFIG.publishUnitDetails && l.unit) unitBits.push(`${t("loc.unit")} ${esc(l.unit)}`);
+  const dirs = [];
+  if (l.mapsUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.mapsUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Google Maps</a>`);
+  if (l.wazeUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.wazeUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Waze</a>`);
+  const near = state.nearest && state.nearest.id === l.id;
+  const biz = l.type === "business";
+  const openNow = isOpenNow(l);
+  return `<article class="loc${near ? " highlight" : ""}" id="loc-${esc(l.id)}">
+    <div class="loc-head">
+      <div class="loc-top">
+        <div class="loc-name">${ico("i-building")}<div><h3>${esc(l.name)}</h3><p class="loc-comm">${esc(l.placeLabel ? L(l.placeLabel) : t("area." + l.area) + ", Panamá")} · ${esc(t(biz ? "loc.business" : "loc.private"))}</p></div></div>
+        <span style="display:flex;flex-wrap:wrap;gap:6px"><span class="pill st-${st}">${esc(t("status." + st))}</span>${openNow === null ? "" : `<span class="pill ${openNow ? "st-accepting" : "st-closed"}">${esc(t(openNow ? "loc.openNow" : "loc.closedNow"))}</span>`}</span>
+      </div>
+    </div>
+    <div class="loc-body">
+      ${l.frontGate ? `<div class="gate"><strong>${ico("i-shield")}${esc(t("loc.gate.title"))}</strong><p>${esc(t("loc.gate.body"))}</p><p class="tip">${esc(t("loc.gate.tip"))}</p></div>` : ""}
+      <p class="row">${ico("i-clock")}<span><b>${l.hoursText ? L(l.hoursText).split(" · ").map(esc).join("<br>") : esc(t(biz ? "loc.hoursBiz" : "loc.hours"))}</b></span></p>
+      ${l.address ? `<p class="row">${ico("i-pin")}<span>${esc(l.address)}</span></p>` : ""}
+      <p class="row">${ico("i-package")}<span>${esc(L(l.instructions))}</span></p>
+      ${biz ? "" : unitBits.length ? `<p class="row">${ico("i-pin")}<span><b>${unitBits.join(" · ")}</b></span></p>`
+                        : `<p class="row muted">${ico("i-lock")}<span>${esc(hasContact() ? t("loc.unitAsk", { name: CONFIG.contact.shortName || CONFIG.contact.name, phone: CONFIG.contact.display }) : t("loc.unitHidden"))}</span></p>`}
+      ${biz ? "" : `<p class="row muted">${ico("i-alert")}<span>${esc(t("loc.respect"))}</span></p>`}
+    </div>
+    <div class="loc-foot">${dirs.length ? `<span>${esc(t("loc.directions"))}:</span>${dirs.join("")}` : `${ico("i-nav")}<span>${esc(t("loc.dirPending"))}</span>`}</div>
+  </article>`;
+}
+
+function isOpenNow(l) {
+  if (!l.openHours) return null;
+  const pa = new Date(Date.now() - 5 * 3600 * 1000);            // Panama is UTC-5 all year
+  const h = l.openHours[pa.getUTCDay()], now = pa.getUTCHours() + pa.getUTCMinutes() / 60;
+  return !!(h && now >= h[0] && now < h[1]);
+}
+function renderLocations() {
+  renderChips();
+  const q = norm(state.q);
+  let list = visibleLocations().filter(l => (state.area === "all" || l.area === state.area) &&
+    (!q || norm(l.name + " " + t("area." + l.area) + " " + l.area).includes(q)));
+  if (state.nearest) list.sort((a, b) => (a.id === state.nearest.id ? -1 : b.id === state.nearest.id ? 1 : 0));
+  const box = $("#locList");
+  if (list.length) { box.innerHTML = list.map(locCard).join(""); return; }
+  box.innerHTML = q
+    ? `<div class="empty">${ico("i-search")}<h3>${esc(t("loc.nomatch"))}</h3></div>`
+    : `<div class="empty">${ico("i-pin")}<h3>${esc(t("loc.empty.title"))}</h3><p>${esc(t("loc.empty.body"))}</p><a class="btn btn-gold" href="#socio" data-open="socio">${esc(t("loc.empty.cta"))}</a></div>`;
+}
+
+$("#chips").addEventListener("click", e => {
+  const c = e.target.closest("[data-area]"); if (!c) return;
+  state.area = c.dataset.area; renderLocations();
+});
+$("#locSearch").addEventListener("input", e => { state.q = e.target.value; renderLocations(); });
+
+function haversineKm(a, b) {
+  const R = 6371, rad = x => x * Math.PI / 180;
+  const dLat = rad(b.lat - a.lat), dLng = rad(b.lng - a.lng);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+// Community centres (OpenStreetMap place points) for the "where are you?" fallback
+const AREA_POINTS = {
+  "coronado": { lat: 8.5338496, lng: -79.8952709 },
+  "nueva-gorgona": { lat: 8.5582285, lng: -79.8756078 },
+  "san-carlos": { lat: 8.4727060, lng: -79.9561983 }
+};
+function geoMsg(key, tone, vars, choose) {
+  const box = $("#geoMsg");
+  let html = key ? `<p class="notice ${tone || ""}">${ico("i-info")}<span>${esc(t(key, vars))}</span></p>` : "";
+  if (choose) html += `<div class="chips" style="margin-top:10px" role="group" aria-label="${esc(t("loc.whereAreYou"))}">${Object.keys(AREA_POINTS).map(a => `<button type="button" class="chip" data-from="${a}">${ico("i-pin")}${esc(t("area." + a))}</button>`).join("")}</div>`;
+  box.innerHTML = html;
+  box.dataset.key = key || ""; box.dataset.tone = tone || ""; box.dataset.vars = vars ? JSON.stringify(vars) : ""; box.dataset.choose = choose ? "1" : "";
+}
+function pointsWithCoords() { return visibleLocations().filter(l => typeof l.lat === "number" && typeof l.lng === "number" && l.status !== "closed"); }
+function showNearest(me, fromArea) {
+  const withCoords = pointsWithCoords();
+  if (!withCoords.length) return geoMsg("loc.geo.nocoords");
+  const best = withCoords.map(l => ({ l, d: haversineKm(me, l) })).sort((a, b) => a.d - b.d)[0];
+  state.me = fromArea ? null : me;
+  state.nearest = best.l; state.area = "all"; state.q = ""; $("#locSearch").value = "";
+  renderLocations(); renderMap();
+  const km = best.d < 10 ? best.d.toFixed(1) : Math.round(best.d);
+  if (fromArea) geoMsg("loc.geo.fromArea", "ok", { area: t("area." + fromArea), name: best.l.name, km });
+  else geoMsg(project(me.lat, me.lng) ? "loc.geo.found" : "map.outside", "ok", { name: best.l.name, km });
+  const card = document.getElementById("loc-" + best.l.id);
+  if (card) { $$(".loc.highlight").forEach(x => x.classList.remove("highlight")); card.classList.add("highlight"); card.scrollIntoView({ behavior: "smooth", block: "center" }); }
+}
+$("#geoMsg").addEventListener("click", e => { const b = e.target.closest("[data-from]"); if (b) showNearest(AREA_POINTS[b.dataset.from], b.dataset.from); });
+$("#nearBtn").addEventListener("click", () => {
+  const askArea = key => geoMsg(key, "warn", null, true);
+  // Claude's viewer never shares location with pages, so go straight to the area choice there.
+  if (!onOwnHost() || !navigator.geolocation) return askArea("loc.geo.choose");
+  geoMsg("loc.geo.working");
+  let done = false;
+  const fail = () => { if (!done) { done = true; askArea("loc.geo.denied"); } };
+  const timer = setTimeout(fail, 9000);
+  try {
+    navigator.geolocation.getCurrentPosition(pos => {
+      if (done) return; done = true; clearTimeout(timer);
+      showNearest({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+    }, () => { clearTimeout(timer); fail(); }, { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 });
+  } catch (e) { clearTimeout(timer); fail(); }
+});
+
+/* -------------------------------- map -------------------------------- */
+const MAP_IMG = "__MAP_DATA_URI__";
+const mx = lon => (lon + 180) / 360 * 256 * 2 ** CONFIG.map.z;
+const my = lat => { const r = lat * Math.PI / 180; return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * 256 * 2 ** CONFIG.map.z; };
+function project(lat, lng) {
+  const m = CONFIG.map, x = mx(lng) - mx(m.west), y = my(lat) - my(m.north);
+  return (x >= 0 && y >= 0 && x <= m.width && y <= m.height) ? { x, y } : null;
+}
+function starPath(cx, cy, R) {
+  const r = R * 0.45; let d = "";
+  for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rad = i % 2 ? r : R; d += (i ? "L" : "M") + (cx + rad * Math.cos(a)).toFixed(1) + " " + (cy + rad * Math.sin(a)).toFixed(1); }
+  return d + "Z";
+}
+function renderMap() {
+  const img = $("#mapImg"); if (img.getAttribute("href") !== MAP_IMG) img.setAttribute("href", MAP_IMG);
+  const phone = window.innerWidth <= 520, R = phone ? 30 : 22;
+  const locs = visibleLocations();
+  const placed = locs.map(l => ({ l, p: (typeof l.lat === "number" && typeof l.lng === "number") ? project(l.lat, l.lng) : null }));
+  let g = "";
+  if (state.me) { const p = project(state.me.lat, state.me.lng); if (p) g += `<g><circle class="me-ring" cx="${p.x}" cy="${p.y}" r="${R * 1.4}"/><circle class="me-dot" cx="${p.x}" cy="${p.y}" r="${R * 0.45}"/><text x="${p.x}" y="${p.y - R * 0.9}" text-anchor="middle" style="font:700 ${phone ? 32 : 24}px var(--sans);fill:#2B6BE0;paint-order:stroke;stroke:#fff;stroke-width:7px">${esc(t("map.you"))}</text></g>`; }
+  const fs = phone ? 34 : 25, boxes = [], W = CONFIG.map.width;
+  placed.filter(x => x.p).forEach(({ p }) => boxes.push([p.x - R, p.x + R, p.y - R, p.y + R]));
+  const hit = b => boxes.some(o => b[0] < o[1] && b[1] > o[0] && b[2] < o[3] && b[3] > o[2]);
+  placed.filter(x => x.p).sort((a, b) => a.p.y - b.p.y).forEach(({ l, p }) => {
+    const label = phone && l.mapLabel ? l.mapLabel : l.name;
+    const wEst = label.length * fs * 0.58, gap = R * 1.2;
+    const cand = [];
+    const sideBox = (side, y) => side === "l" ? [p.x - gap - wEst, p.x - gap, y - fs * 0.85, y + fs * 0.3]
+      : side === "r" ? [p.x + gap, p.x + gap + wEst, y - fs * 0.85, y + fs * 0.3]
+      : [p.x - wEst / 2, p.x + wEst / 2, y - fs * 0.85, y + fs * 0.3];
+    const base = p.y + 9, below = p.y + R + fs * 0.95, above = p.y - R - fs * 0.35;
+    [["r", base], ["l", base], ["c", below], ["c", above], ["r", base + fs * 1.1], ["l", base + fs * 1.1], ["r", base - fs * 1.1], ["l", base - fs * 1.1], ["c", below + fs * 1.1]].forEach(c => cand.push(c));
+    let pick = cand.find(([sd, y]) => { const b = sideBox(sd, y); return b[0] >= 4 && b[1] <= W - 4 && b[2] >= 2 && b[3] <= CONFIG.map.height - 2 && !hit(b); })
+      || (p.x + gap + wEst > W - 4 ? ["l", base] : ["r", base]);
+    const [side, ly] = pick;
+    const box = () => sideBox(side, ly);
+    boxes.push(box());
+    const tx = side === "l" ? p.x - gap : side === "r" ? p.x + gap : p.x, anchor = side === "l" ? "end" : side === "r" ? "start" : "middle";
+    g += `<g class="pin${state.nearest && state.nearest.id === l.id ? " nearest" : ""}" tabindex="0" role="button" data-pin="${esc(l.id)}" aria-label="${esc(l.name)}">
+      <ellipse class="halo" cx="${p.x}" cy="${p.y + R * 0.9}" rx="${R * 0.8}" ry="${R * 0.25}"/>
+      <path class="star" d="${starPath(p.x, p.y, R)}"/>
+      <text x="${tx}" y="${ly}" text-anchor="${anchor}">${esc(label)}</text></g>`;
+  });
+  $("#mapPins").innerHTML = g;
+  const missing = placed.filter(x => !x.p).map(x => x.l.name);
+  $("#mapPending").innerHTML = missing.length ? `<p class="map-pending">${ico("i-pin")}<span>${esc(t("map.pending", { names: missing.join(", ") }))}</span></p>` : "";
+}
+function focusLocation(id) {
+  state.area = "all"; state.q = ""; $("#locSearch").value = "";
+  renderLocations();
+  const el = document.getElementById("loc-" + id); if (!el) return;
+  $$(".loc.highlight").forEach(x => x.classList.remove("highlight")); el.classList.add("highlight");
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+$("#mapPins").addEventListener("click", e => { const p = e.target.closest("[data-pin]"); if (p) focusLocation(p.dataset.pin); });
+$("#mapPins").addEventListener("keydown", e => { const p = e.target.closest("[data-pin]"); if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); focusLocation(p.dataset.pin); } });
+let mapResize; window.addEventListener("resize", () => { clearTimeout(mapResize); mapResize = setTimeout(renderMap, 150); });
+
+/* ------------------------------ supplies ----------------------------- */
+function renderSupplies() {
+  $("#supMeta").innerHTML = `<span class="row">${ico("i-check")}<span>${esc(t("sup.requested"))}</span></span>` +
+    (CONFIG.suppliesLastUpdated ? `<span class="row">${ico("i-clock")}<span>${esc(t("sup.updated", { date: fmtDate(CONFIG.suppliesLastUpdated) }))}</span></span>` : "");
+  $("#supGrid").innerHTML = CONFIG.supplies.map(c => `
+    <article class="sup">
+      <div class="sup-h"><span class="sup-ic">${ico(c.icon || "i-package")}</span><div><h3>${esc(t("sup." + c.id) !== "sup." + c.id ? t("sup." + c.id) : L(c.title))}</h3><p>${esc(T[lang]["sup." + c.id + ".d"] ? t("sup." + c.id + ".d") : L(c.description))}</p></div></div>
+      <ul class="items">${c.items.map(i => `<li class="${i.priority === "notAccepting" ? "off" : ""}"><span>${esc(L(i))}</span>${i.priority ? `<span class="pill pr-${esc(i.priority)}">${esc(t("pr." + i.priority))}</span>` : ""}</li>`).join("")}</ul>
+    </article>`).join("");
+}
+
+/* ------------------------------ payments ----------------------------- */
+function kvRow(label, value, id) {
+  return `<div><span class="txt"><dt>${esc(label)}</dt><dd id="${id}">${esc(value)}</dd></span><button class="copy" type="button" data-copy-from="${id}">${ico("i-copy")}<span>${esc(t("copy"))}</span></button></div>`;
+}
+function renderPayments() {
+  const y = CONFIG.yappy, yOk = y.recipientName && y.handle;
+  $("#yappyCard").innerHTML = `<div class="pay-h"><span class="sup-ic">${ico("i-phone")}</span><div><h3>${esc(t("yappy.title"))}</h3><p class="loc-comm">${esc(t("yappy.sub"))}</p></div></div>` +
+    (yOk ? `<dl class="kv">${kvRow(t("yappy.recipient"), y.recipientName, "yName")}${kvRow(t("yappy.handle"), y.handle, "yHandle")}</dl>
+            ${y.qrImage ? `<img class="qr-img" src="${esc(y.qrImage)}" alt="${esc(t("yappy.qrAlt"))}">` : ""}
+            <p class="row">${ico("i-info")}<span>${esc(t("yappy.steps"))}</span></p>`
+         : `<p class="pending">${ico("i-clock")}<span>${esc(t("yappy.pending"))}</span></p>`);
+  const b = CONFIG.bank, bOk = b.bankName && b.accountHolder && b.accountNumber;
+  let all = "";
+  if (bOk) all = [[t("bank.bank"), b.bankName], [t("bank.holder"), b.accountHolder], [t("bank.type"), b.accountType], [t("bank.number"), b.accountNumber], [t("bank.extra"), L(b.extra)]]
+    .filter(r => r[1]).map(r => r[0] + ": " + r[1]).join("\n") + "\n" + (lang === "es" ? "Referencia" : "Reference") + ": Providence Earthquake Relief";
+  $("#bankCard").innerHTML = `<div class="pay-h"><span class="sup-ic">${ico("i-bank")}</span><div><h3>${esc(t("bank.title"))}</h3><p class="loc-comm">${esc(t("bank.sub"))}</p></div></div>` +
+    (bOk ? `<dl class="kv">${kvRow(t("bank.bank"), b.bankName, "bBank")}${kvRow(t("bank.holder"), b.accountHolder, "bHolder")}${b.accountType ? kvRow(t("bank.type"), b.accountType, "bType") : ""}${kvRow(t("bank.number"), b.accountNumber, "bNum")}${L(b.extra) ? kvRow(t("bank.extra"), L(b.extra), "bExtra") : ""}</dl>
+            <button class="btn btn-navy" type="button" data-copy-text="${esc(all)}" data-label-key="copyAll">${ico("i-copy")}<span>${esc(t("copyAll"))}</span></button>`
+         : `<p class="pending">${ico("i-clock")}<span>${esc(t("bank.pending"))}</span></p>`);
+
+  const f = CONFIG.finance;
+  if (!f.published) {
+    $("#finBox").innerHTML = `<h3>${esc(t("fin.title"))}</h3><p class="pending">${ico("i-info")}<span>${esc(t("fin.pending"))}</span></p>`;
+  } else {
+    const bal = (f.totalCollected != null && f.approvedExpenses != null) ? f.totalCollected - f.approvedExpenses : null;
+    $("#finBox").innerHTML = `<h3>${esc(t("fin.title"))}</h3>
+      <div class="tiles"><div class="tile"><b>${money(f.totalCollected)}</b><span>${esc(t("fin.collected"))}</span></div><div class="tile"><b>${money(f.approvedExpenses)}</b><span>${esc(t("fin.expenses"))}</span></div><div class="tile"><b>${money(bal)}</b><span>${esc(t("fin.balance"))}</span></div></div>
+      ${f.categories?.length ? `<div><h3 style="font-size:1.1rem;margin-bottom:6px">${esc(t("fin.categories"))}</h3><dl class="kv">${f.categories.map(c => `<div><dt>${esc(L(c))}</dt><dd>${money(c.amount)}</dd></div>`).join("")}</dl></div>` : ""}
+      ${f.lastUpdated ? `<p class="loc-comm">${esc(t("fin.updated", { date: fmtDate(f.lastUpdated) }))}</p>` : ""}`;
+  }
+}
+
+/* ----------------------------- cash gifts ----------------------------- */
+let cashShown = 10;
+function renderCash() {
+  const list = sortByDate((CONFIG.cashDonations || []).filter(d => typeof d.amount === "number" && d.amount > 0));
+  const c = CONFIG.contact;
+  const note = `<p class="cash-note">${ico("i-lock")}<span>${esc(hasContact() ? t("cash.privacy", { name: c.shortName || c.name }) : t("cash.privacyNoContact"))}</span></p>`;
+  if (!list.length) { $("#cashList").innerHTML = `<p class="pending">${ico("i-heart")}<span>${esc(t("cash.empty"))}</span></p>` + note; return; }
+  const total = list.reduce((a, d) => a + d.amount, 0);
+  $("#cashList").innerHTML = `<p class="cash-sum"><b>${money(total)}</b><span>${esc(t(list.length === 1 ? "cash.total1" : "cash.totalN", { n: list.length }))}</span></p>
+    <ul class="cash-list">${list.slice(0, cashShown).map(d => `<li>
+      <span class="cash-who"><b>${esc(d.name || t("cash.anon"))}</b><small>${esc(fmtDate(d.date))}${d.method ? " · " + esc(t("cash.m." + d.method) !== "cash.m." + d.method ? t("cash.m." + d.method) : d.method) : ""}${L(d.note) ? " · " + esc(L(d.note)) : ""}</small></span>
+      <span class="cash-amt">${money(d.amount)}</span></li>`).join("")}</ul>
+    ${list.length > cashShown ? `<button class="btn btn-line btn-sm" type="button" id="cashMore" style="justify-self:start">${esc(t("cash.more"))}</button>` : ""}` + note;
+}
+$("#cashList").addEventListener("click", e => { if (e.target.closest("#cashMore")) { cashShown += 10; renderCash(); } });
+
+/* -------------------------------- share ------------------------------ */
+function renderShare() {
+  const url = sitePublicUrl();
+  if (!url) { $("#shareBtns").innerHTML = `<p class="pending">${ico("i-info")}<span>${esc(t("share.pending"))}</span></p>`; return; }
+  const wa = "https://wa.me/?text=" + encodeURIComponent(t("share.waMsg", { url }));
+  const fb = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+  $("#shareBtns").innerHTML = `<div class="share-btns">
+    <a class="btn btn-wa" href="${esc(wa)}" target="_blank" rel="noopener">${ico("i-msg")}${esc(t("share.wa"))}</a>
+    <a class="btn btn-fb" href="${esc(fb)}" target="_blank" rel="noopener">${ico("i-fb")}${esc(t("share.fb"))}</a>
+    <button class="btn copy" style="min-height:48px" type="button" data-copy-text="${esc(url)}" data-label-key="share.copy">${ico("i-link")}<span>${esc(t("share.copy"))}</span></button>
+  </div>`;
+}
+
+/* -------------------------------- forms ------------------------------ */
+const FORM_FIELDS = {
+  volunteer: { es: "Voluntario", en: "Volunteer" },
+  partner: { es: "Nuevo punto de recolección", en: "New collection point" },
+  pickup: { es: "Recogida de donación grande", en: "Large donation pickup" }
+};
+function formChannel() { return CONFIG.formEndpoint ? "endpoint" : CONFIG.coordinatorWhatsApp ? "whatsapp" : null; }
+
+function renderFormControls() {
+  const keep = {};
+  $$("[data-area-select]").forEach(s => keep[s.id] = s.value);
+  $$("[data-area-select]").forEach(s => {
+    s.innerHTML = `<option value="">${esc(t("form.choose"))}</option>` + AREAS.map(a => `<option value="${a}">${esc(t("area." + a))}</option>`).join("");
+    s.value = keep[s.id] || "";
+  });
+  const checked = $$("#helpChecks input:checked").map(i => i.value);
+  if ($("#helpChecks")) $("#helpChecks").innerHTML = HELP_TYPES.map(h => `<label class="check"><input type="checkbox" id="help-${h}" name="help" value="${h}" ${checked.includes(h) ? "checked" : ""}><span>${esc(t("help." + h))}</span></label>`).join("");
+  const ch = formChannel();
+  $$("[data-form]").forEach(f => {
+    const btn = $("[data-submit]", f);
+    btn.textContent = ch === "whatsapp" ? t("form.submitWa") : t("form.submit");
+    btn.disabled = !ch;
+    const st = $(".form-status", f);
+    if (!ch) st.innerHTML = `<p class="notice warn">${ico("i-info")}<span>${esc(t("form.offline"))}</span></p>`;
+    else if (st.dataset.sticky !== "1") st.innerHTML = "";
+  });
+}
+
+function setErr(el, key) {
+  const field = el.closest(".field");
+  field.querySelector(".err")?.remove();
+  if (key) {
+    el.setAttribute("aria-invalid", "true");
+    const p = document.createElement("p"); p.className = "err"; p.textContent = t(key); p.id = (el.id || field.dataset.group) + "-err";
+    field.appendChild(p); el.setAttribute("aria-describedby", p.id);
+  } else { el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+}
+function validate(form) {
+  let first = null;
+  $$("input[required],select[required],textarea[required]", form).forEach(el => {
+    let key = null;
+    if (el.type === "checkbox") { if (!el.checked) key = el.hasAttribute("data-consent") ? "err.consent" : "err.required"; }
+    else if (!el.value.trim()) key = "err.required";
+    else if (el.hasAttribute("data-phone") && (el.value.replace(/\D/g, "").length < 7 || /[^\d\s+\-()]/.test(el.value))) key = "err.phone";
+    setErr(el, key); if (key && !first) first = el;
+  });
+  $$("[data-required-group]", form).forEach(g => {
+    const any = $$("input:checked", g).length > 0;
+    g.querySelector(".err")?.remove();
+    if (!any) { const p = document.createElement("p"); p.className = "err"; p.textContent = t("err.group"); g.appendChild(p); if (!first) first = $("input", g); }
+  });
+  return first;
+}
+function collect(form) {
+  const data = {};
+  new FormData(form).forEach((v, k) => { if (data[k]) data[k] = [].concat(data[k], v); else data[k] = v; });
+  return data;
+}
+function waMessage(kind, data) {
+  const lines = ["*" + L(FORM_FIELDS[kind]) + " · Providence Earthquake Relief*"];
+  $$(`[data-form="${kind}"] .field`).forEach(f => {
+    const lab = f.querySelector("label, legend"); if (!lab) return;
+    const inputs = $$("input,select,textarea", f); if (!inputs.length) return;
+    const name = inputs[0].name; let v = data[name];
+    if (inputs[0].type === "checkbox" && name === "consent") return;
+    if (name === "help") v = [].concat(v || []).map(h => t("help." + h)).join(", ");
+    else if (inputs[0].tagName === "SELECT" && v) v = t("area." + v);
+    if (v) lines.push(lab.textContent.trim() + ": " + v);
+  });
+  return lines.join("\n");
+}
+$$("[data-form]").forEach(form => {
+  form.addEventListener("input", e => { if (e.target.getAttribute("aria-invalid") === "true") setErr(e.target, null); });
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const ch = formChannel(); if (!ch) return;
+    const st = $(".form-status", form); st.dataset.sticky = "1";
+    const bad = validate(form);
+    if (bad) { st.innerHTML = `<p class="notice stop" role="alert">${ico("i-alert")}<span>${esc(t("err.summary"))}</span></p>`; bad.focus(); return; }
+    const kind = form.dataset.form, data = collect(form);
+    if (ch === "endpoint") {
+      const btn = $("[data-submit]", form); btn.disabled = true; btn.textContent = t("form.sending");
+      try {
+        const r = await fetch(CONFIG.formEndpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ form: kind, lang, submittedAt: new Date().toISOString(), data }) });
+        if (!r.ok) throw new Error(r.status);
+        st.innerHTML = `<p class="notice ok" role="status">${ico("i-check")}<span>${esc(t("form.sent"))}</span></p>`; form.reset();
+      } catch (err) {
+        st.innerHTML = `<p class="notice stop" role="alert">${ico("i-alert")}<span>${esc(t("form.failed"))}</span></p>`;
+      } finally { btn.disabled = false; btn.textContent = t("form.submit"); }
+    } else {
+      const href = "https://wa.me/" + CONFIG.coordinatorWhatsApp.replace(/\D/g, "") + "?text=" + encodeURIComponent(waMessage(kind, data));
+      st.innerHTML = `<p class="notice ok" role="status">${ico("i-msg")}<span>${esc(t("form.waReady"))} <a href="${esc(href)}" target="_blank" rel="noopener">${esc(t("form.waLink"))}</a></span></p>`;
+      const a = document.createElement("a"); a.href = href; a.target = "_blank"; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove();
+    }
+  });
+});
+document.addEventListener("click", e => {
+  const o = e.target.closest("[data-open], a[href='#recogida'], a[href='#socio']");
+  if (!o) return;
+  const id = o.dataset.open || o.getAttribute("href").slice(1);
+  const d = document.getElementById(id); if (d && d.tagName === "DETAILS") d.open = true;
+});
+
+/* ------------------------- received & deliveries -------------------------- */
+const recState = { loc: "all", q: "", shown: 12 };
+function imgSrc(u) {
+  if (!u) return "";
+  const m = String(u).match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600` : String(u);
+}
+function locName(id) { const l = CONFIG.locations.find(x => x.id === id); return l ? l.name : (id || ""); }
+function sortByDate(list) { return [...list].sort((a, b) => String(b.date + " " + (b.time || "")).localeCompare(String(a.date + " " + (a.time || "")))); }
+function fmtTime(tm) {
+  if (!tm) return "";
+  const [h, m] = String(tm).split(":").map(Number); if (isNaN(h)) return tm;
+  const d = new Date(2000, 0, 1, h, m || 0);
+  return d.toLocaleTimeString(lang === "es" ? "es-PA" : "en-US", { hour: "numeric", minute: "2-digit" });
+}
+function renderReceived() {
+  const all = sortByDate(CONFIG.received || []);
+  const locs = [...new Set(all.map(r => r.location).filter(Boolean))];
+  if (recState.loc !== "all" && !locs.includes(recState.loc)) recState.loc = "all";
+  $("#recChips").innerHTML = all.length ? ["all", ...locs].map(id => `<button type="button" class="chip" data-rec="${esc(id)}" aria-pressed="${recState.loc === id}">${esc(id === "all" ? t("rec.all") : locName(id))}<span class="n">${id === "all" ? all.length : all.filter(r => r.location === id).length}</span></button>`).join("") : "";
+  $("#recSearch").closest(".finder").hidden = !all.length;
+  $("#recSum").textContent = all.length ? t(all.length === 1 ? "rec.sum1" : "rec.sumN", { n: all.length, date: fmtDate(all[0].date) }) : "";
+  const q = norm(recState.q);
+  const list = all.filter(r => (recState.loc === "all" || r.location === recState.loc) &&
+    (!q || norm([L(r.items), r.donor, locName(r.location)].join(" ")).includes(q)));
+  const box = $("#recList");
+  if (!all.length) {
+    box.innerHTML = "";
+    box.insertAdjacentHTML("afterend", "");
+    $("#recSum").innerHTML = `<span class="empty" style="display:grid">${ico("i-package")}<b style="font:600 1.25rem var(--serif);color:var(--navy)">${esc(t("rec.empty.title"))}</b><span>${esc(t("rec.empty.body"))}</span></span>`;
+  } else if (!list.length) {
+    box.innerHTML = `<div class="empty" style="border:0">${ico("i-search")}<h3>${esc(t("rec.nomatch"))}</h3></div>`;
+  } else {
+    const d = s => { try { const x = new Date(s + "T12:00:00"); return { day: x.getDate(), mon: x.toLocaleDateString(lang === "es" ? "es-PA" : "en-US", { month: "short" }).replace(".", "") }; } catch (e) { return { day: "", mon: s }; } };
+    box.innerHTML = list.slice(0, recState.shown).map(r => { const dt = d(r.date); const ph = imgSrc(r.photo); return `<article class="rec">
+      <div class="rec-date" aria-label="${esc(fmtDate(r.date))}"><b>${dt.day}</b><span>${esc(dt.mon)}</span></div>
+      <div style="min-width:0"><p class="rec-items">${esc(L(r.items))}</p>
+        <p class="rec-meta"><span>${ico("i-pin")}${esc(locName(r.location))}</span><span>${ico("i-heart")}${esc(r.donor ? r.donor : t("rec.anon"))}</span>${r.time ? `<span>${ico("i-clock")}${esc(fmtTime(r.time))}</span>` : ""}</p></div>
+      ${ph ? `<img class="rec-thumb" src="${esc(ph)}" alt="" loading="lazy">` : "<span></span>"}
+    </article>`; }).join("") +
+      (list.length > recState.shown ? `<div class="rec-more"><button class="btn btn-line btn-sm" type="button" id="recMore">${esc(t("rec.more"))}</button></div>` : "");
+  }
+  const c = CONFIG.contact;
+  $("#recHowto").innerHTML = `${ico("i-msg")}<span>${esc(hasContact() ? t("rec.howto", { name: c.shortName || c.name, phone: c.display }) : t("rec.howtoNoContact"))}</span>`;
+}
+$("#recChips").addEventListener("click", e => { const c = e.target.closest("[data-rec]"); if (!c) return; recState.loc = c.dataset.rec; recState.shown = 12; renderReceived(); });
+$("#recSearch").addEventListener("input", e => { recState.q = e.target.value; recState.shown = 12; renderReceived(); });
+$("#recList").addEventListener("click", e => { if (e.target.closest("#recMore")) { recState.shown += 12; renderReceived(); } });
+
+function renderDistributions() {
+  const list = sortByDate(CONFIG.distributions?.length ? CONFIG.distributions : (CONFIG.updates || []));
+  if (!list.length) { $("#distList").innerHTML = `<p class="pending">${ico("i-truck")}<span>${esc(t("dist.empty"))}</span></p>`; return; }
+  $("#distList").innerHTML = list.map(x => {
+    const photos = (x.photos || []).filter(p => p && p.src);
+    const place = L(x.place || x.area);
+    const items = x.items || x.quantities || [];
+    const ph = photos.map(p => { const src = imgSrc(p.src), img = `<img src="${esc(src)}" alt="${esc(L(p.alt))}" loading="lazy">`;
+      return /^https?:/.test(src) ? `<a href="${esc(src)}" target="_blank" rel="noopener" aria-label="${esc(t("dist.photoOpen"))}">${img}</a>` : `<figure>${img}</figure>`; }).join("");
+    return `<article class="dist${photos.length ? " has-photos" : ""}">
+      ${photos.length ? `<div class="dist-photos">${ph}</div>` : ""}
+      <div class="dist-body">
+        <time datetime="${esc(x.date)}">${esc(fmtDate(x.date))}</time>
+        ${place ? `<h3>${esc(place)}</h3>` : ""}
+        ${L(x.description) ? `<p>${esc(L(x.description))}</p>` : ""}
+        <dl>
+          ${items.length ? `<dt>${esc(t("dist.items"))}</dt><dd><ul>${items.map(q => `<li>${esc(L(q))}</li>`).join("")}</ul></dd>` : ""}
+          ${x.confirmedBy && L(x.confirmedBy) ? `<dt>${esc(t("dist.confirmed"))}</dt><dd>${esc(L(x.confirmedBy))}</dd>` : ""}
+          ${x.notes && L(x.notes) ? `<dt>${esc(t("dist.notes"))}</dt><dd>${esc(L(x.notes))}</dd>` : ""}
+        </dl>
+      </div></article>`;
+  }).join("");
+}
+
+function hasContact() { return !!(CONFIG.contact && CONFIG.contact.whatsapp && CONFIG.contact.display); }
+function renderContact() {
+  const els = ["#heroContact", "#guideContact", "#contactCard", "#footContact"].map(s => $(s));
+  if (!hasContact()) { els.forEach(e => e.hidden = true); return; }
+  const c = CONFIG.contact, name = c.shortName || c.name;
+  const wa = "https://wa.me/" + c.whatsapp.replace(/\D/g, "");
+  els.forEach(e => e.hidden = false);
+  $("#heroContact").innerHTML = `${ico("i-msg")}<span>${esc(t("contact.hero", { textOnly: t("contact.textOnlyShort"), name }))} · <a href="${wa}" target="_blank" rel="noopener">${esc(c.display)}</a></span>`;
+  $("#guideContact").innerHTML = `${ico("i-msg")}<span>${esc(t("contact.guide", { name, phone: c.display }))}</span>`;
+  $("#contactCard").innerHTML = `<h3>${ico("i-msg")}<span>${esc(t("contact.title"))}</span></h3>
+    <p><b>${esc(c.name)}</b></p>
+    <div class="num"><b id="contactNum">${esc(c.display)}</b><button class="copy" type="button" data-copy-from="contactNum">${ico("i-copy")}<span>${esc(t("copy"))}</span></button></div>
+    ${c.textOnly ? `<p class="textonly">${ico("i-alert")}<span>${esc(t("contact.textOnly"))}</span></p>` : ""}
+    <p class="loc-comm">${esc(t("contact.body"))}</p>
+    <a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener" style="justify-self:start">${ico("i-msg")}${esc(t("contact.open"))}</a>`;
+  $("#footContact").innerHTML = `${esc(t("contact.title"))}: ${esc(c.name)} · WhatsApp <a href="${wa}" target="_blank" rel="noopener">${esc(c.display)}</a> (${esc(t("contact.textOnlyShort"))})`;
+}
+function renderAnnouncement() {
+  const a = CONFIG.announcement, box = $("#announce");
+  if (!a || !L(a)) { box.hidden = true; return; }
+  box.hidden = false;
+  box.innerHTML = `<p class="notice ${a.tone === "warn" ? "warn" : a.tone === "ok" ? "ok" : ""}">${ico("i-info")}<span>${esc(L(a))}</span></p>`;
+}
+
+/* ---------------------- Phase 2: Google Sheets CSV --------------------- */
+function parseCSV(text) {
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"' && text[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; }
+    else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  const head = (rows.shift() || []).map(h => h.trim().toLowerCase());
+  return rows.filter(r => r.some(v => v.trim())).map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
+}
+const yes = v => /^(yes|si|sí|true|1|x)$/i.test(String(v).trim());
+const numOrNull = v => (v === "" || v == null || isNaN(+v)) ? null : +v;
+async function loadSheets() {
+  const s = CONFIG.sheets; const distCsv = s.distributionsCsv || s.updatesCsv;
+  if (!s.locationsCsv && !s.suppliesCsv && !s.receivedCsv && !distCsv && !s.cashCsv) return;
+  const status = $("#dataStatus"); status.hidden = false;
+  status.innerHTML = `<p class="notice">${ico("i-clock")}<span>${esc(t("data.loading"))}</span></p>`;
+  const get = u => fetch(u, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); }).then(parseCSV);
+  try {
+    if (s.locationsCsv) {
+      const rows = await get(s.locationsCsv);
+      CONFIG.locations = rows.map(r => ({ id: r.id || norm(r.name).replace(/\W+/g, "-"), approved: yes(r.approved), name: r.name, area: AREAS.includes(r.area) ? r.area : "other",
+        status: r.status || "awaiting", frontGate: yes(r.frontgate), tower: yes(r.publishdetails) ? r.tower : "", unit: yes(r.publishdetails) ? r.unit : "",
+        lat: numOrNull(r.lat), lng: numOrNull(r.lng), mapsUrl: r.mapsurl || "", wazeUrl: r.wazeurl || "",
+        instructions: { es: r.instructions_es, en: r.instructions_en } }));
+    }
+    if (s.suppliesCsv) {
+      const rows = await get(s.suppliesCsv), byCat = {};
+      rows.forEach(r => { const id = r.category || "other"; (byCat[id] = byCat[id] || []).push({ es: r.item_es, en: r.item_en || r.item_es, priority: r.priority || null }); if (r.last_updated) CONFIG.suppliesLastUpdated = r.last_updated; });
+      const icons = { food: "i-food", shelter: "i-tent", hygiene: "i-sparkle", kids: "i-palette" };
+      CONFIG.supplies = Object.keys(byCat).map(id => ({ id, icon: icons[id] || "i-package", title: { es: id, en: id }, items: byCat[id] }));
+    }
+    if (s.cashCsv) {
+      const rows = await get(s.cashCsv);
+      CONFIG.cashDonations = rows.filter(r => r.date && !/^(no|false|0)$/i.test(r.publish || ""))
+        .map(r => ({ date: r.date, name: r.name || "", amount: parseFloat(String(r.amount).replace(/[^\d.]/g, "")) || 0, method: (r.method || "").toLowerCase(), note: r.note || "" }));
+    }
+    if (s.receivedCsv) {
+      const rows = await get(s.receivedCsv);
+      const idFor = v => (CONFIG.locations.find(l => l.id === v || norm(l.name) === norm(v)) || {}).id || v;
+      CONFIG.received = rows.filter(r => r.date && !/^(no|false|0)$/i.test(r.publish || ""))
+        .map(r => ({ date: r.date, time: r.time || "", location: idFor(r.location), items: { es: r.items_es || r.items, en: r.items_en || r.items_es || r.items }, donor: r.donor || "", photo: r.photo_url || "" }));
+    }
+    if (distCsv) {
+      const rows = await get(distCsv);
+      CONFIG.distributions = rows.filter(r => r.date).map(r => {
+        const urls = (r.photo_urls || r.photo_url || "").split(/[\s;]+/).filter(Boolean);
+        const split = v => (v || "").split(";").map(x => x.trim()).filter(Boolean);
+        const ies = split(r.items_es || r.quantities_es), ien = split(r.items_en || r.quantities_en);
+        return { date: r.date, place: { es: r.place_es || r.area_es, en: r.place_en || r.area_en || r.place_es || r.area_es },
+          description: { es: r.description_es, en: r.description_en || r.description_es },
+          items: ies.map((q, i) => ({ es: q, en: ien[i] || q })),
+          photos: urls.map(u => ({ src: u, alt: { es: r.photo_alt_es || "", en: r.photo_alt_en || r.photo_alt_es || "" } })),
+          confirmedBy: r.confirmed_by_es ? { es: r.confirmed_by_es, en: r.confirmed_by_en || r.confirmed_by_es } : null,
+          notes: { es: r.notes_es, en: r.notes_en || r.notes_es } };
+      });
+    }
+    status.hidden = true;
+  } catch (e) {
+    status.innerHTML = `<p class="notice warn">${ico("i-alert")}<span>${esc(t("data.error"))}</span></p>`;
+  }
+  renderAll();
+}
+
+/* ------------------------------- wiring ------------------------------ */
+function renderAll() {
+  applyText(); renderAnnouncement(); renderContact(); renderLocations(); renderMap(); renderSupplies(); renderPayments(); renderCash(); renderShare(); renderFormControls(); renderReceived(); renderDistributions();
+  const g = $("#geoMsg"); if (g.dataset.key) geoMsg(g.dataset.key, g.dataset.tone, g.dataset.vars ? JSON.parse(g.dataset.vars) : null, g.dataset.choose === "1");
+}
+$$("img.logo").forEach(i => { i.src = LOGO; i.decoding = "async"; });
+$$("[data-lang]").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang; try { localStorage.setItem("relief-lang", lang); } catch (e) {}
+  renderAll();
+}));
+const menuBtn = $("#menuBtn"), nav = $("#nav");
+menuBtn.addEventListener("click", () => { const o = !nav.classList.contains("open"); nav.classList.toggle("open", o); menuBtn.setAttribute("aria-expanded", String(o)); });
+nav.addEventListener("click", e => { if (e.target.closest("a")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); } });
+renderAll();
+loadSheets();
+</script>
