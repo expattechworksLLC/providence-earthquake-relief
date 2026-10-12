@@ -5,7 +5,7 @@
 - **Spanish:** https://providenceearthquakerelief.netlify.app/es/ — always opens in Spanish
 - **Main:** https://providenceearthquakerelief.netlify.app/ — follows the phone's language
 
-To update: Netlify → your site → **Deploys** tab → drag the new unzipped folder into the box at the bottom.
+**Updates are automatic:** this repository is linked to Netlify, so every change pushed to `main` goes live within about a minute. No zips or manual uploads.
 Every page has the ES/EN switch at the top.
 
 This folder is the complete public site (`index.html`, `en/`, `es/`). Each page is self-contained (logo embedded, no build step).
