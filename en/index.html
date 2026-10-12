@@ -9,10 +9,10 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="https://providencechurchpa.org/img/favicon.png">
 <link rel="apple-touch-icon" href="https://providencechurchpa.org/img/logo.png">
+<link rel="canonical" href="https://providenceearthquakerelief.netlify.app/en/">
 <link rel="alternate" hreflang="en" href="https://providenceearthquakerelief.netlify.app/en/">
 <link rel="alternate" hreflang="es" href="https://providenceearthquakerelief.netlify.app/es/">
 <meta property="og:url" content="https://providenceearthquakerelief.netlify.app/en/">
-<link rel="canonical" href="https://providenceearthquakerelief.netlify.app/en/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Providence Church Coronado">
 <meta property="og:title" content="Providence Church — Earthquake Relief">
@@ -797,10 +797,10 @@ const CONFIG = {
   ],
 
   // Yappy: fill all three before it shows. qrImage = a data: URI or a URL on your own host.
-  yappy: { recipientName: "", handle: "", qrImage: "" },
+  yappy: { recipientName: "Pastor Marc O", handle: "6575-6765", qrImage: "" },
 
   // Panama bank transfer. Shows once accountNumber is filled in.
-  bank: { bankName: "", accountHolder: "", accountType: "", accountNumber: "", extra: { es: "", en: "" } },
+  bank: { bankName: "Banistmo", accountHolder: "John Sawkins", accountType: { es: "Cuenta de ahorros", en: "Savings account" }, accountNumber: "0116193443", extra: { es: "", en: "" } },
 
   /* RECENT CASH DONATIONS — publish only after the money is confirmed received.
      Show a name ONLY if the donor agreed; leave name "" to show "Anonymous".
@@ -895,7 +895,7 @@ es: {
   "yappy.title":"Yappy","yappy.sub":"Pago rápido desde tu teléfono",
   "yappy.pending":"Próximamente estarán disponibles los datos para donar por Yappy.",
   "yappy.recipient":"Destinatario","yappy.handle":"Número o directorio Yappy","yappy.qrAlt":"Código QR de Yappy para donaciones",
-  "yappy.steps":"Abre Yappy, busca al destinatario o escanea el código, ingresa el monto y escribe Providence Earthquake Relief en el mensaje.",
+  "yappy.steps":"Abre Yappy, envía al número 6575-6765, ingresa el monto y escribe Providence Earthquake Relief en el mensaje.",
   "bank.title":"Transferencia bancaria","bank.sub":"Desde cualquier banco en Panamá",
   "bank.pending":"Próximamente estarán disponibles los datos para donar por transferencia bancaria.",
   "bank.bank":"Banco","bank.holder":"Titular","bank.type":"Tipo de cuenta","bank.number":"Número de cuenta","bank.extra":"Información adicional",
@@ -1012,7 +1012,7 @@ en: {
   "yappy.title":"Yappy","yappy.sub":"Quick payment from your phone",
   "yappy.pending":"Yappy donation details coming soon.",
   "yappy.recipient":"Recipient","yappy.handle":"Yappy number or handle","yappy.qrAlt":"Yappy QR code for donations",
-  "yappy.steps":"Open Yappy, find the recipient or scan the code, enter the amount and write Providence Earthquake Relief in the message.",
+  "yappy.steps":"Open Yappy, send to the number 6575-6765, enter the amount and write Providence Earthquake Relief in the message.",
   "bank.title":"Bank transfer","bank.sub":"From any bank in Panama",
   "bank.pending":"Bank transfer details coming soon.",
   "bank.bank":"Bank","bank.holder":"Account holder","bank.type":"Account type","bank.number":"Account number","bank.extra":"Additional details",
@@ -1336,10 +1336,10 @@ function renderPayments() {
          : `<p class="pending">${ico("i-clock")}<span>${esc(t("yappy.pending"))}</span></p>`);
   const b = CONFIG.bank, bOk = b.bankName && b.accountHolder && b.accountNumber;
   let all = "";
-  if (bOk) all = [[t("bank.bank"), b.bankName], [t("bank.holder"), b.accountHolder], [t("bank.type"), b.accountType], [t("bank.number"), b.accountNumber], [t("bank.extra"), L(b.extra)]]
+  if (bOk) all = [[t("bank.bank"), b.bankName], [t("bank.holder"), b.accountHolder], [t("bank.type"), L(b.accountType)], [t("bank.number"), b.accountNumber], [t("bank.extra"), L(b.extra)]]
     .filter(r => r[1]).map(r => r[0] + ": " + r[1]).join("\n") + "\n" + (lang === "es" ? "Referencia" : "Reference") + ": Providence Earthquake Relief";
   $("#bankCard").innerHTML = `<div class="pay-h"><span class="sup-ic">${ico("i-bank")}</span><div><h3>${esc(t("bank.title"))}</h3><p class="loc-comm">${esc(t("bank.sub"))}</p></div></div>` +
-    (bOk ? `<dl class="kv">${kvRow(t("bank.bank"), b.bankName, "bBank")}${kvRow(t("bank.holder"), b.accountHolder, "bHolder")}${b.accountType ? kvRow(t("bank.type"), b.accountType, "bType") : ""}${kvRow(t("bank.number"), b.accountNumber, "bNum")}${L(b.extra) ? kvRow(t("bank.extra"), L(b.extra), "bExtra") : ""}</dl>
+    (bOk ? `<dl class="kv">${kvRow(t("bank.bank"), b.bankName, "bBank")}${kvRow(t("bank.holder"), b.accountHolder, "bHolder")}${L(b.accountType) ? kvRow(t("bank.type"), L(b.accountType), "bType") : ""}${kvRow(t("bank.number"), b.accountNumber, "bNum")}${L(b.extra) ? kvRow(t("bank.extra"), L(b.extra), "bExtra") : ""}</dl>
             <button class="btn btn-navy" type="button" data-copy-text="${esc(all)}" data-label-key="copyAll">${ico("i-copy")}<span>${esc(t("copyAll"))}</span></button>`
          : `<p class="pending">${ico("i-clock")}<span>${esc(t("bank.pending"))}</span></p>`);
 
