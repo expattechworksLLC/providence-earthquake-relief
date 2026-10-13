@@ -762,10 +762,12 @@ const CONFIG = {
                       en: "Bring your donations to Zion Fitness Club during opening hours and ask at the front desk where to leave them." } },
     { id: "bahia", approved: true, mapLabel: "Bahía Resort", name: "Bahía Resort", area: "nueva-gorgona", status: "accepting",
       tower: "1", unit: "16A, 17F", publishDetails: true,   // unit details approved for publication by the coordinator
-      frontGate: false, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
+      frontGate: true,
+      gateText: { es: "Deja tus donaciones en la garita de entrada de Bahía Resort. Nosotros pasaremos a recogerlas.",
+                  en: "Leave your donations at the Bahía Resort front gate. We'll pick them up." }, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
       mapsUrl: "https://maps.app.goo.gl/mUXPk9Qs1ya2m5T89", wazeUrl: "https://waze.com/ul?ll=8.5484357,-79.8715929&navigate=yes",
-      instructions: { es: "Hay tinas de donaciones frente a la puerta de los apartamentos 16A y 17F de la Torre 1. Coloca tus donaciones en cualquiera de las dos.",
-                      en: "There are donation bins outside the doors of units 16A and 17F in Tower 1. Place your donations in either one." } },
+      instructions: { es: "Si tienes acceso al edificio, también hay tinas de donaciones frente a la puerta de los apartamentos 16A y 17F de la Torre 1.",
+                      en: "If you have building access, there are also donation bins outside the doors of units 16A and 17F in Tower 1." } },
     { id: "ccc", approved: true, mapLabel: "Country Club", name: "Coronado Country Club", area: "coronado", status: "accepting",
       tower: "3", unit: "23C", publishDetails: true,        // unit details approved for publication by the coordinator
       frontGate: true, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
@@ -861,7 +863,7 @@ es: {
   "hero.mission":"Providence Church Coronado y voluntarios de la comunidad estamos recolectando y llevando suministros esenciales a las comunidades afectadas por el sismo en la península de Azuero. Con el apoyo de nuestros vecinos, comercios y toda la comunidad, podemos brindar ayuda concreta donde más se necesita.",
   "hero.route":"Recolectamos en Coronado, Nueva Gorgona y San Carlos. Primer destino: Playa Venao y las comunidades afectadas de los alrededores.",
   "cta.find":"Buscar un punto de recolección","cta.supplies":"Donar suministros","cta.money":"Donar dinero","cta.volunteer":"Ser voluntario",
-  "hero.gate":"En Coronado Golf Tower y Coronado Country Club puedes dejar tus donaciones en la garita.",
+  "hero.gate":"En Coronado Golf Tower, Coronado Country Club y Bahía Resort puedes dejar tus donaciones en la garita.",
   "loc.eyebrow":"Puntos de Recolección","loc.title":"¿Dónde dejo mis donaciones?",
   "loc.lead":"Lleva tus donaciones al punto más cercano. En los edificios residenciales, respeta siempre las normas de acceso y seguridad.",
   "loc.search.label":"Buscar por edificio o comunidad","loc.search.ph":"Buscar edificio o comunidad…","loc.areas":"Filtrar por zona",
@@ -978,7 +980,7 @@ en: {
   "hero.mission":"Providence Church Coronado and local volunteers are collecting and delivering essential supplies to communities affected by the earthquake in Panama's Azuero Peninsula. With the support of our neighbors, businesses, and community, we can provide practical assistance where it is needed most.",
   "hero.route":"Collecting in Coronado, Nueva Gorgona and San Carlos. First destination: Playa Venao and the surrounding affected communities.",
   "cta.find":"Find a Drop-Off Location","cta.supplies":"Donate Supplies","cta.money":"Donate Money","cta.volunteer":"Volunteer",
-  "hero.gate":"At Coronado Golf Tower and Coronado Country Club you can leave donations at the front gate.",
+  "hero.gate":"At Coronado Golf Tower, Coronado Country Club and Bahía Resort you can leave donations at the front gate.",
   "loc.eyebrow":"Donation Locations","loc.title":"Where can I drop off donations?",
   "loc.lead":"Take your donations to the closest point. At residential buildings, please always follow the access and security rules.",
   "loc.search.label":"Search by building or community","loc.search.ph":"Search building or community…","loc.areas":"Filter by area",
