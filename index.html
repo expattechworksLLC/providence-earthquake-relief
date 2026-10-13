@@ -766,10 +766,13 @@ const CONFIG = {
       instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
                       en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } },
     { id: "ccc", approved: true, mapLabel: "Country Club", name: "Coronado Country Club", area: "coronado", status: "accepting",
-      tower: "", unit: "", frontGate: false, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
-      // lat/lng: "P.H. Coronado Country Club" on OpenStreetMap (development area, not Tower 300 itself) — confirm
-      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
-                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } }
+      tower: "3", unit: "23C", publishDetails: true,        // unit details approved for publication by the coordinator
+      frontGate: true, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
+      // lat/lng: "P.H. Coronado Country Club" on OpenStreetMap (development area, not Tower 3 itself) — confirm
+      gateText: { es: "Deja tus donaciones en la garita de entrada del complejo. Nosotros pasaremos a recogerlas.",
+                  en: "Leave your donations at the front gate of the complex. We'll pick them up." },
+      instructions: { es: "Si tienes acceso al edificio, también puedes dejarlas en la tina de donaciones frente a la puerta de la Torre 3, Apto. 23C.",
+                      en: "If you have building access, you can also leave them in the donation tub outside Tower 3, Unit 23C." } }
   ],
 
   /* Supplies requested by contacts in the affected communities.
@@ -857,7 +860,7 @@ es: {
   "hero.mission":"Providence Church Coronado y voluntarios de la comunidad estamos recolectando y llevando suministros esenciales a las comunidades afectadas por el sismo en la península de Azuero. Con el apoyo de nuestros vecinos, comercios y toda la comunidad, podemos brindar ayuda concreta donde más se necesita.",
   "hero.route":"Recolectamos en Coronado, Nueva Gorgona y San Carlos. Primer destino: Playa Venao y las comunidades afectadas de los alrededores.",
   "cta.find":"Buscar un punto de recolección","cta.supplies":"Donar suministros","cta.money":"Donar dinero","cta.volunteer":"Ser voluntario",
-  "hero.gate":"En Coronado Golf Tower puedes dejar tus donaciones en la garita.",
+  "hero.gate":"En Coronado Golf Tower y Coronado Country Club puedes dejar tus donaciones en la garita.",
   "loc.eyebrow":"Puntos de Recolección","loc.title":"¿Dónde dejo mis donaciones?",
   "loc.lead":"Lleva tus donaciones al punto más cercano. En los edificios residenciales, respeta siempre las normas de acceso y seguridad.",
   "loc.search.label":"Buscar por edificio o comunidad","loc.search.ph":"Buscar edificio o comunidad…","loc.areas":"Filtrar por zona",
@@ -974,7 +977,7 @@ en: {
   "hero.mission":"Providence Church Coronado and local volunteers are collecting and delivering essential supplies to communities affected by the earthquake in Panama's Azuero Peninsula. With the support of our neighbors, businesses, and community, we can provide practical assistance where it is needed most.",
   "hero.route":"Collecting in Coronado, Nueva Gorgona and San Carlos. First destination: Playa Venao and the surrounding affected communities.",
   "cta.find":"Find a Drop-Off Location","cta.supplies":"Donate Supplies","cta.money":"Donate Money","cta.volunteer":"Volunteer",
-  "hero.gate":"At Coronado Golf Tower you can leave donations with front gate security.",
+  "hero.gate":"At Coronado Golf Tower and Coronado Country Club you can leave donations at the front gate.",
   "loc.eyebrow":"Donation Locations","loc.title":"Where can I drop off donations?",
   "loc.lead":"Take your donations to the closest point. At residential buildings, please always follow the access and security rules.",
   "loc.search.label":"Search by building or community","loc.search.ph":"Search building or community…","loc.areas":"Filter by area",
@@ -1153,8 +1156,8 @@ function renderChips() {
 function locCard(l) {
   const st = ["accepting", "full", "closed", "awaiting"].includes(l.status) ? l.status : "awaiting";
   const unitBits = [];
-  if (CONFIG.publishUnitDetails && l.tower) unitBits.push(`${t("loc.tower")} ${esc(l.tower)}`);
-  if (CONFIG.publishUnitDetails && l.unit) unitBits.push(`${t("loc.unit")} ${esc(l.unit)}`);
+  if ((CONFIG.publishUnitDetails || l.publishDetails) && l.tower) unitBits.push(`${t("loc.tower")} ${esc(l.tower)}`);
+  if ((CONFIG.publishUnitDetails || l.publishDetails) && l.unit) unitBits.push(`${t("loc.unit")} ${esc(l.unit)}`);
   const dirs = [];
   if (l.mapsUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.mapsUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Google Maps</a>`);
   if (l.wazeUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.wazeUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Waze</a>`);
@@ -1169,7 +1172,7 @@ function locCard(l) {
       </div>
     </div>
     <div class="loc-body">
-      ${l.frontGate ? `<div class="gate"><strong>${ico("i-shield")}${esc(t("loc.gate.title"))}</strong><p>${esc(t("loc.gate.body"))}</p><p class="tip">${esc(t("loc.gate.tip"))}</p></div>` : ""}
+      ${l.frontGate ? `<div class="gate"><strong>${ico("i-shield")}${esc(t("loc.gate.title"))}</strong><p>${esc(l.gateText ? L(l.gateText) : t("loc.gate.body"))}</p><p class="tip">${esc(t("loc.gate.tip"))}</p></div>` : ""}
       <p class="row">${ico("i-clock")}<span><b>${l.hoursText ? L(l.hoursText).split(" · ").map(esc).join("<br>") : esc(t(biz ? "loc.hoursBiz" : "loc.hours"))}</b></span></p>
       ${l.address ? `<p class="row">${ico("i-pin")}<span>${esc(l.address)}</span></p>` : ""}
       <p class="row">${ico("i-package")}<span>${esc(L(l.instructions))}</span></p>
