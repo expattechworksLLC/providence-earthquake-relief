@@ -735,10 +735,11 @@ const CONFIG = {
       instructions: { es: "Lleva tus donaciones a Zion Fitness Club durante el horario de atención y pregunta en la recepción dónde dejarlas.",
                       en: "Bring your donations to Zion Fitness Club during opening hours and ask at the front desk where to leave them." } },
     { id: "bahia", approved: true, mapLabel: "Bahía Resort", name: "Bahía Resort", area: "nueva-gorgona", status: "accepting",
-      tower: "", unit: "", frontGate: false, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
+      tower: "1", unit: "16A, 17F", publishDetails: true,   // unit details approved for publication by the coordinator
+      frontGate: false, lat: 8.5484357, lng: -79.8715929,          // PH Bahía Resort — Google Maps pin from the coordinator
       mapsUrl: "https://maps.app.goo.gl/mUXPk9Qs1ya2m5T89", wazeUrl: "https://waze.com/ul?ll=8.5484357,-79.8715929&navigate=yes",
-      instructions: { es: "Hay una tina de donaciones identificada frente a la puerta de la residencia. Coloca tus donaciones dentro.",
-                      en: "There is a designated donation tub outside the residence's front door. Place your donations inside." } },
+      instructions: { es: "Hay tinas de donaciones frente a la puerta de los apartamentos 16A y 17F de la Torre 1. Coloca tus donaciones en cualquiera de las dos.",
+                      en: "There are donation bins outside the doors of units 16A and 17F in Tower 1. Place your donations in either one." } },
     { id: "ccc", approved: true, mapLabel: "Country Club", name: "Coronado Country Club", area: "coronado", status: "accepting",
       tower: "3", unit: "23C", publishDetails: true,        // unit details approved for publication by the coordinator
       frontGate: true, lat: 8.5451115, lng: -79.8763646, mapsUrl: "", wazeUrl: "",
@@ -850,7 +851,7 @@ es: {
   "loc.hours":"Entrega: A cualquier hora, sujeto al acceso del edificio.",
   "loc.private":"Residencia privada","loc.business":"Comercio","loc.openNow":"Abierto ahora","loc.closedNow":"Cerrado ahora","loc.hoursBiz":"Entrega: durante el horario de atención del local.",
   "loc.unitHidden":"El lugar exacto dentro del edificio se publicará cuando el equipo lo autorice.",
-  "loc.tower":"Torre","loc.unit":"Apto.",
+  "loc.tower":"Torre","loc.unit":"Apto.","loc.units":"Aptos.",
   "loc.gate.title":"Puedes dejar tus donaciones en la garita.",
   "loc.gate.body":"Entrega tus donaciones al personal de seguridad en la entrada. Un coordinador local bajará a recogerlas. No necesitas subir a la torre.",
   "loc.gate.tip":"Al entregarlas, menciona «Providence Earthquake Relief».",
@@ -967,7 +968,7 @@ en: {
   "loc.hours":"Drop-off: Anytime, subject to building access.",
   "loc.private":"Private residence","loc.business":"Business","loc.openNow":"Open now","loc.closedNow":"Closed now","loc.hoursBiz":"Drop-off: during the store's opening hours.",
   "loc.unitHidden":"The exact spot inside the building will be published once the team approves it.",
-  "loc.tower":"Tower","loc.unit":"Unit",
+  "loc.tower":"Tower","loc.unit":"Unit","loc.units":"Units",
   "loc.gate.title":"Front Gate Drop-Off Available",
   "loc.gate.body":"Hand your donations to the security staff at the front gate. A local coordinator will come down to collect them. You don't need to go up into the tower.",
   "loc.gate.tip":"When you hand them over, mention “Providence Earthquake Relief.”",
@@ -1131,7 +1132,7 @@ function locCard(l) {
   const st = ["accepting", "full", "closed", "awaiting"].includes(l.status) ? l.status : "awaiting";
   const unitBits = [];
   if ((CONFIG.publishUnitDetails || l.publishDetails) && l.tower) unitBits.push(`${t("loc.tower")} ${esc(l.tower)}`);
-  if ((CONFIG.publishUnitDetails || l.publishDetails) && l.unit) unitBits.push(`${t("loc.unit")} ${esc(l.unit)}`);
+  if ((CONFIG.publishUnitDetails || l.publishDetails) && l.unit) unitBits.push(`${t(l.unit.includes(",") ? "loc.units" : "loc.unit")} ${esc(l.unit.replace(/,\s*/g, lang === "es" ? " y " : " and "))}`);
   const dirs = [];
   if (l.mapsUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.mapsUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Google Maps</a>`);
   if (l.wazeUrl) dirs.push(`<a class="btn btn-line btn-sm" href="${esc(l.wazeUrl)}" target="_blank" rel="noopener">${ico("i-nav")}Waze</a>`);
