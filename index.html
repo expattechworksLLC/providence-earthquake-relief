@@ -740,6 +740,16 @@ const CONFIG = {
       mapsUrl: "https://maps.app.goo.gl/wBvzzqbu51KWPivY8", wazeUrl: "https://waze.com/ul?ll=8.5376201,-79.8861447&navigate=yes",
       instructions: { es: "Si tienes acceso a la torre, también puedes colocar tus donaciones en la tina identificada frente al apartamento de recolección.",
                       en: "If you have access to the tower, you can also place donations in the designated tub outside the collection apartment." } },
+    { id: "vial", approved: true, mapLabel: "Clínica Vial", mapLabelAlways: true, mapNudge: [-1.7, 0.6], type: "business", name: "Clínica Vial — Dr. Atencio", area: "coronado", status: "accepting",
+      tower: "", unit: "", frontGate: false, lat: 8.5440875, lng: -79.9128281,              // from Google plus code G3VP+JVM Las Lajas
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=8.5440875%2C-79.9128281", wazeUrl: "https://waze.com/ul?ll=8.5440875,-79.9128281&navigate=yes",
+      placeLabel: { es: "Las Lajas, área de Coronado", en: "Las Lajas, Coronado area" },
+      address: "G3VP+JVM, Las Lajas, Panamá Oeste",
+      openHours: { 0: null, 1: [10, 16], 2: [10, 16], 3: [10, 16], 4: [10, 16], 5: [10, 16], 6: null },
+      hoursText: { es: "Lunes a viernes: 10:00 a. m. – 4:00 p. m. · Sábado y domingo: cerrado",
+                   en: "Monday–Friday: 10:00 a.m. – 4:00 p.m. · Saturday and Sunday: closed" },
+      instructions: { es: "Lleva tus donaciones a la clínica dental del Dr. Atencio durante el horario de atención y entrégalas en la recepción.",
+                      en: "Bring your donations to Dr. Atencio's dental clinic during office hours and leave them at the front desk." } },
     { id: "redbarn", approved: true, mapLabel: "Red Barn", type: "business", name: "Red Barn Market", area: "coronado", status: "accepting",
       tower: "", unit: "", frontGate: false, lat: 8.5440563, lng: -79.9126136,              // Google Maps pin from the coordinator
       mapsUrl: "https://maps.app.goo.gl/ujKmgWR11NVhCzJ57", wazeUrl: "https://waze.com/ul?ll=8.5440563,-79.9126136&navigate=yes",
@@ -1293,14 +1303,18 @@ function renderMap() {
   const img = $("#mapImg"); if (img.getAttribute("href") !== MAP_IMG) img.setAttribute("href", MAP_IMG);
   const phone = window.innerWidth <= 520, R = phone ? 30 : 22;
   const locs = visibleLocations();
-  const placed = locs.map(l => ({ l, p: (typeof l.lat === "number" && typeof l.lng === "number") ? project(l.lat, l.lng) : null }));
+  const placed = locs.map(l => {
+    let p = (typeof l.lat === "number" && typeof l.lng === "number") ? project(l.lat, l.lng) : null;
+    if (p && l.mapNudge) p = { x: p.x + l.mapNudge[0] * R, y: p.y + l.mapNudge[1] * R };   // display only; distances use real coordinates
+    return { l, p };
+  });
   let g = "";
   if (state.me) { const p = project(state.me.lat, state.me.lng); if (p) g += `<g><circle class="me-ring" cx="${p.x}" cy="${p.y}" r="${R * 1.4}"/><circle class="me-dot" cx="${p.x}" cy="${p.y}" r="${R * 0.45}"/><text x="${p.x}" y="${p.y - R * 0.9}" text-anchor="middle" style="font:700 ${phone ? 32 : 24}px var(--sans);fill:#2B6BE0;paint-order:stroke;stroke:#fff;stroke-width:7px">${esc(t("map.you"))}</text></g>`; }
   const fs = phone ? 34 : 25, boxes = [], W = CONFIG.map.width;
   placed.filter(x => x.p).forEach(({ p }) => boxes.push([p.x - R, p.x + R, p.y - R, p.y + R]));
   const hit = b => boxes.some(o => b[0] < o[1] && b[1] > o[0] && b[2] < o[3] && b[3] > o[2]);
   placed.filter(x => x.p).sort((a, b) => a.p.y - b.p.y).forEach(({ l, p }) => {
-    const label = phone && l.mapLabel ? l.mapLabel : l.name;
+    const label = (phone || l.mapLabelAlways) && l.mapLabel ? l.mapLabel : l.name;
     const wEst = label.length * fs * 0.58, gap = R * 1.2;
     const cand = [];
     const sideBox = (side, y) => side === "l" ? [p.x - gap - wEst, p.x - gap, y - fs * 0.85, y + fs * 0.3]
