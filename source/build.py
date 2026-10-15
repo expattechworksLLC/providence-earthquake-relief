@@ -6,7 +6,9 @@ logo='data:image/webp;base64,'+base64.b64encode(open(f'{D}/logo-160.webp','rb').
 mp='data:image/webp;base64,'+base64.b64encode(open(f'{D}/map-z14.webp','rb').read()).decode()
 body=s.replace('__LOGO_DATA_URI__',logo).replace('__MAP_DATA_URI__',mp)
 open(f'{D}/relief.html','w').write(body)
-rest=body.replace('<title>Providence Church — Ayuda por el Sismo</title>\n','',1)
+# PHOTO_FIX: absolute photo paths for the public pages (which live under /en/ and /es/)
+pub=body.replace('src: "photos/','src: "/photos/')
+rest=pub.replace('<title>Providence Church — Ayuda por el Sismo</title>\n','',1)
 i=rest.index('<style>'); links=rest[:i]; r2=rest[i:]; j=r2.index('</style>')+8
 style,content=r2[:j],r2[j:]
 URL="https://providenceearthquakerelief.netlify.app/"
