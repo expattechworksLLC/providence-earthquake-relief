@@ -334,7 +334,13 @@ fieldset.field{border:0;padding:0;margin:0}
 .dist-photos img{display:block;width:100%;height:100%;aspect-ratio:3/4;object-fit:cover}
 .dist-photos.odd > :first-child{grid-column:1/-1}
 .dist-photos.odd > :first-child img{aspect-ratio:4/3}
-@media (min-width:860px){.dist.has-photos{grid-template-columns:1.3fr 1fr}}
+@media (min-width:860px){.dist.has-photos{grid-template-columns:1.3fr 1fr}
+  .dist.many{grid-template-columns:1fr}
+  .dist.many .dist-photos{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .dist.many .dist-photos.odd > :first-child{grid-column:span 2}
+  .dist.many .dist-photos.odd > :first-child img{aspect-ratio:auto;height:100%;position:absolute;inset:0}
+  .dist.many .dist-photos.odd > :first-child{position:relative}
+  .dist.many .dist-body{order:-1}}
 .dist-body{padding:20px;display:grid;gap:12px;align-content:start}
 .dist-body time{color:var(--gold-ink);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
 .dist-body dl{margin:0;display:grid;gap:4px;font-size:.95rem}
@@ -826,7 +832,9 @@ const CONFIG = {
      method: "yappy" | "transfer" | "cash" | "" ; amount in US dollars.
      Example (do not uncomment with made-up data):
      { date: "2026-10-12", name: "", amount: 25, method: "yappy", note: "" } */
-  cashDonations: [],
+  cashDonations: [
+    { date: "2026-10-19", name: "John & Tamy G.", amount: null, method: "", note: "" }      // amount not shared yet
+  ],
 
   // Financial transparency. Leave published:false until totals are verified.
   finance: { published: false, totalCollected: null, approvedExpenses: null, lastUpdated: null,
@@ -851,6 +859,21 @@ const CONFIG = {
        confirmedBy: { es: "…", en: "…" },                                    // receiving team
        notes: { es: "…", en: "…" } } */
   distributions: [
+    { date: "2026-10-19",
+      place: { es: "Más donaciones en camino", en: "More donations on the way" },
+      description: { es: "Los voluntarios recogieron otra ronda de donaciones de nuestros puntos de recolección, las clasificaron y cargaron los vehículos con agua, alimentos, ropa, sillas y artículos de higiene para las familias afectadas por el sismo. Gracias a todos los que donaron y a la comunidad de Templo Gosen.",
+                     en: "Volunteers picked up another round of donations from our drop-off points, sorted them and loaded the vehicles with water, food, clothing, chairs and hygiene items for families affected by the earthquake. Thank you to everyone who gave, and to the Templo Gosen community." },
+      items: [],
+      photos: [
+        { src: "/photos/2026-10-19-packed.jpg",      alt: { es: "Voluntario acomodando donaciones en una camioneta", en: "A volunteer packing donations into an SUV" } },
+        { src: "/photos/2026-10-19-loading-suv.jpg", alt: { es: "Voluntarios cargando sillas donadas", en: "Volunteers loading donated chairs" } },
+        { src: "/photos/2026-10-19-bags.jpg",        alt: { es: "Bolsas de donaciones listas para cargar", en: "Bags of donations ready to load" } },
+        { src: "/photos/2026-10-19-car.jpg",         alt: { es: "Maletero con agua, alimentos y artículos de higiene", en: "A car trunk with water, food and hygiene items" } },
+        { src: "/photos/2026-10-19-sorted.jpg",      alt: { es: "Donaciones clasificadas en bolsas", en: "Donations sorted into bags" } },
+        { src: "/photos/2026-10-19-chairs.jpg",      alt: { es: "Voluntaria llevando sillas junto a las donaciones", en: "A volunteer bringing chairs next to the donations" } },
+        { src: "/photos/2026-10-19-gathering.jpg",   alt: { es: "Reunión en Templo Gosen", en: "A gathering at Templo Gosen" } } ],
+      confirmedBy: null,
+      notes: null },
     { date: "2026-10-15",
       place: { es: "De Coronado hacia las comunidades afectadas", en: "From Coronado to the affected communities" },
       description: { es: "Recogimos las donaciones que dejaron en nuestros puntos de recolección y los voluntarios cargaron agua, almohadas y suministros para llevarlos a las familias afectadas por el sismo.",
@@ -974,7 +997,7 @@ es: {
   "foot.title":"Providence Church — Ayuda por el Sismo","foot.copy":"© 2026 Providence Church Coronado (Templo Gosen)","foot.built":"Sitio web creado por Expat Techworks · Coronado, Panamá","foot.body":"Esfuerzo comunitario independiente coordinado por Providence Church Coronado para las comunidades afectadas por el sismo en Azuero.",
   "data.loading":"Cargando la información más reciente…","data.error":"No se pudo cargar la información más reciente. Mostramos la última versión guardada.",
   "cash.title":"Donaciones en dinero recientes","cash.lead":"Publicamos cada donación cuando confirmamos que la recibimos.",
-  "cash.total1":"en 1 donación publicada","cash.totalN":"en {n} donaciones publicadas","cash.anon":"Donante anónimo",
+  "cash.total1":"en 1 donación publicada","cash.totalN":"en {n} donaciones publicadas","cash.anon":"Donante anónimo","cash.thanks":"¡Gracias!",
   "cash.m.yappy":"Yappy","cash.m.transfer":"Transferencia","cash.m.cash":"Efectivo","cash.more":"Ver más",
   "cash.empty":"Aún no hay donaciones en dinero publicadas.",
   "cash.privacy":"Mostramos tu nombre y el monto solo con tu permiso. Si prefieres aparecer como anónimo, avísale a {name} por WhatsApp (solo texto).","cash.privacyNoContact":"Mostramos tu nombre y el monto solo con tu permiso; si no, aparecerás como donante anónimo.",
@@ -1091,7 +1114,7 @@ en: {
   "foot.title":"Providence Church — Earthquake Relief","foot.copy":"© 2026 Providence Church Coronado (Templo Gosen)","foot.built":"Website built by Expat Techworks · Coronado, Panamá","foot.body":"An independent community effort coordinated by Providence Church Coronado for communities affected by the earthquake in Azuero.",
   "data.loading":"Loading the latest information…","data.error":"The latest information couldn't be loaded. Showing the last saved version.",
   "cash.title":"Recent financial donations","cash.lead":"Each gift is posted once we confirm we've received it.",
-  "cash.total1":"from 1 posted gift","cash.totalN":"from {n} posted gifts","cash.anon":"Anonymous donor",
+  "cash.total1":"from 1 posted gift","cash.totalN":"from {n} posted gifts","cash.anon":"Anonymous donor","cash.thanks":"Thank you!",
   "cash.m.yappy":"Yappy","cash.m.transfer":"Bank transfer","cash.m.cash":"Cash","cash.more":"Show more",
   "cash.empty":"No financial donations posted yet.",
   "cash.privacy":"We show your name and amount only with your permission. If you'd rather appear as anonymous, text {name} on WhatsApp.","cash.privacyNoContact":"We show your name and amount only with your permission; otherwise you'll appear as an anonymous donor.",
@@ -1394,15 +1417,16 @@ function renderPayments() {
 /* ----------------------------- cash gifts ----------------------------- */
 let cashShown = 10;
 function renderCash() {
-  const list = sortByDate((CONFIG.cashDonations || []).filter(d => typeof d.amount === "number" && d.amount > 0));
+  const list = sortByDate((CONFIG.cashDonations || []).filter(d => d && d.date && (d.name || (typeof d.amount === "number" && d.amount > 0))));
+  const counted = list.filter(d => typeof d.amount === "number" && d.amount > 0);
   const c = CONFIG.contact;
   const note = `<p class="cash-note">${ico("i-lock")}<span>${esc(hasContact() ? t("cash.privacy", { name: c.shortName || c.name }) : t("cash.privacyNoContact"))}</span></p>`;
   if (!list.length) { $("#cashList").innerHTML = `<p class="pending">${ico("i-heart")}<span>${esc(t("cash.empty"))}</span></p>` + note; return; }
-  const total = list.reduce((a, d) => a + d.amount, 0);
-  $("#cashList").innerHTML = `<p class="cash-sum"><b>${money(total)}</b><span>${esc(t(list.length === 1 ? "cash.total1" : "cash.totalN", { n: list.length }))}</span></p>
+  const total = counted.reduce((a, d) => a + d.amount, 0);
+  $("#cashList").innerHTML = `${counted.length ? `<p class="cash-sum"><b>${money(total)}</b><span>${esc(t(counted.length === 1 ? "cash.total1" : "cash.totalN", { n: counted.length }))}</span></p>` : ""}
     <ul class="cash-list">${list.slice(0, cashShown).map(d => `<li>
       <span class="cash-who"><b>${esc(d.name || t("cash.anon"))}</b><small>${esc(fmtDate(d.date))}${d.method ? " · " + esc(t("cash.m." + d.method) !== "cash.m." + d.method ? t("cash.m." + d.method) : d.method) : ""}${L(d.note) ? " · " + esc(L(d.note)) : ""}</small></span>
-      <span class="cash-amt">${money(d.amount)}</span></li>`).join("")}</ul>
+      <span class="cash-amt">${typeof d.amount === "number" && d.amount > 0 ? money(d.amount) : esc(t("cash.thanks"))}</span></li>`).join("")}</ul>
     ${list.length > cashShown ? `<button class="btn btn-line btn-sm" type="button" id="cashMore" style="justify-self:start">${esc(t("cash.more"))}</button>` : ""}` + note;
 }
 $("#cashList").addEventListener("click", e => { if (e.target.closest("#cashMore")) { cashShown += 10; renderCash(); } });
@@ -1581,7 +1605,7 @@ function renderDistributions() {
     const items = x.items || x.quantities || [];
     const ph = photos.map(p => { const src = imgSrc(p.src), img = `<img src="${esc(src)}" alt="${esc(L(p.alt))}" loading="lazy">`;
       return /^https?:/.test(src) ? `<a href="${esc(src)}" target="_blank" rel="noopener" aria-label="${esc(t("dist.photoOpen"))}">${img}</a>` : `<figure>${img}</figure>`; }).join("");
-    return `<article class="dist${photos.length ? " has-photos" : ""}">
+    return `<article class="dist${photos.length ? " has-photos" : ""}${photos.length > 4 ? " many" : ""}">
       ${photos.length ? `<div class="dist-photos${photos.length % 2 ? " odd" : ""}">${ph}</div>` : ""}
       <div class="dist-body">
         <time datetime="${esc(x.date)}">${esc(fmtDate(x.date))}</time>
