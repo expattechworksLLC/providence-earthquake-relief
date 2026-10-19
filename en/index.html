@@ -254,7 +254,7 @@ p{margin:0}
 .cash-sum b{font:600 1.9rem/1 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
 .cash-sum span{color:var(--muted);font-size:.92rem}
 .cash-list{list-style:none;margin:0;padding:0;background:var(--field);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
-.cash-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--rule)}
+.cash-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-top:1px solid var(--rule)}
 .cash-list li:first-child{border-top:0}
 .cash-who{min-width:0}
 .cash-who b{display:block;font-weight:600;overflow-wrap:anywhere}
@@ -1448,7 +1448,7 @@ function renderCash() {
   const total = counted.reduce((a, d) => a + d.amount, 0);
   $("#cashList").innerHTML = `${counted.length ? `<p class="cash-sum"><b>${money(total)}</b><span>${esc(t(counted.length === 1 ? "cash.total1" : "cash.totalN", { n: counted.length }))}</span></p>` : ""}
     <ul class="cash-list">${list.slice(0, cashShown).map(d => `<li>
-      <span class="cash-who"><b>${esc(d.name || t("cash.anon"))}</b><small>${esc(fmtDate(d.date))}${d.method ? " · " + esc(t("cash.m." + d.method) !== "cash.m." + d.method ? t("cash.m." + d.method) : d.method) : ""}${L(d.note) ? " · " + esc(L(d.note)) : ""}</small></span>
+      <span class="cash-who"><b>${esc(d.name || t("cash.anon"))}</b>${(() => { const bits = [d.method ? (t("cash.m." + d.method) !== "cash.m." + d.method ? t("cash.m." + d.method) : d.method) : "", L(d.note)].filter(Boolean); return bits.length ? `<small>${esc(bits.join(" · "))}</small>` : ""; })()}</span>
       ${(() => { const k = tierOf(d); return k ? `<span class="tier tier-${k}">${ico("i-star")}${esc(t("tier." + k))}</span>` : `<span class="cash-amt">${typeof d.amount === "number" && d.amount > 0 && d.showAmount ? money(d.amount) : esc(t("cash.thanks"))}</span>`; })()}</li>`).join("")}</ul>
     ${list.length > cashShown ? `<button class="btn btn-line btn-sm" type="button" id="cashMore" style="justify-self:start">${esc(t("cash.more"))}</button>` : ""}` + note;
 }
